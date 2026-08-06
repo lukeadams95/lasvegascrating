@@ -1028,6 +1028,8 @@ h1, h2 {
 .footer__copyright { font-size: 12.5px; color: var(--footer-muted-2); }
 .footer__legal { display: flex; gap: 24px; font-size: 12.5px; }
 .footer__legal a { color: var(--footer-muted-2); }
+.footer__bottom .social-icon { color: var(--footer-muted); border-color: rgba(255, 255, 255, 0.25); }
+.footer__bottom .social-icon:hover { color: var(--tan); border-color: var(--tan); }
 
 /* =========================================================================
    INNER PAGE HERO (Packaging / Shipping / Crating / Logistics, etc.)
@@ -1819,10 +1821,12 @@ h1, h2 {
    ========================================================================= */
 
 @media (max-width: 1180px) {
-  .nav-toggle { display: flex; }
+  .topbar { display: none; }
+  .nav-toggle { display: flex; top: 0; }
   .logo-link img { top: 0; }
   .mainnav { position: sticky; top: 0; z-index: 150; }
   .mainnav__inner { padding: 16px 24px; }
+  .mainnav__row { align-items: center; }
   .mainnav__actions .email-btn,
   .mainnav__actions .icon-btn,
   .mainnav__actions .phone-btn,
