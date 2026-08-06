@@ -26,9 +26,10 @@
   --footer-muted-2: #7d818c;
   --text-on-dark: #cfd2d9;
   --review-text: #3a3d47;
-  --clip-btn: polygon(6% 0, 100% 0, 94% 100%, 0 100%);
+  --clip-btn: polygon(13px 0, 100% 0, calc(100% - 13px) 100%, 0 100%);
   --clip-btn-nav: polygon(9px 0, 100% 0, calc(100% - 9px) 100%, 0 100%);
-  --clip-btn-steep: polygon(0 0, 100% 0, 100% 100%, 4% 100%);
+  --clip-btn-md: polygon(11px 0, 100% 0, calc(100% - 11px) 100%, 0 100%);
+  --clip-btn-steep: polygon(0 0, 100% 0, 100% 100%, 11px 100%);
   --clip-card: polygon(0 0, 92% 0, 100% 12%, 100% 100%, 0 100%);
   --clip-review: polygon(0 0, 90% 0, 100% 14%, 100% 100%, 0 100%);
   --container: 1240px;
@@ -568,7 +569,7 @@ h1, h2 {
   color: var(--tan);
   border: none;
   padding: 13px;
-  clip-path: var(--clip-btn);
+  clip-path: var(--clip-btn-md);
   font-weight: 700;
   font-size: 13px;
   text-transform: uppercase;
