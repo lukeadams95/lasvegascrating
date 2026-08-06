@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shipping Services in Las Vegas | Las Vegas Crating &amp; Logistics</title>
+<meta name="description" content="International shipping, same day delivery, moving, small moves, art packing, electronics, and DHL Express — full-service shipping out of Las Vegas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- TOP INFO BAR -->
+<div class="topbar">
+  <div class="topbar__hours">
+    <span class="topbar__hours-icon" aria-hidden="true">&#9719;</span>
+    Monday to Friday: 8:00am &ndash; 5:00pm, Saturday &amp; Sunday: By Appointment
+  </div>
+  <div class="topbar__right">
+    <a href="service-areas.html" class="topbar__link">Service Areas</a>
+    <a href="careers.html" class="topbar__link">Careers</a>
+    <a href="faq.html" class="topbar__link">FAQ</a>
+    <div class="socials">
+      <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+      <a href="#" class="social-icon" aria-label="Facebook">f</a>
+      <a href="#" class="social-icon" aria-label="X">x</a>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN NAV -->
+<header class="mainnav">
+  <div class="mainnav__inner">
+    <div class="mainnav__row">
+      <a href="index.html" class="logo-link">
+        <img src="assets/logo-new-color.webp" alt="Las Vegas Crating &amp; Logistics" width="200" height="52">
+      </a>
+
+      <div class="mainnav__actions">
+        <a href="tel:7027484973" class="btn btn--steel phone-btn">
+          <span aria-hidden="true">&#9742;</span> 702-748-4973
+        </a>
+        <a href="mailto:contact@lasvegascrating.com" class="btn btn--steel email-btn">
+          <span aria-hidden="true">&#9993;</span> contact@lasvegascrating.com
+        </a>
+        <a href="contact.html" class="btn btn--steel contact-btn">Contact Us</a>
+        <button type="button" class="icon-btn" aria-label="Search">&#9906;</button>
+        <a href="get-a-quote.html" class="btn btn--nav-quote">Get a Quote</a>
+        <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation menu">
+          <span class="nav-toggle__bars"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="nav" id="primaryNav" aria-label="Primary">
+      <div class="nav__mobile-cta">
+        <a href="tel:7027484973" class="btn btn--steel">&#9742; 702-748-4973</a>
+        <a href="get-a-quote.html" class="btn btn--tan">Get a Quote</a>
+      </div>
+      <a href="index.html" class="nav__link">HOME</a>
+      <div class="has-dropdown" id="aboutDropdown">
+        <a href="about.html" class="nav__link" aria-haspopup="true" aria-expanded="false">
+          ABOUT <span class="dropdown-caret" aria-hidden="true">&#9662;</span>
+        </a>
+        <div class="dropdown-panel">
+          <a href="local-shipping-supplies.html" class="dropdown-link">Local Shipping Supplies</a>
+          <a href="art-courier-service.html" class="dropdown-link">Art Courier Service</a>
+          <a href="convention-trade-show-event-packing-shipping-storage.html" class="dropdown-link">Convention, Trade Show, Event Packing, Shipping &amp; Storage</a>
+          <a href="trade-show-exhibition-movers.html" class="dropdown-link">Trade Show &amp; Exhibition Movers</a>
+          <a href="estate-relocation-moves.html" class="dropdown-link">Estate Relocation Moves</a>
+          <a href="leonardo-da-vinci-exhibit.html" class="dropdown-link">Las Vegas Crating Packs and Ships the Leonardo Da Vinci Exhibit</a>
+          <a href="clients-and-partners.html" class="dropdown-link">Clients &amp; Partners</a>
+          <a href="freight-forwarder-vs-broker.html" class="dropdown-link">Difference Between A Freight Forwarder and a Broker</a>
+        </div>
+      </div>
+      <a href="packaging.html" class="nav__link">PACKAGING</a>
+      <a href="shipping.html" class="nav__link nav__link--active">SHIPPING</a>
+      <a href="crating.html" class="nav__link">CRATING</a>
+      <a href="logistics.html" class="nav__link">LOGISTICS</a>
+      <a href="locations.html" class="nav__link">LOCATIONS</a>
+      <a href="blog.html" class="nav__link">BLOG</a>
+    </nav>
+  </div>
+</header>
+
+<main data-service-page>
+
+  <!-- HERO -->
+  <section class="inner-hero">
+    <div class="inner-hero__grid">
+      <div class="inner-hero__text">
+        <div class="inner-hero__eyebrow">Shipping</div>
+        <h1 class="inner-hero__title">We Ship Anything, to Anywhere</h1>
+        <p class="inner-hero__body">Ground, air, and sea freight &mdash; tracked, insured, and handled by our own team from pickup to delivery. Whether it's cross-country or across the world, we manage the full route so nothing falls through the cracks.</p>
+      </div>
+      <div class="inner-hero__photo-wrap">
+        <img src="uploads/shipping-hero.webp" alt="Loading dock with a truck being loaded with crated freight">
+        <div class="inner-hero__fade"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE PILLS -->
+  <section class="service-pills">
+    <div class="service-pills__inner">
+      <button type="button" class="service-pill is-active" data-tab-target="international">International Shipping</button>
+      <button type="button" class="service-pill" data-tab-target="same-day">Same Day Shipping &amp; Delivery</button>
+      <button type="button" class="service-pill" data-tab-target="moving">Moving</button>
+      <button type="button" class="service-pill" data-tab-target="small-moves">Small Moves</button>
+      <button type="button" class="service-pill" data-tab-target="art-packing">Art Packing, Shipping &amp; Storage</button>
+      <button type="button" class="service-pill" data-tab-target="electronics">Electronic Shipping &amp; Moving</button>
+      <button type="button" class="service-pill" data-tab-target="dhl">DHL Shipping</button>
+    </div>
+  </section>
+
+  <!-- ================= INTERNATIONAL SHIPPING ================= -->
+  <div class="service-panel is-active" data-tab-panel="international">
+    <section class="service-overview">
+      <div class="service-overview__inner">
+        <h2>International Shipping</h2>
+        <div class="section-divider section-divider--center service-overview__divider"></div>
+        <p>25 years of shipping anything to anywhere, worldwide. What started as a local box company has grown into a multi-location international shipping hub, handling customs forms, tracking, and ISPM-15 heat-treated wood for every international shipment.</p>
+      </div>
+    </section>
+    <section class="service-split">
+      <div class="service-split__grid">
+        <div class="service-split__image" style="background-image: url('uploads/international-shipping.webp');"></div>
+        <div>
+          <div class="service-split__label">ISPM-15 Heat Treatment</div>
+          <p class="service-split__body">Wood packaging is heat-treated to a core temperature of 132.8&deg;F for a minimum of 30 minutes, eliminating wood-boring beetles, pinewood nematodes, wood-boring wasps, and fungal pathogens &mdash; required to clear international customs and avoid costly port delays.</p>
+        </div>
+      </div>
+    </section>
+    <section class="process">
+      <div class="process__head"><div class="eyebrow eyebrow--tan">Process</div><h3>How It's Applied</h3><div class="section-divider section-divider--center"></div></div>
+      <div class="process__grid">
+        <div class="process__panel">
+          <div class="process__icon"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></div>
+          <div class="process__title">Choose the Best Route</div>
+          <p class="process__desc">We use intermodal shipping, switching between air, freight, and ground to secure the cheapest carrier rates.</p>
+          <svg class="process__deco" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#CEC2AB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </div>
+        <div class="process__panel">
+          <div class="process__icon"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+          <div class="process__title">Prepare Documentation</div>
+          <p class="process__desc">Export paperwork and customs declarations are completed for a smooth border crossing.</p>
+          <svg class="process__deco" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#CEC2AB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </div>
+        <div class="process__panel">
+          <div class="process__icon"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
+          <div class="process__title">Track to Delivery</div>
+          <p class="process__desc">Every shipment is tracked from pickup through final local delivery.</p>
+          <svg class="process__deco" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#CEC2AB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </div>
+      </div>
+    </section>
+    <section class="mid-cards">
+      <div class="mid-cards__grid">
+        <div class="mid-card">
+          <div class="mid-card__label">Customs Documents We Handle</div>
+          <div class="mid-card__sizes">
+            <span class="mid-card__size">Commercial Invoice</span>
+            <span class="mid-card__size">Packing List</span>
+            <span class="mid-card__size">Customs Declaration</span>
+            <span class="mid-card__size">Bill of Lading / Airway Bill</span>
+            <span class="mid-card__size">Certificate of Origin</span>
+            <span class="mid-card__size">Export License</span>
+            <span class="mid-card__size">Import License</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="applications">
+      <div class="applications__grid">
+        <div>
+          <h3 class="applications__heading">Where Do We Ship Internationally?</h3>
+          <div class="accordion">
+            <div class="accordion-item is-open">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Do you ship to Mexico, Japan, Canada, and Australia?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, along with 180+ countries worldwide.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Which carriers do you use?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>DHL Express, USPS, and FedEx, chosen for the best rate and speed on each route.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Do you handle customs for every country?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, full documentation and ISPM-15 compliance are handled on every international shipment.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="applications__image" style="background-image: url('uploads/international-shipping-faq.webp');"></div>
+      </div>
+    </section>
+    <section class="zigzag">
+      <div class="zigzag__inner">
+        <div class="zigzag__head"><div class="eyebrow">Why Choose Us</div><h3>Why Choose Us for International Shipping</h3><div class="section-divider section-divider--center"></div></div>
+        <div class="zigzag__grid">
+          <div class="zigzag__line"></div>
+          <div class="zigzag__step">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7"/><circle cx="7" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/></svg><div class="zigzag__num">01</div></div>
+            <div class="zigzag__title">Global Carrier Network</div>
+            <p class="zigzag__desc">Access to the lowest available international rates</p>
+          </div>
+          <div class="zigzag__step zigzag__step--offset">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 6 6.5.5-5 4.3 1.7 6.2L12 16.8 6.3 20l1.7-6.2-5-4.3 6.5-.5z"/></svg><div class="zigzag__num">02</div></div>
+            <div class="zigzag__title">25+ Years Experience</div>
+            <p class="zigzag__desc">Trusted shipping expertise since day one</p>
+          </div>
+          <div class="zigzag__step">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M4 20c0-3 2-5 5-5M20 20c0-3-2-5-5-5"/></svg><div class="zigzag__num">03</div></div>
+            <div class="zigzag__title">Trusted by All Clients</div>
+            <p class="zigzag__desc">Local artists, startups, and major commercial accounts alike</p>
+          </div>
+          <div class="zigzag__step zigzag__step--offset">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg><div class="zigzag__num">04</div></div>
+            <div class="zigzag__title">Full Customs Handling</div>
+            <p class="zigzag__desc">Documentation and ISPM-15 compliance managed for you</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= SAME DAY SHIPPING & DELIVERY ================= -->
+  <div class="service-panel" data-tab-panel="same-day">
+    <section class="service-overview">
+      <div class="service-overview__inner">
+        <h2>Same Day Shipping &amp; Delivery</h2>
+        <div class="section-divider section-divider--center service-overview__divider"></div>
+        <p>Over 25 years of industry experience, headquartered less than a mile from the Las Vegas Strip, with a fully licensed, bonded, and insured team of drivers dedicated to getting your delivery there without delays.</p>
+      </div>
+    </section>
+    <section class="service-split">
+      <div class="service-split__grid">
+        <div class="service-split__image" style="background-image: url('uploads/same-day-shipping.webp');"></div>
+        <div>
+          <div class="service-split__label">Fine Art Courier</div>
+          <p class="service-split__body">Custom wood crates built to exact dimensions with foam, shock absorbers, hinges, lids, and windows &mdash; handled from our warehouse before going out by rail, freight, truck, or air, with a goal of zero damage and zero delays.</p>
+        </div>
+      </div>
+    </section>
+    <section class="mid-cards">
+      <div class="mid-cards__grid">
+        <div class="mid-card">
+          <div class="mid-card__label">Services</div>
+          <div class="mid-card__sizes">
+            <span class="mid-card__size">HAZMAT Licensed</span>
+            <span class="mid-card__size">Same Day Medical Supply</span>
+            <span class="mid-card__size">Same Day Freight</span>
+            <span class="mid-card__size">Package Delivery</span>
+            <span class="mid-card__size">Just-in-Time Delivery</span>
+            <span class="mid-card__size">Expedited Transport</span>
+            <span class="mid-card__size">Fine Art Courier</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="applications">
+      <div class="applications__grid">
+        <div>
+          <h3 class="applications__heading">Who Uses Same Day Shipping &amp; Delivery?</h3>
+          <div class="accordion">
+            <div class="accordion-item is-open">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Do you deliver to trade shows and conventions?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, including festivals and events across Las Vegas.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Do you offer temporary storage?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, for residences, businesses, casinos, and convention booths.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Is receiving and pickup included?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, full pickup, delivery, and receiving handled end-to-end.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="applications__image" style="background-image: url('uploads/same-day-shipping-faq.webp');"></div>
+      </div>
+    </section>
+    <section class="zigzag">
+      <div class="zigzag__inner">
+        <div class="zigzag__head"><div class="eyebrow">Why Choose Us</div><h3>Why Choose Us for Same Day Shipping &amp; Delivery</h3><div class="section-divider section-divider--center"></div></div>
+        <div class="zigzag__grid">
+          <div class="zigzag__line"></div>
+          <div class="zigzag__step">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M4 20c0-3 2-5 5-5M20 20c0-3-2-5-5-5"/></svg><div class="zigzag__num">01</div></div>
+            <div class="zigzag__title">Family Owned</div>
+            <p class="zigzag__desc">Two generations of hands-on service</p>
+          </div>
+          <div class="zigzag__step zigzag__step--offset">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg><div class="zigzag__num">02</div></div>
+            <div class="zigzag__title">10,000 Sq Ft Warehouse</div>
+            <p class="zigzag__desc">Proper loading docks for any size shipment</p>
+          </div>
+          <div class="zigzag__step">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/></svg><div class="zigzag__num">03</div></div>
+            <div class="zigzag__title">Secure Facility</div>
+            <p class="zigzag__desc">Security systems protecting every shipment</p>
+          </div>
+          <div class="zigzag__step zigzag__step--offset">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg><div class="zigzag__num">04</div></div>
+            <div class="zigzag__title">Inventory Tracking</div>
+            <p class="zigzag__desc">Every item tracked from pickup to delivery</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= MOVING ================= -->
+  <div class="service-panel" data-tab-panel="moving">
+    <section class="service-overview">
+      <div class="service-overview__inner">
+        <h2>Moving</h2>
+        <div class="section-divider section-divider--center service-overview__divider"></div>
+        <p>Local, out-of-state, or international moves made easy and stress-free, with on-site crating for large or difficult-to-move items &mdash; no damage, no hassle.</p>
+      </div>
+    </section>
+    <section class="service-split">
+      <div class="service-split__grid">
+        <div class="service-split__image" style="background-image: url('uploads/moving.webp');"></div>
+        <div>
+          <div class="service-split__label">What We Move</div>
+          <p class="service-split__body">Items from a single pound to more than 2,500 pounds, including antiques &amp; fine art, statues, electronics, household goods, hyperbaric chambers, safes, medical equipment, and pianos.</p>
+        </div>
+      </div>
+    </section>
+    <section class="process">
+      <div class="process__head"><div class="eyebrow eyebrow--tan">Process</div><h3>How It's Applied</h3><div class="section-divider section-divider--center"></div></div>
+      <div class="process__grid">
+        <div class="process__panel">
+          <div class="process__icon"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></div>
+          <div class="process__title">Build the Crate</div>
+          <p class="process__desc">Custom interior packaging is built for each container to exact specifications.</p>
+          <svg class="process__deco" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#CEC2AB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </div>
+        <div class="process__panel">
+          <div class="process__icon"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+          <div class="process__title">Line &amp; Fill</div>
+          <p class="process__desc">Lined and filled based on your item's dimensions, weight, and fragility.</p>
+          <svg class="process__deco" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#CEC2AB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </div>
+        <div class="process__panel">
+          <div class="process__icon"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
+          <div class="process__title">Freight-Ready Lumber</div>
+          <p class="process__desc">Sourced from ISPM-15 heat-treated lumber for international shipments.</p>
+          <svg class="process__deco" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#CEC2AB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </div>
+      </div>
+    </section>
+    <section class="applications">
+      <div class="applications__grid">
+        <div>
+          <h3 class="applications__heading">Who Do We Move?</h3>
+          <div class="accordion">
+            <div class="accordion-item is-open">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Do you move businesses and offices?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, including auction houses, universities, and students.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Do you offer senior moving services?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, white glove service for assisted living transitions.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Can you move items of any weight?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, from a single pound to more than 2,500 pounds.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="applications__image" style="background-image: url('uploads/moving-faq.webp');"></div>
+      </div>
+    </section>
+    <section class="zigzag">
+      <div class="zigzag__inner">
+        <div class="zigzag__head"><div class="eyebrow">Why Choose Us</div><h3>Why Choose Us for Moving</h3><div class="section-divider section-divider--center"></div></div>
+        <div class="zigzag__grid">
+          <div class="zigzag__line"></div>
+          <div class="zigzag__step">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/></svg><div class="zigzag__num">01</div></div>
+            <div class="zigzag__title">Licensed &amp; Bonded</div>
+            <p class="zigzag__desc">Fully licensed, bonded, and insured for every move</p>
+          </div>
+          <div class="zigzag__step zigzag__step--offset">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 6 6.5.5-5 4.3 1.7 6.2L12 16.8 6.3 20l1.7-6.2-5-4.3 6.5-.5z"/></svg><div class="zigzag__num">02</div></div>
+            <div class="zigzag__title">20+ Years Experience</div>
+            <p class="zigzag__desc">Two decades of trusted moving expertise</p>
+          </div>
+          <div class="zigzag__step">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg><div class="zigzag__num">03</div></div>
+            <div class="zigzag__title">Highly Reviewed</div>
+            <p class="zigzag__desc">A track record backed by strong customer reviews</p>
+          </div>
+          <div class="zigzag__step zigzag__step--offset">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M4 20c0-3 2-5 5-5M20 20c0-3-2-5-5-5"/></svg><div class="zigzag__num">04</div></div>
+            <div class="zigzag__title">No Damage, No Hassle</div>
+            <p class="zigzag__desc">On-site crating for large or difficult items</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= SMALL MOVES ================= -->
+  <div class="service-panel" data-tab-panel="small-moves">
+    <section class="service-overview">
+      <div class="service-overview__inner">
+        <h2>Small Moves</h2>
+        <div class="section-divider section-divider--center service-overview__divider"></div>
+        <p>A small move service built for any shape or size item, to and from or in and around Las Vegas &mdash; with the same level of care as our largest crating projects.</p>
+      </div>
+    </section>
+    <section class="service-split">
+      <div class="service-split__grid">
+        <div class="service-split__image" style="background-image: url('uploads/small-moves.jpg');"></div>
+        <div>
+          <div class="service-split__label">What We Handle</div>
+          <p class="service-split__body">Casino &amp; hotel industry, campus and dorm moves, convention center services, trade show events, appliances, fine art/gallery service, large artwork, sculptures, electronic equipment, and hazardous materials.</p>
+        </div>
+      </div>
+    </section>
+    <section class="mid-cards">
+      <div class="mid-cards__grid">
+        <div class="mid-card">
+          <div class="mid-card__label">Equipment We Bring</div>
+          <div class="mid-card__sizes">
+            <span class="mid-card__size">Oversized Ladders</span>
+            <span class="mid-card__size">Furniture Dolly</span>
+            <span class="mid-card__size">Hoists &amp; Cranes</span>
+            <span class="mid-card__size">Ramps &amp; Lifts</span>
+            <span class="mid-card__size">Trucks &amp; Liftgates</span>
+            <span class="mid-card__size">Hand Trucks</span>
+            <span class="mid-card__size">Vapor Barrier Bags</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="applications">
+      <div class="applications__grid">
+        <div>
+          <h3 class="applications__heading">Where Do We Offer Small Moves?</h3>
+          <div class="accordion">
+            <div class="accordion-item is-open">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Do you serve Henderson and Summerlin?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, along with Downtown, Sun City, Paradise, and surrounding areas.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Is temporary storage available?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, short or long term storage for any small move.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Can you handle any size item?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, from a single piece of furniture to full small-scale relocations.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="applications__image" style="background-image: url('uploads/small-moves-faq.webp');"></div>
+      </div>
+    </section>
+    <section class="zigzag">
+      <div class="zigzag__inner">
+        <div class="zigzag__head"><div class="eyebrow">Why Choose Us</div><h3>Why Choose Us for Small Moves</h3><div class="section-divider section-divider--center"></div></div>
+        <div class="zigzag__grid">
+          <div class="zigzag__line"></div>
+          <div class="zigzag__step">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg><div class="zigzag__num">01</div></div>
+            <div class="zigzag__title">Strip-Adjacent Location</div>
+            <p class="zigzag__desc">Convenient location right next to the Strip</p>
+          </div>
+          <div class="zigzag__step zigzag__step--offset">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M4 20c0-3 2-5 5-5M20 20c0-3-2-5-5-5"/></svg><div class="zigzag__num">02</div></div>
+            <div class="zigzag__title">Competitive Rates</div>
+            <p class="zigzag__desc">Fair pricing on every small move</p>
+          </div>
+          <div class="zigzag__step">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="1"/><path d="M4 10h16"/><path d="M8 3v4M16 3v4"/></svg><div class="zigzag__num">03</div></div>
+            <div class="zigzag__title">Flexible Scheduling</div>
+            <p class="zigzag__desc">Available for residential or commercial requests</p>
+          </div>
+          <div class="zigzag__step zigzag__step--offset">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg><div class="zigzag__num">04</div></div>
+            <div class="zigzag__title">Any Size Handled</div>
+            <p class="zigzag__desc">From a single item to a full small move</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= ART PACKING, SHIPPING & STORAGE ================= -->
+  <div class="service-panel" data-tab-panel="art-packing">
+    <section class="service-overview">
+      <div class="service-overview__inner">
+        <h2>Art Packing, Shipping &amp; Storage</h2>
+        <div class="section-divider section-divider--center service-overview__divider"></div>
+        <p>Local and worldwide fine art packing, shipping, and storage &mdash; from pictures and statues to oversized installations &mdash; with white glove service and zero compromise on care.</p>
+      </div>
+    </section>
+    <section class="service-split">
+      <div class="service-split__grid">
+        <div class="service-split__image" style="background-image: url('uploads/art-packing.webp');"></div>
+        <div>
+          <div class="service-split__label">What We Ship</div>
+          <p class="service-split__body">Framed and unframed paintings, sculptures in marble, wood, metal, or glass, ceramics and pottery, architectural models, antiques, movie props, and museum or gallery exhibitions.</p>
+        </div>
+      </div>
+    </section>
+    <section class="mid-cards">
+      <div class="mid-cards__grid">
+        <div class="mid-card">
+          <div class="mid-card__label">Storage for Traveling Exhibits</div>
+          <p class="mid-card__body">We hold inventory for galleries between venues, storing empty crates and re-packing everything for the next stop &mdash; as short as a few days or as long as a few months.</p>
+        </div>
+      </div>
+    </section>
+    <section class="applications">
+      <div class="applications__grid">
+        <div>
+          <h3 class="applications__heading">Who Relies on Our Art Services?</h3>
+          <div class="accordion">
+            <div class="accordion-item is-open">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Do you work with museums and galleries?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, along with auction houses and restorers.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Do you serve private residences?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, plus offices and warehouses of any size.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Can you store pieces between exhibits?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, holding inventory for traveling exhibitions for days or months.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="applications__image" style="background-image: url('uploads/art-packing-faq.webp');"></div>
+      </div>
+    </section>
+    <section class="zigzag">
+      <div class="zigzag__inner">
+        <div class="zigzag__head"><div class="eyebrow">Why Choose Us</div><h3>Why Choose Us for Art Packing, Shipping &amp; Storage</h3><div class="section-divider section-divider--center"></div></div>
+        <div class="zigzag__grid">
+          <div class="zigzag__line"></div>
+          <div class="zigzag__step">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg><div class="zigzag__num">01</div></div>
+            <div class="zigzag__title">Certified Experts</div>
+            <p class="zigzag__desc">Certified packing specialists for fine art</p>
+          </div>
+          <div class="zigzag__step zigzag__step--offset">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/></svg><div class="zigzag__num">02</div></div>
+            <div class="zigzag__title">Pack &amp; Ship Guarantee</div>
+            <p class="zigzag__desc">Backed by our guarantee on every shipment</p>
+          </div>
+          <div class="zigzag__step">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg><div class="zigzag__num">03</div></div>
+            <div class="zigzag__title">Insurance Included</div>
+            <p class="zigzag__desc">Federally mandated shipping insurance on every quote</p>
+          </div>
+          <div class="zigzag__step zigzag__step--offset">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 6 6.5.5-5 4.3 1.7 6.2L12 16.8 6.3 20l1.7-6.2-5-4.3 6.5-.5z"/></svg><div class="zigzag__num">04</div></div>
+            <div class="zigzag__title">20+ Years Experience</div>
+            <p class="zigzag__desc">Two decades of trusted fine art handling</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= ELECTRONIC SHIPPING & MOVING ================= -->
+  <div class="service-panel" data-tab-panel="electronics">
+    <section class="service-overview">
+      <div class="service-overview__inner">
+        <h2>Electronic Shipping &amp; Moving</h2>
+        <div class="section-divider section-divider--center service-overview__divider"></div>
+        <p>The same precision we bring to antiques and glass, applied to data centers, servers, computers, TVs, and conference room equipment &mdash; packed securely and tightly to limit movement and damage.</p>
+      </div>
+    </section>
+    <section class="service-split">
+      <div class="service-split__grid">
+        <div class="service-split__image" style="background-image: url('uploads/electronics-shipping.webp');"></div>
+        <div>
+          <div class="service-split__label">How We Package It</div>
+          <p class="service-split__body">Anti-static bubble wrap, double-wall corrugated boxing, and foam-in-place packaging for monitors and CPUs, with protective crates or pallets for higher-value or higher-volume equipment.</p>
+        </div>
+      </div>
+    </section>
+    <section class="process">
+      <div class="process__head"><div class="eyebrow eyebrow--tan">Process</div><h3>How It's Applied</h3><div class="section-divider section-divider--center"></div></div>
+      <div class="process__grid">
+        <div class="process__panel">
+          <div class="process__icon"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></div>
+          <div class="process__title">Pallets &amp; Packing Materials</div>
+          <p class="process__desc">Trained movers arrive fully equipped with pallets, boxes, and packing materials.</p>
+          <svg class="process__deco" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#CEC2AB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </div>
+        <div class="process__panel">
+          <div class="process__icon"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+          <div class="process__title">Load &amp; Shrink-Wrap</div>
+          <p class="process__desc">Equipment is loaded and shrink-wrapped for secure transit.</p>
+          <svg class="process__deco" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#CEC2AB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </div>
+        <div class="process__panel">
+          <div class="process__icon"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
+          <div class="process__title">Track by Serial Number</div>
+          <p class="process__desc">Every item is logged using a state-certified scale for accurate freight terms.</p>
+          <svg class="process__deco" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#CEC2AB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </div>
+      </div>
+    </section>
+    <section class="applications">
+      <div class="applications__grid">
+        <div>
+          <h3 class="applications__heading">Who Needs Electronic Shipping &amp; Moving?</h3>
+          <div class="accordion">
+            <div class="accordion-item is-open">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Do you handle data center dismantling?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, along with corporate reclamation projects.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Do you work with hospitals and small businesses?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, packing and moving equipment for offices of any size.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Is secure storage available?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, climate-controlled storage with 24-hour supervision.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="applications__image" style="background-image: url('uploads/electronics-shipping-faq.webp');"></div>
+      </div>
+    </section>
+    <section class="zigzag">
+      <div class="zigzag__inner">
+        <div class="zigzag__head"><div class="eyebrow">Why Choose Us</div><h3>Why Choose Us for Electronic Shipping &amp; Moving</h3><div class="section-divider section-divider--center"></div></div>
+        <div class="zigzag__grid">
+          <div class="zigzag__line"></div>
+          <div class="zigzag__step">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 6 6.5.5-5 4.3 1.7 6.2L12 16.8 6.3 20l1.7-6.2-5-4.3 6.5-.5z"/></svg><div class="zigzag__num">01</div></div>
+            <div class="zigzag__title">#1 Rated Locally</div>
+            <p class="zigzag__desc">Top-rated on Google and Yelp</p>
+          </div>
+          <div class="zigzag__step zigzag__step--offset">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg><div class="zigzag__num">02</div></div>
+            <div class="zigzag__title">20+ Years Experience</div>
+            <p class="zigzag__desc">Two decades of electronics packing expertise</p>
+          </div>
+          <div class="zigzag__step">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/></svg><div class="zigzag__num">03</div></div>
+            <div class="zigzag__title">Secure Handling</div>
+            <p class="zigzag__desc">Anti-static and foam-in-place protection for every item</p>
+          </div>
+          <div class="zigzag__step zigzag__step--offset">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg><div class="zigzag__num">04</div></div>
+            <div class="zigzag__title">Precise Tracking</div>
+            <p class="zigzag__desc">Every item logged by serial number for accurate freight terms</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= DHL SHIPPING ================= -->
+  <div class="service-panel" data-tab-panel="dhl">
+    <section class="service-overview">
+      <div class="service-overview__inner">
+        <h2>DHL Shipping</h2>
+        <div class="section-divider section-divider--center service-overview__divider"></div>
+        <p>As your local DHL Express partner, we handle international shipping, customs forms, documentation, and ISPM-15 heat-treated wood &mdash; conveniently located between the I-15 and 215 for fast drop-offs and pickups.</p>
+      </div>
+    </section>
+    <section class="service-split">
+      <div class="service-split__grid">
+        <div class="service-split__image" style="background-image: url('uploads/dhl-shipping.webp');"></div>
+        <div>
+          <div class="service-split__label">About DHL</div>
+          <p class="service-split__body">Founded in 1969 in San Francisco, DHL pioneered express document delivery between the U.S. and the Far East before expanding globally &mdash; today operating in 220+ countries with time-definite delivery services.</p>
+        </div>
+      </div>
+    </section>
+    <section class="applications">
+      <div class="applications__grid">
+        <div>
+          <h3 class="applications__heading">What's Included With DHL Shipping?</h3>
+          <div class="accordion">
+            <div class="accordion-item is-open">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Is professional pickup included?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, on-time professional pickup for every shipment.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Do you ship fine art internationally?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, including full international insurance coverage.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Are customs forms handled for me?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, all documentation and customs forms are prepared for you.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__btn"><span class="accordion-item__q">Can I track my shipment?</span><svg class="accordion-item__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion-item__panel"><p>Yes, with up-to-the-minute tracking on every DHL shipment.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="applications__image" style="background-image: url('uploads/dhl-shipping-faq.webp');"></div>
+      </div>
+    </section>
+    <section class="zigzag">
+      <div class="zigzag__inner">
+        <div class="zigzag__head"><div class="eyebrow">Why Choose Us</div><h3>Why Choose Us for DHL Shipping</h3><div class="section-divider section-divider--center"></div></div>
+        <div class="zigzag__grid">
+          <div class="zigzag__line"></div>
+          <div class="zigzag__step">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg><div class="zigzag__num">01</div></div>
+            <div class="zigzag__title">Most Convenient Location</div>
+            <p class="zigzag__desc">Between the I-15 and 215 for fast drop-offs and pickups</p>
+          </div>
+          <div class="zigzag__step zigzag__step--offset">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M4 20c0-3 2-5 5-5M20 20c0-3-2-5-5-5"/></svg><div class="zigzag__num">02</div></div>
+            <div class="zigzag__title">Cheapest Rates</div>
+            <p class="zigzag__desc">The most competitive international shipping rates we can find</p>
+          </div>
+          <div class="zigzag__step">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/></svg><div class="zigzag__num">03</div></div>
+            <div class="zigzag__title">Trusted DHL Partner</div>
+            <p class="zigzag__desc">Your local DHL Express shipping partner</p>
+          </div>
+          <div class="zigzag__step zigzag__step--offset">
+            <div class="zigzag__icon-wrap"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7"/><circle cx="7" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/></svg><div class="zigzag__num">04</div></div>
+            <div class="zigzag__title">Fast Turnaround</div>
+            <p class="zigzag__desc">On-time professional pickup every time</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- GLOBAL CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner__inner">
+      <div>
+        <h2>Ready to Ship? Let's Get Your Free Quote.</h2>
+        <div class="section-divider section-divider--center cta-banner__divider"></div>
+        <p>Call now or request a quote online &mdash; most quotes are returned the same business day.</p>
+      </div>
+      <div class="cta-row">
+        <a href="get-a-quote.html" class="btn btn--tan">Get a Quote &#8599;</a>
+        <a href="tel:7027484973" class="call-now call-now--on-dark">
+          <span class="call-now__icon" aria-hidden="true">&#9742;</span>
+          <span>
+            <span class="call-now__label">Call Us Now</span>
+            <span class="call-now__number">702-748-4973</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <img src="assets/logo-new-color.webp" alt="Las Vegas Crating &amp; Logistics" class="footer__logo">
+      <p>4640 Polaris Ave, Las Vegas, NV 89103</p>
+      <p>1-833-801-9084</p>
+      <p>Monday &ndash; Friday: 8:00am &ndash; 5:00pm<br>Saturday &amp; Sunday: By Appointment</p>
+    </div>
+    <div>
+      <div class="footer__col-title">Shipping &amp; Storage</div>
+      <div class="footer__links">
+        <a href="shipping.html">International</a>
+        <a href="shipping.html">Same Day</a>
+        <a href="shipping.html">Moving</a>
+        <a href="shipping.html">Small Moves</a>
+        <a href="shipping.html">Art Packing</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__col-title">Packing &amp; Crating</div>
+      <div class="footer__links">
+        <a href="crating.html">Custom Wood Crates</a>
+        <a href="crating.html">Re-Usable Crates</a>
+        <a href="crating.html">ISPM-15</a>
+        <a href="crating.html">Wood Pallets</a>
+        <a href="crating.html">Freight</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__col-title">Company</div>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="packaging.html">Packaging</a>
+        <a href="shipping.html">Shipping</a>
+        <a href="crating.html">Crating</a>
+        <a href="logistics.html">Logistics</a>
+        <a href="locations.html">Locations</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="footer__copyright">&copy; 2026 Las Vegas Crating &amp; Logistics. All rights reserved.</div>
+    <div class="footer__legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
