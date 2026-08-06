@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #F7F5F0; font-family: 'Inter', sans-serif; }
+    a { color: #1A1C27; text-decoration: none; }
+    a:hover { color: #CEC2AB; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="background: #F7F5F0; color: #1A1C27; min-height: 100vh;">
+
+  <!-- TOP INFO BAR -->
+  <div style="background: #fff; padding: 8px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 12px; color: #1A1C27; border-bottom: 1px solid #eceff2; overflow-x: auto;">
+    <div style="display: flex; align-items: center; gap: 24px; white-space: nowrap; flex-shrink: 0;">
+      <div style="display: flex; align-items: center; gap: 7px;">
+        <span style="width: 13px; height: 13px; border: 1.5px solid #a89877; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 8px; color: #a89877; flex-shrink: 0;">◷</span>
+        Monday to Friday: 8:00am – 5:00pm, Saturday &amp; Sunday: By Appointment
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 20px; white-space: nowrap; flex-shrink: 0;">
+      <a href="Service Areas.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">Service Areas</a>
+      <a href="Careers.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">Careers</a>
+      <a href="FAQ.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">FAQ</a>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <sc-for list="{{ socials }}" as="soc" hint-placeholder-count="3">
+          <a href="#" style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid #d8d0bd; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #1A1C27;" style-hover="border-color: #a89877; color: #a89877;">{{ soc }}</a>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAV -->
+  <div style="background: #fff; position: relative; z-index: 20; border-bottom: 1px solid #eceff2;">
+    <div style="max-width: 1440px; margin: 0 auto; padding: 10px 32px 0;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;">
+        <div style="display: flex; align-items: center; flex-shrink: 0;">
+          <a href="Homepage v3.dc.html"><img src="assets/logo-new-color.webp" alt="Las Vegas Crating &amp; Logistics" style="height: 52px; width: auto; display: block; position: relative; top: 14px;"></a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; flex-shrink: 0;">
+          <a href="tel:7027484973" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            <span style="font-size: 12px;">☎</span> 702-748-4973
+          </a>
+          <a href="mailto:contact@lasvegascrating.com" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            <span style="font-size: 12px;">✉</span> contact@lasvegascrating.com
+          </a>
+          <a href="Contact.dc.html" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            Contact Us
+          </a>
+          <span style="width: 34px; height: 34px; border: 1px solid #d8d0bd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #1A1C27; cursor: pointer;" style-hover="border-color: #a89877; color: #a89877;">⚲</span>
+          <a href="Get a Quote.dc.html" style="background: #1A1C27; color: #fff; padding: 12px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap; position: relative; top: 14px;" style-hover="background: #262a3a;">Get a Quote</a>
+        </div>
+      </div>
+      <nav style="display: flex; align-items: center; justify-content: center; gap: 2px; flex-wrap: wrap; width: fit-content; margin: 4px auto 0; border-top: 1px solid #eceff2; padding-top: 4px;">
+        <a href="Homepage v3.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">HOME</a>
+        <div style="position: relative;" onMouseEnter="{{ openAbout }}" onMouseLeave="{{ closeAbout }}">
+          <a href="About.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">ABOUT <span style="font-size: 8px; position: relative; top: 1px;">▾</span></a>
+          <sc-if value="{{ aboutOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #eceff2; box-shadow: 0 16px 32px rgba(26,28,39,0.14); min-width: 300px; padding: 6px; z-index: 50; display: flex; flex-direction: column;">
+              <sc-for list="{{ aboutSubItems }}" as="sub" hint-placeholder-count="8">
+                <a href="{{ sub.href }}" style="padding: 10px 14px; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 13px; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877; background: #F7F5F0;">{{ sub.label }}</a>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+          <a href="{{ item.href }}" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">
+            {{ item.label }}
+          </a>
+        </sc-for>
+        <a href="Specialty Shipping Blog.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">BLOG</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section style="background: #F7F5F0; padding: 70px 32px 50px;">
+    <div style="max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; min-height: clamp(280px, calc(15.6vw + 260px), 560px);">
+      <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #A9824F; text-transform: uppercase; margin-bottom: 16px;">Legal</div>
+      <h1 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 42px; line-height: 1.15; color: #1A1C27; margin: 0 0 14px; letter-spacing: normal;">Privacy Policy</h1>
+      <p style="font-size: 14px; color: rgba(26,28,39,0.55); margin: 0;">Last updated November 21, 2024.</p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section style="background: #fff; padding: 50px 32px 0;">
+    <div style="max-width: 700px; margin: 0 auto;">
+      <p style="font-size: 16px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0;">
+        This Privacy Notice for Long's Crating and Logistics Inc. (doing business as Las Vegas Crating) describes how and why we access, collect, store, use, and/or share your personal information when you use our Services, including when you visit our website, use our packing, shipping, crating, and storage services, or otherwise engage with us. Questions or concerns? Contact us at <a href="mailto:contact@lasvegascrating.com" style="color: #A9824F;">contact@lasvegascrating.com</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- SUMMARY OF KEY POINTS -->
+  <section style="background: #fff; padding: 40px 32px 0;">
+    <div style="max-width: 700px; margin: 0 auto; background: #F7F5F0; border: 1px solid #e4ddce; padding: 32px 34px;">
+      <div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 15px; color: #1A1C27; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 16px;">Summary of Key Points</div>
+      <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <sc-for list="{{ summaryPoints }}" as="pt" hint-placeholder-count="7">
+          <li style="font-size: 15px; line-height: 1.7; color: rgba(26,28,39,0.8);">{{ pt }}</li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TABLE OF CONTENTS -->
+  <section style="background: #fff; padding: 50px 32px;">
+    <div style="max-width: 700px; margin: 0 auto;">
+      <div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 15px; color: #1A1C27; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 16px;">Table of Contents</div>
+      <ol style="margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 9px;">
+        <sc-for list="{{ tocItems }}" as="item" hint-placeholder-count="13">
+          <li style="font-size: 14.5px; line-height: 1.6;"><a href="{{ item.href }}" style="color: #1A1C27;" style-hover="color: #A9824F;">{{ item.label }}</a></li>
+        </sc-for>
+      </ol>
+    </div>
+  </section>
+
+  <!-- BODY SECTIONS -->
+  <section style="background: #fff; padding: 0 32px 80px;">
+    <div style="max-width: 700px; margin: 0 auto;">
+
+      <div id="sec-1" style="margin-bottom: 44px;">
+        <h3 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 21px; color: #1A1C27; margin: 0 0 14px;">1. What Information Do We Collect?</h3>
+        <p style="font-size: 15.5px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0 0 12px;"><b>Personal information you disclose to us.</b> We collect personal information that you voluntarily provide when you request a quote, fill out a contact form, apply for a job, or otherwise communicate with us. This may include your name, email address, phone number, mailing address, and any details you share about the items you need packed, crated, shipped, or stored.</p>
+        <p style="font-size: 15.5px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0;">We do not process any sensitive personal information (such as health data, biometric data, or racial or ethnic origin), and we do not collect any information about you from third parties.</p>
+      </div>
+
+      <div id="sec-2" style="margin-bottom: 44px;">
+        <h3 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 21px; color: #1A1C27; margin: 0 0 14px;">2. How Do We Process Your Information?</h3>
+        <p style="font-size: 15.5px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0;">We process your information to provide, improve, and administer our Services, to communicate with you regarding quotes, bookings, and shipments, for security and fraud-prevention purposes, and to comply with applicable legal and regulatory obligations, including customs and international shipping requirements.</p>
+      </div>
+
+      <div id="sec-3" style="margin-bottom: 44px;">
+        <h3 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 21px; color: #1A1C27; margin: 0 0 14px;">3. What Legal Bases Do We Rely On to Process Your Information?</h3>
+        <p style="font-size: 15.5px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0;">We only process your personal information when we have a valid legal reason to do so, including with your consent, to fulfill a contract or service you have requested, to comply with legal obligations, to protect your vital interests, or for our legitimate business interests.</p>
+      </div>
+
+      <div id="sec-4" style="margin-bottom: 44px;">
+        <h3 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 21px; color: #1A1C27; margin: 0 0 14px;">4. When and With Whom Do We Share Your Personal Information?</h3>
+        <p style="font-size: 15.5px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0;">We may share information with vendors and service providers who perform services on our behalf (such as freight carriers, customs brokers, and payment processors), during a business transfer (such as a merger or acquisition), or when required by law, court order, or governmental request.</p>
+      </div>
+
+      <div id="sec-5" style="margin-bottom: 44px;">
+        <h3 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 21px; color: #1A1C27; margin: 0 0 14px;">5. Do We Use Cookies and Other Tracking Technologies?</h3>
+        <p style="font-size: 15.5px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0;">We may use cookies and similar tracking technologies to gather usage and analytics information, remember your preferences, and improve the performance of our website. You can control cookies through your browser settings.</p>
+      </div>
+
+      <div id="sec-6" style="margin-bottom: 44px;">
+        <h3 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 21px; color: #1A1C27; margin: 0 0 14px;">6. How Long Do We Keep Your Information?</h3>
+        <p style="font-size: 15.5px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0;">We keep your personal information for as long as necessary to fulfill the purposes outlined in this notice, unless a longer retention period is required or permitted by law (such as tax, accounting, or other legal requirements).</p>
+      </div>
+
+      <div id="sec-7" style="margin-bottom: 44px;">
+        <h3 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 21px; color: #1A1C27; margin: 0 0 14px;">7. How Do We Keep Your Information Safe?</h3>
+        <p style="font-size: 15.5px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0;">We have implemented appropriate and reasonable technical and organizational security measures designed to protect the security of any personal information we process. However, no electronic transmission or storage system is completely secure, and we cannot guarantee that unauthorized third parties will never be able to defeat our security measures.</p>
+      </div>
+
+      <div id="sec-8" style="margin-bottom: 44px;">
+        <h3 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 21px; color: #1A1C27; margin: 0 0 14px;">8. What Are Your Privacy Rights?</h3>
+        <p style="font-size: 15.5px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0;">Depending on your location, you may have the right to request access to, correction of, or deletion of your personal information, to object to or restrict certain processing, and to withdraw consent where processing is based on consent. To exercise these rights, contact us using the information in Section 12.</p>
+      </div>
+
+      <div id="sec-9" style="margin-bottom: 44px;">
+        <h3 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 21px; color: #1A1C27; margin: 0 0 14px;">9. Controls for Do-Not-Track Features</h3>
+        <p style="font-size: 15.5px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0;">Most web browsers include a Do-Not-Track ("DNT") feature that signals your preference not to be tracked online. Because there is not yet a uniform technology standard for recognizing DNT signals, we do not currently respond to them.</p>
+      </div>
+
+      <div id="sec-10" style="margin-bottom: 44px;">
+        <h3 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 21px; color: #1A1C27; margin: 0 0 16px;">10. Do United States Residents Have Specific Privacy Rights?</h3>
+        <p style="font-size: 15.5px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0 0 16px;">If you are a resident of certain U.S. states, you may have additional rights regarding your personal information, including the right to know what categories of personal information we have collected. The table below summarizes the categories of personal information we may have collected in the past twelve months:</p>
+        <div style="display: flex; flex-direction: column; font-size: 14px; border: 1px solid #d8d0bd;">
+          <div style="display: grid; grid-template-columns: 1fr 100px;">
+            <div style="padding: 10px 12px; background: #F7F5F0; font-weight: 600; border-right: 1px solid #d8d0bd; border-bottom: 1px solid #d8d0bd;">Category</div>
+            <div style="padding: 10px 12px; background: #F7F5F0; font-weight: 600; border-bottom: 1px solid #d8d0bd;">Collected</div>
+          </div>
+          <sc-for list="{{ caCategories }}" as="row" hint-placeholder-count="8">
+            <div style="display: grid; grid-template-columns: 1fr 100px; border-bottom: 1px solid #d8d0bd;">
+              <div style="padding: 10px 12px; color: rgba(26,28,39,0.8); border-right: 1px solid #d8d0bd;">{{ row.category }}</div>
+              <div style="padding: 10px 12px; color: rgba(26,28,39,0.8);">{{ row.collected }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div id="sec-11" style="margin-bottom: 44px;">
+        <h3 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 21px; color: #1A1C27; margin: 0 0 14px;">11. Do We Make Updates to This Notice?</h3>
+        <p style="font-size: 15.5px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0;">We may update this Privacy Notice from time to time. The updated version will be indicated by a revised "Last updated" date, and any changes will become effective as soon as the updated notice is posted.</p>
+      </div>
+
+      <div id="sec-12" style="margin-bottom: 44px;">
+        <h3 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 21px; color: #1A1C27; margin: 0 0 14px;">12. How Can You Contact Us About This Notice?</h3>
+        <p style="font-size: 15.5px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0 0 14px;">If you have questions or comments about this notice, you may contact us by email at <a href="mailto:contact@lasvegascrating.com" style="color: #A9824F;">contact@lasvegascrating.com</a>, or by mail at:</p>
+        <p style="font-size: 15.5px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0; background: #F7F5F0; border: 1px solid #e4ddce; padding: 16px 18px;">
+          Long's Crating and Logistics Inc.<br>
+          4610 Polaris Ave<br>
+          Las Vegas, NV 89103
+        </p>
+      </div>
+
+      <div id="sec-13" style="margin-bottom: 0;">
+        <h3 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 21px; color: #1A1C27; margin: 0 0 14px;">13. How Can You Review, Update, or Delete the Data We Collect From You?</h3>
+        <p style="font-size: 15.5px; line-height: 1.75; color: rgba(26,28,39,0.8); margin: 0;">Based on the laws of your jurisdiction, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. To request to review, update, or delete your personal information, please contact us using the information in Section 12.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #1A1C27; color: #cfd2d9; padding: 70px 32px 28px;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px;">
+        <div>
+          <img src="assets/logo-new-color.webp" alt="Las Vegas Crating &amp; Logistics" style="height: 40px; width: auto; display: block; margin-bottom: 16px; filter: brightness(0) invert(1);">
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0 0 14px;">4640 Polaris Ave, Las Vegas, NV 89103</p>
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0 0 14px;">1-833-801-9084</p>
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0;">Monday – Friday: 8:00am – 5:00pm<br>Saturday &amp; Sunday: By Appointment</p>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Shipping &amp; Storage</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ shippingLinks }}" as="l" hint-placeholder-count="5">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Packing &amp; Crating</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ cratingLinks }}" as="l" hint-placeholder-count="5">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Company</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ companyLinks }}" as="l" hint-placeholder-count="7">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(206,194,171,0.15); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div style="font-size: 12.5px; color: #7d818c;">© 2026 Las Vegas Crating &amp; Logistics. All rights reserved.</div>
+        <div style="display: flex; gap: 24px; font-size: 12.5px;">
+          <a href="Privacy Policy.dc.html" style="color: #7d818c;">Privacy Policy</a>
+          <a href="#" style="color: #7d818c;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      navItems: [
+        { label: 'PACKAGING', href: 'Packaging.dc.html' },
+        { label: 'SHIPPING', href: 'Shipping.dc.html' },
+        { label: 'CRATING', href: 'Crating.dc.html' },
+        { label: 'LOGISTICS', href: 'Logistics.dc.html' },
+        { label: 'LOCATIONS', href: 'Locations.dc.html' },
+      ],
+      socials: ['in', 'f', 'x'],
+      aboutOpen: !!this.state.aboutOpen,
+      openAbout: () => this.setState({ aboutOpen: true }),
+      closeAbout: () => this.setState({ aboutOpen: false }),
+      blogOpen: !!this.state.blogOpen,
+      openBlog: () => this.setState({ blogOpen: true }),
+      closeBlog: () => this.setState({ blogOpen: false }),
+      blogSubItems: [
+        { label: 'Specialty Shipping Blog', href: 'Specialty Shipping Blog.dc.html' },
+      ],
+      aboutSubItems: [
+        { label: 'Local Shipping Supplies', href: 'Local Shipping Supplies.dc.html' },
+        { label: 'Art Courier Service', href: 'Art Courier Service.dc.html' },
+        { label: 'Convention, Trade Show, Event Packing, Shipping & Storage', href: 'Convention Trade Show Event Packing Shipping Storage.dc.html' },
+        { label: 'Trade Show & Exhibition Movers', href: 'Trade Show Exhibition Movers.dc.html' },
+        { label: 'Estate Relocation Moves', href: 'Estate Relocation Moves.dc.html' },
+        { label: 'Las Vegas Crating Packs and Ships the Leonardo Da Vinci Exhibit', href: 'Las Vegas Crating Packs and Ships Leonardo Da Vinci Exhibit.dc.html' },
+        { label: 'Clients & Partners', href: 'Clients and Partners.dc.html' },
+        { label: 'Difference Between A Freight Forwarder and a Broker', href: 'Difference Between A Freight Forwarder and a Broker.dc.html' },
+      ],
+      summaryPoints: [
+        'What personal information we process — depends on how you interact with us and the Services you use.',
+        'We do not process any sensitive personal information.',
+        'We do not collect any information from third parties.',
+        'How we process your information — to provide, improve, and administer our Services, communicate with you, ensure security and prevent fraud, and comply with legal obligations.',
+        'When and with whom we share personal information — only in specific situations, such as with vendors, service providers, or legal authorities.',
+        'How we keep your information safe — through appropriate technical and organizational security measures.',
+        'Your rights — depending on your location, you may have rights regarding your personal information, including how to exercise them.',
+      ],
+      tocItems: [
+        { label: '1. What Information Do We Collect?', href: '#sec-1' },
+        { label: '2. How Do We Process Your Information?', href: '#sec-2' },
+        { label: '3. What Legal Bases Do We Rely On?', href: '#sec-3' },
+        { label: '4. When and With Whom Do We Share Information?', href: '#sec-4' },
+        { label: '5. Do We Use Cookies and Tracking Technologies?', href: '#sec-5' },
+        { label: '6. How Long Do We Keep Your Information?', href: '#sec-6' },
+        { label: '7. How Do We Keep Your Information Safe?', href: '#sec-7' },
+        { label: '8. What Are Your Privacy Rights?', href: '#sec-8' },
+        { label: '9. Controls for Do-Not-Track Features', href: '#sec-9' },
+        { label: '10. Do U.S. Residents Have Specific Privacy Rights?', href: '#sec-10' },
+        { label: '11. Do We Make Updates to This Notice?', href: '#sec-11' },
+        { label: '12. How Can You Contact Us About This Notice?', href: '#sec-12' },
+        { label: '13. How Can You Review, Update, or Delete Your Data?', href: '#sec-13' },
+      ],
+      caCategories: [
+        { category: 'Identifiers (name, contact details)', collected: 'Yes' },
+        { category: 'Personal records (as defined by Cal. Civ. Code § 1798.80(e))', collected: 'Yes' },
+        { category: 'Protected classification characteristics', collected: 'No' },
+        { category: 'Commercial information', collected: 'Yes' },
+        { category: 'Biometric information', collected: 'No' },
+        { category: 'Internet or network activity', collected: 'Yes' },
+        { category: 'Geolocation data', collected: 'No' },
+        { category: 'Sensory data', collected: 'No' },
+      ],
+      shippingLinks: [
+        { label: 'International', href: 'Shipping.dc.html' },
+        { label: 'Same Day', href: 'Shipping.dc.html' },
+        { label: 'Moving', href: 'Shipping.dc.html' },
+        { label: 'Small Moves', href: 'Shipping.dc.html' },
+        { label: 'Art Packing', href: 'Shipping.dc.html' },
+      ],
+      cratingLinks: [
+        { label: 'Custom Wood Crates', href: 'Crating.dc.html' },
+        { label: 'Re-Usable Crates', href: 'Crating.dc.html' },
+        { label: 'ISPM-15', href: 'Crating.dc.html' },
+        { label: 'Wood Pallets', href: 'Crating.dc.html' },
+        { label: 'Freight', href: 'Crating.dc.html' },
+      ],
+      companyLinks: [
+        { label: 'Home', href: 'Homepage v3.dc.html' },
+        { label: 'Packaging', href: 'Packaging.dc.html' },
+        { label: 'Shipping', href: 'Shipping.dc.html' },
+        { label: 'Crating', href: 'Crating.dc.html' },
+        { label: 'Logistics', href: 'Logistics.dc.html' },
+        { label: 'Locations', href: 'Locations.dc.html' },
+        { label: 'Contact Us', href: 'Contact.dc.html' },
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    body { margin: 0; background: #F7F5F0; font-family: 'Inter', sans-serif; }
+    @keyframes phoneRing {
+      0%, 100% { transform: rotate(0deg); }
+      10% { transform: rotate(-15deg); }
+      20% { transform: rotate(12deg); }
+      30% { transform: rotate(-10deg); }
+      40% { transform: rotate(8deg); }
+      50% { transform: rotate(0deg); }
+    }
+    a { color: #1A1C27; text-decoration: none; }
+    a:hover { color: #CEC2AB; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="background: #F7F5F0; color: #1A1C27; min-height: 100vh;">
+
+  <!-- TOP INFO BAR -->
+  <div style="background: #fff; padding: 8px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 12px; color: #1A1C27; border-bottom: 1px solid #eceff2; overflow-x: auto;">
+    <div style="display: flex; align-items: center; gap: 24px; white-space: nowrap; flex-shrink: 0;">
+      <div style="display: flex; align-items: center; gap: 7px;">
+        <span style="width: 13px; height: 13px; border: 1.5px solid #a89877; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 8px; color: #a89877; flex-shrink: 0;">◷</span>
+        Monday to Friday: 8:00am – 5:00pm, Saturday &amp; Sunday: By Appointment
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 20px; white-space: nowrap; flex-shrink: 0;">
+      <a href="Service Areas.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">Service Areas</a>
+      <a href="Careers.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">Careers</a>
+      <a href="FAQ.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">FAQ</a>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <sc-for list="{{ socials }}" as="soc" hint-placeholder-count="3">
+          <a href="#" style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid #d8d0bd; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #1A1C27;" style-hover="border-color: #a89877; color: #a89877;">{{ soc }}</a>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAV -->
+  <div style="background: #fff; position: relative; z-index: 20; border-bottom: 1px solid #eceff2;">
+    <div style="max-width: 1440px; margin: 0 auto; padding: 10px 32px 0;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;">
+        <div style="display: flex; align-items: center; flex-shrink: 0;">
+          <a href="Homepage v3.dc.html"><img src="assets/logo-new-color.webp" alt="Las Vegas Crating &amp; Logistics" style="height: 52px; width: auto; display: block; position: relative; top: 14px;"></a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; flex-shrink: 0;">
+          <a href="tel:7027484973" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            <span style="font-size: 12px;">☎</span> 702-748-4973
+          </a>
+          <a href="mailto:contact@lasvegascrating.com" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            <span style="font-size: 12px;">✉</span> contact@lasvegascrating.com
+          </a>
+          <a href="Contact.dc.html" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            Contact Us
+          </a>
+          <span style="width: 34px; height: 34px; border: 1px solid #d8d0bd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #1A1C27; cursor: pointer;" style-hover="border-color: #a89877; color: #a89877;">⚲</span>
+          <a href="Get a Quote.dc.html" style="background: #1A1C27; color: #fff; padding: 12px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap; position: relative; top: 14px;" style-hover="background: #262a3a;">Get a Quote</a>
+        </div>
+      </div>
+      <nav style="display: flex; align-items: center; justify-content: center; gap: 2px; flex-wrap: wrap; width: fit-content; margin: 4px auto 0; border-top: 1px solid #eceff2; padding-top: 4px;">
+        <a href="Homepage v3.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">HOME</a>
+        <div style="position: relative;" onMouseEnter="{{ openAbout }}" onMouseLeave="{{ closeAbout }}">
+          <a href="About.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">ABOUT <span style="font-size: 8px; position: relative; top: 1px;">▾</span></a>
+          <sc-if value="{{ aboutOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #eceff2; box-shadow: 0 16px 32px rgba(26,28,39,0.14); min-width: 300px; padding: 6px; z-index: 50; display: flex; flex-direction: column;">
+              <sc-for list="{{ aboutSubItems }}" as="sub" hint-placeholder-count="8">
+                <a href="{{ sub.href }}" style="padding: 10px 14px; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 13px; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877; background: #F7F5F0;">{{ sub.label }}</a>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+<sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+          <a href="{{ item.href }}" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: {{ item.weight }}; font-size: 13.5px; letter-spacing: 0.02em; color: {{ item.color }}; white-space: nowrap;" style-hover="color: #a89877;">
+            {{ item.label }}
+          </a>
+        </sc-for>
+        <a href="Specialty Shipping Blog.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">BLOG</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section style="background: #1A1C27; padding: 0;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; align-content: center; min-height: clamp(280px, calc(15.6vw + 260px), 560px);">
+      <div style="padding: 80px 0 80px 32px; min-width: 0;">
+        <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #CEC2AB; text-transform: uppercase; margin-bottom: 16px;">Shipping</div>
+        <h1 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 48px; line-height: 1.1; color: #fff; margin: 0 0 20px; letter-spacing: normal; text-wrap: pretty;">We Ship Anything, to Anywhere</h1>
+        <p style="font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.7); margin: 0;">
+          Ground, air, and sea freight — tracked, insured, and handled by our own team from pickup to delivery. Whether it's cross-country or across the world, we manage the full route so nothing falls through the cracks.
+        </p>
+      </div>
+      <div style="position: relative; align-self: stretch; min-height: 420px; min-width: 0;">
+        <image-slot id="shp-hero-photo" shape="rect" src="uploads/crate shipping-efff2210.webp" placeholder="Photo: loading dock or truck being loaded with crated freight"></image-slot>
+        <div style="position: absolute; inset: 0; background: linear-gradient(90deg, #1A1C27 0%, rgba(26,28,39,0) 18%, rgba(26,28,39,0) 82%, #1A1C27 100%); pointer-events: none;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE PILLS -->
+  <section style="background: #fff; padding: 40px 32px; border-bottom: 1px solid #eceff2;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px;">
+        <sc-for list="{{ services }}" as="svc" hint-placeholder-count="7">
+          <button onClick="{{ svc.select }}" style="background: {{ svc.bg }}; border: 1.5px solid {{ svc.borderColor }}; color: {{ svc.textColor }}; padding: 13px 20px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-align: left; cursor: pointer; max-width: 220px; transition: all 0.2s;">
+            {{ svc.title }}
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE HEADING + OVERVIEW -->
+  <section style="background: #F7F5F0; padding: 90px 32px 60px;">
+    <div style="max-width: 1240px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 34px; color: #1A1C27; margin: 0 0 22px; letter-spacing: normal; text-wrap: pretty;">{{ activeTitle }}</h2>
+      <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto 26px;"></div>
+      <p style="font-size: 16px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0 auto; max-width: 900px; text-align: left;">{{ activeIntro }}</p>
+    </div>
+  </section>
+
+  <!-- SPLIT 1 (photo left, text right) -->
+  <section style="background: #F7F5F0; padding: 0 32px 90px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center;">
+      <div style="aspect-ratio: 4/3; clip-path: polygon(0 0, 92% 0, 100% 12%, 100% 100%, 0 100%);">
+        <image-slot id="{{ activePhoto1Id }}" shape="rect" placeholder="{{ activePhoto1Placeholder }}"></image-slot>
+      </div>
+      <div>
+        <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #A9824F; text-transform: uppercase; margin-bottom: 14px; text-align: center;">{{ activeSection1Label }}</div>
+        <p style="font-size: 15.5px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0;">{{ activeSection1Body }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT'S APPLIED — 3-PANEL PROCESS -->
+  <sc-if value="{{ activeHasHowApplied }}" hint-placeholder-val="{{ true }}">
+  <section style="background: #1A1C27; padding: 90px 0 0;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px; text-align: center; margin-bottom: 50px;">
+      <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #CEC2AB; text-transform: uppercase; margin-bottom: 16px;">Process</div>
+      <h3 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 30px; color: #fff; margin: 0 0 16px; letter-spacing: normal;">How It's Applied</h3>
+      <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto;"></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+      <sc-for list="{{ activeHowApplied }}" as="step" hint-placeholder-count="3">
+        <div style="position: relative; background: {{ step.bg }}; padding: 70px 32px 60px; display: flex; flex-direction: column; align-items: center; text-align: center; min-height: 260px;">
+          <div style="margin-bottom: 22px;">
+            <sc-if value="{{ step.isStep1 }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></sc-if>
+            <sc-if value="{{ step.isStep2 }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></sc-if>
+            <sc-if value="{{ step.isStep3 }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></sc-if>
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 19px; color: #fff; margin-bottom: 10px; text-align: center;">{{ step.title }}</div>
+          <p style="font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.7); margin: 0; max-width: 240px; text-align: center;">{{ step.desc }}</p>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#CEC2AB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; bottom: 16px; left: 20px; opacity: 0.85;"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- MID SECTIONS (homepage card style) -->
+  <sc-if value="{{ activeHasMidSections }}" hint-placeholder-val="{{ true }}">
+    <section style="background: #1A1C27; padding: 90px 32px;">
+      <div style="max-width: 1240px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+          <sc-for list="{{ activeMidSections }}" as="sec" hint-placeholder-count="2">
+            <div style="background: #CEC2AB; border: 1px solid #b3a689; padding: 28px 24px; text-align: center; transition: transform 0.2s, box-shadow 0.2s;" style-hover="transform: translateY(-6px); box-shadow: 0 16px 30px -12px rgba(0,0,0,0.3);">
+              <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 19px; color: #1A1C27; margin-bottom: 10px;">{{ sec.label }}</div>
+              <sc-if value="{{ sec.hasSizes }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+                  <sc-for list="{{ sec.sizes }}" as="sz" hint-placeholder-count="6">
+                    <span style="background: #1A1C27; color: #CEC2AB; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 12px; padding: 7px 12px; white-space: nowrap;">{{ sz }}</span>
+                  </sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ sec.notSizes }}" hint-placeholder-val="{{ true }}">
+                <p style="font-size: 15px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0;">{{ sec.body }}</p>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- APPLICATIONS ACCORDION (reversed — accordion left, photo right) -->
+  <section style="background: #fff; padding: 100px 32px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center;">
+      <div>
+        <h3 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 30px; color: #1A1C27; margin: 0 0 26px; letter-spacing: normal; text-wrap: pretty; text-align: center;">{{ activeApplicationsHeading }}</h3>
+        <div>
+          <sc-for list="{{ activeApplicationsItems }}" as="item" hint-placeholder-count="4">
+            <div style="border-bottom: 1px solid #eceff2;">
+              <button onClick="{{ item.toggle }}" style="width: 100%; background: none; border: none; padding: 18px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; cursor: pointer;">
+                <span style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; color: {{ item.qColor }}; text-align: center; flex: 1;">{{ item.q }}</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; transform: {{ item.chevronRotate }};"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <sc-if value="{{ item.isOpen }}" hint-placeholder-val="{{ false }}">
+                <div style="background: #F7F5F0; padding: 16px 20px; margin: 0 0 16px; text-align: center;">
+                  <p style="font-size: 15px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0;">{{ item.a }}</p>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="aspect-ratio: 4/3; clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%, 0 12%);">
+        <image-slot id="{{ activePhoto2Id }}" shape="rect" placeholder="{{ activePhoto2Placeholder }}"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US — ZIGZAG STEPS -->
+  <section style="background: #F7F5F0; padding: 90px 32px;">
+    <div style="max-width: 1160px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 64px;">
+        <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #A9824F; text-transform: uppercase; margin-bottom: 16px;">Why Choose Us</div>
+        <h3 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 30px; color: #1A1C27; margin: 0 0 16px; letter-spacing: normal; text-wrap: pretty;">{{ activeWCUHeading }}</h3>
+        <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto;"></div>
+      </div>
+      <div style="position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+        <div style="position: absolute; top: 45px; left: 6%; right: 6%; border-top: 2px dashed #CEC2AB; z-index: 0;"></div>
+        <sc-for list="{{ activeWCUPoints }}" as="pt" hint-placeholder-count="4">
+          <div style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: {{ pt.offset }};">
+            <div style="position: relative; width: 82px; height: 82px; border-radius: 50%; border: 2px solid #CEC2AB; background: #F7F5F0; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <sc-if value="{{ pt.isCheck }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></sc-if>
+              <sc-if value="{{ pt.isBox }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></sc-if>
+              <sc-if value="{{ pt.isTruck }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7"/><circle cx="7" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/></svg></sc-if>
+              <sc-if value="{{ pt.isHandshake }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M4 20c0-3 2-5 5-5M20 20c0-3-2-5-5-5"/></svg></sc-if>
+              <sc-if value="{{ pt.isShield }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/></svg></sc-if>
+              <sc-if value="{{ pt.isWarehouse }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></sc-if>
+              <sc-if value="{{ pt.isLeaf }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c8 0 14-6 14-14-8 0-14 6-14 14z"/><path d="M5 19c2-4 4-6 8-9"/></svg></sc-if>
+              <sc-if value="{{ pt.isCalendar }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="1"/><path d="M4 10h16"/><path d="M8 3v4M16 3v4"/></svg></sc-if>
+              <sc-if value="{{ pt.isGear }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></sc-if>
+              <sc-if value="{{ pt.isStar }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 6 6.5.5-5 4.3 1.7 6.2L12 16.8 6.3 20l1.7-6.2-5-4.3 6.5-.5z"/></svg></sc-if>
+              <div style="position: absolute; bottom: -6px; right: -6px; width: 27px; height: 27px; border-radius: 50%; background: #1A1C27; color: #CEC2AB; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 11px; display: flex; align-items: center; justify-content: center;">{{ pt.num }}</div>
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 19px; color: #1A1C27; margin: 22px 0 8px;">{{ pt.title }}</div>
+            <p style="font-size: 15px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0; max-width: 220px;">{{ pt.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL CTA BANNER -->
+  <section style="background: linear-gradient(100deg, rgba(26,28,39,0.75) 30%, rgba(26,28,39,0.55) 100%), url('uploads/las-vegas-crating-3pl-warehouse (1).webp') center/cover no-repeat; padding: 70px 32px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px;">
+      <div>
+        <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 32px; color: #fff; margin: 0 0 16px; letter-spacing: normal; text-wrap: pretty;">Ready to Ship? Let's Get Your Free Quote.</h2>
+        <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto 14px;"></div>
+        <p style="font-size: 14.5px; color: #cfd2d9; margin: 0;">Call now or request a quote online — most quotes are returned the same business day.</p>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;">
+        <a href="Get a Quote.dc.html" style="display: inline-flex; align-items: center; gap: 8px; background: #CEC2AB; color: #1A1C27; padding: 15px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap;" style-hover="background: #ddd3c0;">Get a Quote ↗</a>
+        <a href="tel:7027484973" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+          <span style="width: 32px; height: 32px; border: 1.5px solid #CEC2AB; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #CEC2AB; flex-shrink: 0; animation: phoneRing 1.4s ease-in-out infinite;">☎</span>
+          <span style="line-height: 1.3;">
+            <span style="display: block; font-size: 10.5px; color: #9aa0ac; text-transform: uppercase; letter-spacing: 0.05em;">Call Us Now</span>
+            <span style="display: block; font-size: 14px; font-weight: 800; color: #fff;">702-748-4973</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #1A1C27; color: #cfd2d9; padding: 70px 32px 28px;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px;">
+        <div>
+          <img src="assets/logo-new-color.webp" alt="Las Vegas Crating &amp; Logistics" style="height: 40px; width: auto; display: block; margin-bottom: 16px; filter: brightness(0) invert(1);">
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0 0 14px;">4640 Polaris Ave, Las Vegas, NV 89103</p>
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0 0 14px;">1-833-801-9084</p>
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0;">Monday – Friday: 8:00am – 5:00pm<br>Saturday &amp; Sunday: By Appointment</p>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Shipping &amp; Storage</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ shippingLinks }}" as="l" hint-placeholder-count="5">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Packing &amp; Crating</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ cratingLinks }}" as="l" hint-placeholder-count="5">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Company</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ companyLinks }}" as="l" hint-placeholder-count="7">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(206,194,171,0.15); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div style="font-size: 12.5px; color: #7d818c;">© 2026 Las Vegas Crating &amp; Logistics. All rights reserved.</div>
+        <div style="display: flex; gap: 24px; font-size: 12.5px;">
+          <a href="Privacy Policy.dc.html" style="color: #7d818c;">Privacy Policy</a>
+          <a href="#" style="color: #7d818c;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { activeIndex: 0, openAccordion: 0 };
+
+  servicesData = [
+    {
+      title: 'International Shipping',
+      slug: 'international',
+      intro: '25 years of shipping anything to anywhere, worldwide. What started as a local box company has grown into a multi-location international shipping hub, handling customs forms, tracking, and ISPM-15 heat-treated wood for every international shipment.',
+      photo1: 'Photo: cargo being loaded onto a plane or ship',
+      photo2: 'Photo: customs paperwork/documents close-up',
+      sections: [
+        { label: 'ISPM-15 Heat Treatment', body: 'Wood packaging is heat-treated to a core temperature of 132.8\u00b0F for a minimum of 30 minutes, eliminating wood-boring beetles, pinewood nematodes, wood-boring wasps, and fungal pathogens \u2014 required to clear international customs and avoid costly port delays.' },
+        { label: 'Customs Documents We Handle', body: 'Commercial Invoice, Packing List, Customs Declaration, Bill of Lading/Airway Bill, Certificate of Origin, Export License, Import License, and other specific certificates as needed.', sizes: ['Commercial Invoice', 'Packing List', 'Customs Declaration', 'Bill of Lading / Airway Bill', 'Certificate of Origin', 'Export License', 'Import License'] },
+      ],
+      howApplied: [
+        { title: 'Choose the Best Route', desc: 'We use intermodal shipping, switching between air, freight, and ground to secure the cheapest carrier rates.' },
+        { title: 'Prepare Documentation', desc: 'Export paperwork and customs declarations are completed for a smooth border crossing.' },
+        { title: 'Track to Delivery', desc: 'Every shipment is tracked from pickup through final local delivery.' },
+      ],
+      applications: {
+        heading: 'Where Do We Ship Internationally?',
+        items: [
+          { q: 'Do you ship to Mexico, Japan, Canada, and Australia?', a: 'Yes, along with 180+ countries worldwide.' },
+          { q: 'Which carriers do you use?', a: 'DHL Express, USPS, and FedEx, chosen for the best rate and speed on each route.' },
+          { q: 'Do you handle customs for every country?', a: 'Yes, full documentation and ISPM-15 compliance are handled on every international shipment.' },
+        ],
+      },
+      whyChooseUs: {
+        heading: 'Why Choose Us for International Shipping',
+        points: [
+          { icon: 'truck', title: 'Global Carrier Network', desc: 'Access to the lowest available international rates' },
+          { icon: 'star', title: '25+ Years Experience', desc: 'Trusted shipping expertise since day one' },
+          { icon: 'handshake', title: 'Trusted by All Clients', desc: 'Local artists, startups, and major commercial accounts alike' },
+          { icon: 'check', title: 'Full Customs Handling', desc: 'Documentation and ISPM-15 compliance managed for you' },
+        ],
+      },
+    },
+    {
+      title: 'Same Day Shipping & Delivery',
+      slug: 'same-day',
+      intro: 'Over 25 years of industry experience, headquartered less than a mile from the Las Vegas Strip, with a fully licensed, bonded, and insured team of drivers dedicated to getting your delivery there without delays.',
+      photo1: 'Photo: courier truck making a local delivery',
+      photo2: 'Photo: driver loading a package same-day',
+      sections: [
+        { label: 'Fine Art Courier', body: 'Custom wood crates built to exact dimensions with foam, shock absorbers, hinges, lids, and windows \u2014 handled from our warehouse before going out by rail, freight, truck, or air, with a goal of zero damage and zero delays.' },
+        { label: 'Services', body: 'Hazardous Materials, Same Day Medical Supply Delivery, Same Day Freight, Package Delivery, Just-in-Time Delivery, Expedited Transport, Fine Art Courier, and International Shipping.', sizes: ['HAZMAT Licensed', 'Same Day Medical Supply', 'Same Day Freight', 'Package Delivery', 'Just-in-Time Delivery', 'Expedited Transport', 'Fine Art Courier'] },
+      ],
+      applications: {
+        heading: 'Who Uses Same Day Shipping & Delivery?',
+        items: [
+          { q: 'Do you deliver to trade shows and conventions?', a: 'Yes, including festivals and events across Las Vegas.' },
+          { q: 'Do you offer temporary storage?', a: 'Yes, for residences, businesses, casinos, and convention booths.' },
+          { q: 'Is receiving and pickup included?', a: 'Yes, full pickup, delivery, and receiving handled end-to-end.' },
+        ],
+      },
+      whyChooseUs: {
+        heading: 'Why Choose Us for Same Day Shipping & Delivery',
+        points: [
+          { icon: 'handshake', title: 'Family Owned', desc: 'Two generations of hands-on service' },
+          { icon: 'warehouse', title: '10,000 Sq Ft Warehouse', desc: 'Proper loading docks for any size shipment' },
+          { icon: 'shield', title: 'Secure Facility', desc: 'Security systems protecting every shipment' },
+          { icon: 'check', title: 'Inventory Tracking', desc: 'Every item tracked from pickup to delivery' },
+        ],
+      },
+    },
+    {
+      title: 'Moving',
+      slug: 'moving',
+      intro: 'Local, out-of-state, or international moves made easy and stress-free, with on-site crating for large or difficult-to-move items \u2014 no damage, no hassle.',
+      photo1: 'Photo: movers carrying furniture or a crate into a truck',
+      photo2: 'Photo: moving truck loaded and ready',
+      sections: [
+        { label: 'What We Move', body: 'Items from a single pound to more than 2,500 pounds, including antiques & fine art, statues, electronics, household goods, hyperbaric chambers, safes, medical equipment, and pianos.' },
+      ],
+      howApplied: [
+        { title: 'Build the Crate', desc: 'Custom interior packaging is built for each container to exact specifications.' },
+        { title: 'Line & Fill', desc: "Lined and filled based on your item's dimensions, weight, and fragility." },
+        { title: 'Freight-Ready Lumber', desc: 'Sourced from ISPM-15 heat-treated lumber for international shipments.' },
+      ],
+      applications: {
+        heading: 'Who Do We Move?',
+        items: [
+          { q: 'Do you move businesses and offices?', a: 'Yes, including auction houses, universities, and students.' },
+          { q: 'Do you offer senior moving services?', a: 'Yes, white glove service for assisted living transitions.' },
+          { q: 'Can you move items of any weight?', a: 'Yes, from a single pound to more than 2,500 pounds.' },
+        ],
+      },
+      whyChooseUs: {
+        heading: 'Why Choose Us for Moving',
+        points: [
+          { icon: 'shield', title: 'Licensed & Bonded', desc: 'Fully licensed, bonded, and insured for every move' },
+          { icon: 'star', title: '20+ Years Experience', desc: 'Two decades of trusted moving expertise' },
+          { icon: 'check', title: 'Highly Reviewed', desc: 'A track record backed by strong customer reviews' },
+          { icon: 'handshake', title: 'No Damage, No Hassle', desc: 'On-site crating for large or difficult items' },
+        ],
+      },
+    },
+    {
+      title: 'Small Moves',
+      slug: 'small-moves',
+      intro: 'A small move service built for any shape or size item, to and from or in and around Las Vegas \u2014 with the same level of care as our largest crating projects.',
+      photo1: 'Photo: single piece of furniture being carefully moved',
+      photo2: 'Photo: small moving crew at a residence',
+      sections: [
+        { label: 'What We Handle', body: 'Casino & hotel industry, campus and dorm moves, convention center services, trade show events, appliances, fine art/gallery service, large artwork, sculptures, electronic equipment, and hazardous materials.' },
+        { label: 'Equipment We Bring', body: 'Oversized ladders, furniture dolly, hoists and cranes, professional packing material, ramps and lifts, trucks and liftgates, hand trucks, vapor barrier bags, and moving straps.', sizes: ['Oversized Ladders', 'Furniture Dolly', 'Hoists & Cranes', 'Ramps & Lifts', 'Trucks & Liftgates', 'Hand Trucks', 'Vapor Barrier Bags'] },
+      ],
+      applications: {
+        heading: 'Where Do We Offer Small Moves?',
+        items: [
+          { q: 'Do you serve Henderson and Summerlin?', a: 'Yes, along with Downtown, Sun City, Paradise, and surrounding areas.' },
+          { q: 'Is temporary storage available?', a: 'Yes, short or long term storage for any small move.' },
+          { q: 'Can you handle any size item?', a: 'Yes, from a single piece of furniture to full small-scale relocations.' },
+        ],
+      },
+      whyChooseUs: {
+        heading: 'Why Choose Us for Small Moves',
+        points: [
+          { icon: 'warehouse', title: 'Strip-Adjacent Location', desc: 'Convenient location right next to the Strip' },
+          { icon: 'handshake', title: 'Competitive Rates', desc: 'Fair pricing on every small move' },
+          { icon: 'calendar', title: 'Flexible Scheduling', desc: 'Available for residential or commercial requests' },
+          { icon: 'check', title: 'Any Size Handled', desc: 'From a single item to a full small move' },
+        ],
+      },
+    },
+    {
+      title: 'Art Packing, Shipping & Storage',
+      slug: 'art-packing',
+      intro: 'Local and worldwide fine art packing, shipping, and storage \u2014 from pictures and statues to oversized installations \u2014 with white glove service and zero compromise on care.',
+      photo1: 'Photo: art handler installing or removing a large piece',
+      photo2: 'Photo: framed artwork being custom crated',
+      sections: [
+        { label: 'What We Ship', body: 'Framed and unframed paintings, sculptures in marble, wood, metal, or glass, ceramics and pottery, architectural models, antiques, movie props, and museum or gallery exhibitions.' },
+        { label: 'Storage for Traveling Exhibits', body: 'We hold inventory for galleries between venues, storing empty crates and re-packing everything for the next stop \u2014 as short as a few days or as long as a few months.', center: true },
+      ],
+      applications: {
+        heading: 'Who Relies on Our Art Services?',
+        items: [
+          { q: 'Do you work with museums and galleries?', a: 'Yes, along with auction houses and restorers.' },
+          { q: 'Do you serve private residences?', a: 'Yes, plus offices and warehouses of any size.' },
+          { q: 'Can you store pieces between exhibits?', a: 'Yes, holding inventory for traveling exhibitions for days or months.' },
+        ],
+      },
+      whyChooseUs: {
+        heading: 'Why Choose Us for Art Packing, Shipping & Storage',
+        points: [
+          { icon: 'check', title: 'Certified Experts', desc: 'Certified packing specialists for fine art' },
+          { icon: 'shield', title: 'Pack & Ship Guarantee', desc: 'Backed by our guarantee on every shipment' },
+          { icon: 'gear', title: 'Insurance Included', desc: 'Federally mandated shipping insurance on every quote' },
+          { icon: 'star', title: '20+ Years Experience', desc: 'Two decades of trusted fine art handling' },
+        ],
+      },
+    },
+    {
+      title: 'Electronic Shipping & Moving',
+      slug: 'electronics',
+      intro: 'The same precision we bring to antiques and glass, applied to data centers, servers, computers, TVs, and conference room equipment \u2014 packed securely and tightly to limit movement and damage.',
+      photo1: 'Photo: server rack or computer equipment being packed',
+      photo2: 'Photo: technician wrapping electronics for shipment',
+      sections: [
+        { label: 'How We Package It', body: 'Anti-static bubble wrap, double-wall corrugated boxing, and foam-in-place packaging for monitors and CPUs, with protective crates or pallets for higher-value or higher-volume equipment.' },
+      ],
+      howApplied: [
+        { title: 'Pallets & Packing Materials', desc: 'Trained movers arrive fully equipped with pallets, boxes, and packing materials.' },
+        { title: 'Load & Shrink-Wrap', desc: 'Equipment is loaded and shrink-wrapped for secure transit.' },
+        { title: 'Track by Serial Number', desc: 'Every item is logged using a state-certified scale for accurate freight terms.' },
+      ],
+      applications: {
+        heading: 'Who Needs Electronic Shipping & Moving?',
+        items: [
+          { q: 'Do you handle data center dismantling?', a: 'Yes, along with corporate reclamation projects.' },
+          { q: 'Do you work with hospitals and small businesses?', a: 'Yes, packing and moving equipment for offices of any size.' },
+          { q: 'Is secure storage available?', a: 'Yes, climate-controlled storage with 24-hour supervision.' },
+        ],
+      },
+      whyChooseUs: {
+        heading: 'Why Choose Us for Electronic Shipping & Moving',
+        points: [
+          { icon: 'star', title: '#1 Rated Locally', desc: 'Top-rated on Google and Yelp' },
+          { icon: 'check', title: '20+ Years Experience', desc: 'Two decades of electronics packing expertise' },
+          { icon: 'shield', title: 'Secure Handling', desc: 'Anti-static and foam-in-place protection for every item' },
+          { icon: 'gear', title: 'Precise Tracking', desc: 'Every item logged by serial number for accurate freight terms' },
+        ],
+      },
+    },
+    {
+      title: 'DHL Shipping',
+      slug: 'dhl',
+      intro: 'As your local DHL Express partner, we handle international shipping, customs forms, documentation, and ISPM-15 heat-treated wood \u2014 conveniently located between the I-15 and 215 for fast drop-offs and pickups.',
+      photo1: 'Photo: DHL Express package being prepared',
+      photo2: 'Photo: international shipment being labeled',
+      sections: [
+        { label: 'About DHL', body: 'Founded in 1969 in San Francisco, DHL pioneered express document delivery between the U.S. and the Far East before expanding globally \u2014 today operating in 220+ countries with time-definite delivery services.' },
+      ],
+      applications: {
+        heading: "What's Included With DHL Shipping?",
+        items: [
+          { q: 'Is professional pickup included?', a: 'Yes, on-time professional pickup for every shipment.' },
+          { q: 'Do you ship fine art internationally?', a: 'Yes, including full international insurance coverage.' },
+          { q: 'Are customs forms handled for me?', a: 'Yes, all documentation and customs forms are prepared for you.' },
+          { q: 'Can I track my shipment?', a: 'Yes, with up-to-the-minute tracking on every DHL shipment.' },
+        ],
+      },
+      whyChooseUs: {
+        heading: 'Why Choose Us for DHL Shipping',
+        points: [
+          { icon: 'warehouse', title: 'Most Convenient Location', desc: 'Between the I-15 and 215 for fast drop-offs and pickups' },
+          { icon: 'handshake', title: 'Cheapest Rates', desc: 'The most competitive international shipping rates we can find' },
+          { icon: 'shield', title: 'Trusted DHL Partner', desc: 'Your local DHL Express shipping partner' },
+          { icon: 'truck', title: 'Fast Turnaround', desc: 'On-time professional pickup every time' },
+        ],
+      },
+    },
+  ];
+
+  setActive(i) { this.setState({ activeIndex: i, openAccordion: 0 }); }
+  toggleAccordion(i) { this.setState(s => ({ openAccordion: s.openAccordion === i ? -1 : i })); }
+
+  renderVals() {
+    const active = this.servicesData[this.state.activeIndex];
+    return {
+      navItems: [
+        { label: 'PACKAGING', href: 'Packaging.dc.html', color: '#1A1C27', weight: 600 },
+        { label: 'SHIPPING', href: 'Shipping.dc.html', color: '#A9824F', weight: 800 },
+        { label: 'CRATING', href: 'Crating.dc.html', color: '#1A1C27', weight: 600 },
+        { label: 'LOGISTICS', href: 'Logistics.dc.html', color: '#1A1C27', weight: 600 },
+        { label: 'LOCATIONS', href: 'Locations.dc.html', color: '#1A1C27', weight: 600 },
+      ],
+      socials: ['in', 'f', 'x'],
+      aboutOpen: !!this.state.aboutOpen,
+      openAbout: () => this.setState({ aboutOpen: true }),
+      closeAbout: () => this.setState({ aboutOpen: false }),
+      blogOpen: !!this.state.blogOpen,
+      openBlog: () => this.setState({ blogOpen: true }),
+      closeBlog: () => this.setState({ blogOpen: false }),
+      blogSubItems: [
+        { label: 'Specialty Shipping Blog', href: 'Specialty Shipping Blog.dc.html' },
+      ],
+      aboutSubItems: [
+        { label: 'Local Shipping Supplies', href: 'Local Shipping Supplies.dc.html' },
+        { label: 'Art Courier Service', href: 'Art Courier Service.dc.html' },
+        { label: 'Convention, Trade Show, Event Packing, Shipping & Storage', href: 'Convention Trade Show Event Packing Shipping Storage.dc.html' },
+        { label: 'Trade Show & Exhibition Movers', href: 'Trade Show Exhibition Movers.dc.html' },
+        { label: 'Estate Relocation Moves', href: 'Estate Relocation Moves.dc.html' },
+        { label: 'Las Vegas Crating Packs and Ships the Leonardo Da Vinci Exhibit', href: 'Las Vegas Crating Packs and Ships Leonardo Da Vinci Exhibit.dc.html' },
+        { label: 'Clients & Partners', href: 'Clients and Partners.dc.html' },
+        { label: 'Difference Between A Freight Forwarder and a Broker', href: 'Difference Between A Freight Forwarder and a Broker.dc.html' },
+      ],
+      services: this.servicesData.map((s, i) => ({
+        title: s.title,
+        select: () => this.setActive(i),
+        bg: i === this.state.activeIndex ? '#A9824F' : '#fff',
+        borderColor: i === this.state.activeIndex ? '#A9824F' : '#E4DDCE',
+        textColor: i === this.state.activeIndex ? '#fff' : '#1A1C27',
+      })),
+      activeTitle: active.title,
+      activeIntro: active.intro,
+      activePhoto1Id: 'shp-' + active.slug + '-photo1',
+      activePhoto1Placeholder: active.photo1,
+      activePhoto2Id: 'shp-' + active.slug + '-photo2',
+      activePhoto2Placeholder: active.photo2,
+      activeSection1Label: active.sections[0].label,
+      activeSection1Body: active.sections[0].body,
+      activeMidSections: active.sections.slice(1).map(sec => ({
+        label: sec.label, body: sec.body, sizes: sec.sizes || [],
+        hasSizes: !!sec.sizes, notSizes: !sec.sizes, align: (sec.sizes || sec.center) ? 'center' : 'left',
+      })),
+      activeHasMidSections: active.sections.length > 1,
+      activeHasHowApplied: !!active.howApplied,
+      activeHowApplied: (active.howApplied || []).map((step, i) => ({
+        title: step.title, desc: step.desc,
+        bg: ['#1A1C27', '#232A42', '#2D3658'][i],
+        isStep1: i === 0, isStep2: i === 1, isStep3: i === 2,
+      })),
+      activeApplicationsHeading: active.applications.heading,
+      activeApplicationsItems: active.applications.items.map((item, i) => {
+        const isOpen = i === this.state.openAccordion;
+        return {
+          q: item.q, a: item.a, isOpen,
+          qColor: isOpen ? '#A9824F' : '#1A1C27',
+          chevronRotate: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+          toggle: () => this.toggleAccordion(i),
+        };
+      }),
+      activeWCUHeading: active.whyChooseUs.heading,
+      activeWCUPoints: active.whyChooseUs.points.map((pt, i) => ({
+        num: '0' + (i + 1),
+        title: pt.title,
+        desc: pt.desc,
+        offset: (i % 2 === 1 ? '36px' : '0px'),
+        isCheck: pt.icon === 'check', isBox: pt.icon === 'box', isTruck: pt.icon === 'truck',
+        isHandshake: pt.icon === 'handshake', isShield: pt.icon === 'shield', isWarehouse: pt.icon === 'warehouse',
+        isLeaf: pt.icon === 'leaf', isCalendar: pt.icon === 'calendar', isGear: pt.icon === 'gear', isStar: pt.icon === 'star',
+      })),
+      shippingLinks: [
+        { label: 'International', href: 'Shipping.dc.html' },
+        { label: 'Same Day', href: 'Shipping.dc.html' },
+        { label: 'Moving', href: 'Shipping.dc.html' },
+        { label: 'Small Moves', href: 'Shipping.dc.html' },
+        { label: 'Art Packing', href: 'Shipping.dc.html' },
+      ],
+      cratingLinks: [
+        { label: 'Custom Wood Crates', href: 'Crating.dc.html' },
+        { label: 'Re-Usable Crates', href: 'Crating.dc.html' },
+        { label: 'ISPM-15', href: 'Crating.dc.html' },
+        { label: 'Wood Pallets', href: 'Crating.dc.html' },
+        { label: 'Freight', href: 'Crating.dc.html' },
+      ],
+      companyLinks: [
+        { label: 'Home', href: 'Homepage v3.dc.html' },
+        { label: 'Packaging', href: 'Packaging.dc.html' },
+        { label: 'Shipping', href: 'Shipping.dc.html' },
+        { label: 'Crating', href: 'Crating.dc.html' },
+        { label: 'Logistics', href: 'Logistics.dc.html' },
+        { label: 'Locations', href: 'Locations.dc.html' },
+        { label: 'Contact Us', href: 'Contact.dc.html' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

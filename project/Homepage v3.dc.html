@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #F7F5F0; font-family: 'Inter', sans-serif; }
+    @keyframes phoneRing {
+      0%, 100% { transform: rotate(0deg); }
+      10% { transform: rotate(-15deg); }
+      20% { transform: rotate(12deg); }
+      30% { transform: rotate(-10deg); }
+      40% { transform: rotate(8deg); }
+      50% { transform: rotate(0deg); }
+    }
+    @keyframes iconWiggle {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      20% { transform: rotate(-12deg) scale(1.08); }
+      40% { transform: rotate(10deg) scale(1.08); }
+      60% { transform: rotate(-8deg) scale(1.05); }
+      80% { transform: rotate(6deg) scale(1.05); }
+    }
+    @keyframes crateLidOpen {
+      0%, 8% { transform: rotateX(0deg); }
+      20%, 26% { transform: rotateX(-130deg); }
+      34%, 100% { transform: rotateX(0deg); }
+    }
+    @keyframes crateMove {
+      0%, 30% { transform: translateX(0); opacity: 1; }
+      45%, 68% { transform: translateX(32px); opacity: 0; }
+      72% { transform: translateX(0); opacity: 0; }
+      85%, 100% { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes truckDrive {
+      0%, 45% { transform: translateX(0); opacity: 1; }
+      68% { transform: translateX(110px); opacity: 0; }
+      72% { transform: translateX(-40px); opacity: 0; }
+      85%, 100% { transform: translateX(0); opacity: 1; }
+    }
+    a { color: #1A1C27; text-decoration: none; }
+    a:hover { color: #CEC2AB; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="background: #F7F5F0; color: #1A1C27; min-height: 100vh;">
+
+  <!-- TOP INFO BAR -->
+  <div style="background: #fff; padding: 8px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 12px; color: #1A1C27; border-bottom: 1px solid #eceff2; overflow-x: auto;">
+    <div style="display: flex; align-items: center; gap: 24px; white-space: nowrap; flex-shrink: 0;">
+      
+      <div style="display: flex; align-items: center; gap: 7px;">
+        <span style="width: 13px; height: 13px; border: 1.5px solid #a89877; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 8px; color: #a89877; flex-shrink: 0;">◷</span>
+        Monday to Friday: 8:00am – 5:00pm, Saturday &amp; Sunday: By Appointment
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 20px; white-space: nowrap; flex-shrink: 0;">
+      <a href="Service Areas.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">Service Areas</a>
+      <a href="Careers.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">Careers</a>
+      <a href="FAQ.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">FAQ</a>
+      
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <sc-for list="{{ socials }}" as="soc" hint-placeholder-count="3">
+          <a href="#" style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid #d8d0bd; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #1A1C27;" style-hover="border-color: #a89877; color: #a89877;">{{ soc }}</a>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAV -->
+  <div style="background: #fff; position: relative; z-index: 20; border-bottom: 1px solid #eceff2;">
+    <div style="max-width: 1440px; margin: 0 auto; padding: 10px 32px 0;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;">
+        <div style="display: flex; align-items: center; flex-shrink: 0;">
+          <a href="Homepage v3.dc.html"><img src="assets/logo-new-color.webp" alt="Las Vegas Crating &amp; Logistics" style="height: 52px; width: auto; display: block; position: relative; top: 14px;"></a>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 16px; flex-shrink: 0;">
+          <a href="tel:7027484973" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            <span style="font-size: 12px;">☎</span> 702-748-4973
+          </a>
+          <a href="mailto:contact@lasvegascrating.com" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            <span style="font-size: 12px;">✉</span> contact@lasvegascrating.com
+          </a>
+          <a href="Contact.dc.html" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            Contact Us
+          </a>
+          <span style="width: 34px; height: 34px; border: 1px solid #d8d0bd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #1A1C27; cursor: pointer;" style-hover="border-color: #a89877; color: #a89877;">⚲</span>
+          <a href="Get a Quote.dc.html" style="background: #1A1C27; color: #fff; padding: 12px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap; position: relative; top: 14px;" style-hover="background: #262a3a;">Get a Quote</a>
+        </div>
+      </div>
+
+      <nav style="display: flex; align-items: center; justify-content: center; gap: 2px; flex-wrap: wrap; width: fit-content; margin: 4px auto 0; border-top: 1px solid #eceff2; padding-top: 4px;">
+        <a href="Homepage v3.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 13.5px; letter-spacing: 0.02em; color: #A9824F; white-space: nowrap;" style-hover="color: #a89877;">HOME</a>
+        <div style="position: relative;" onMouseEnter="{{ openAbout }}" onMouseLeave="{{ closeAbout }}">
+          <a href="About.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">ABOUT <span style="font-size: 8px; position: relative; top: 1px;">▾</span></a>
+          <sc-if value="{{ aboutOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #eceff2; box-shadow: 0 16px 32px rgba(26,28,39,0.14); min-width: 300px; padding: 6px; z-index: 50; display: flex; flex-direction: column;">
+              <sc-for list="{{ aboutSubItems }}" as="sub" hint-placeholder-count="8">
+                <a href="{{ sub.href }}" style="padding: 10px 14px; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 13px; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877; background: #F7F5F0;">{{ sub.label }}</a>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+          <a href="{{ item.href }}" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: {{ item.weight }}; font-size: 13.5px; letter-spacing: 0.02em; color: {{ item.color }}; white-space: nowrap;" style-hover="color: #a89877;">
+            {{ item.label }}
+          </a>
+        </sc-for>
+        <a href="Specialty Shipping Blog.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">BLOG</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO — DIAGONAL SPLIT -->
+  <section style="position: relative; overflow: hidden; min-height: 560px; display: flex; align-items: stretch;">
+    <div style="position: absolute; inset: 0; z-index: 0;">
+      <video src="assets/hero-bg-video2.mp4" autoPlay="true" loop="true" muted="true" playsInline="true" style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
+    </div>
+
+    <div style="position: absolute; inset: 0; z-index: 1; background: linear-gradient(100deg, rgba(26,28,39,0.55) 0%, rgba(26,28,39,0.15) 55%, rgba(26,28,39,0) 75%);"></div>
+
+    <div style="position: relative; z-index: 2; width: 58%; min-width: 480px; display: flex; align-items: flex-start; padding: 50px 130px 60px 70px;">
+      <div style="max-width: 400px;">
+        <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #CEC2AB; text-transform: uppercase; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.6);">25+ Years of Specialty Logistics</div>
+        <h1 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 52px; line-height: 1.15; color: #fff; margin: 0 0 24px; letter-spacing: normal; text-wrap: pretty; text-shadow: 0 2px 14px rgba(0,0,0,0.7);">
+          Full Service Packing Shipping Crating and Moving in Las Vegas, NV
+        </h1>
+        <p style="font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.85); margin: 0 0 36px; text-shadow: 0 2px 10px rgba(0,0,0,0.7);">
+          Experts in all transportation delivery services. We handle all large item crating, packing, shipping, storage, and professional moving relocations.
+        </p>
+        <div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap;">
+          <a href="Get a Quote.dc.html" style="display: inline-flex; align-items: center; gap: 8px; background: #CEC2AB; color: #1A1C27; padding: 16px 28px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap;" style-hover="background: #ddd3c0;">Get a Quote ↗</a>
+          <a href="tel:7027484973" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+            <span style="width: 34px; height: 34px; border: 1.5px solid #CEC2AB; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #CEC2AB; flex-shrink: 0; animation: phoneRing 1.4s ease-in-out infinite;">☎</span>
+            <span style="line-height: 1.3;">
+              <span style="display: block; font-size: 11px; color: #9aa0ac; text-transform: uppercase; letter-spacing: 0.05em;">Call Us Now</span>
+              <span style="display: block; font-size: 15px; font-weight: 800; color: #fff;">702-748-4973</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div style="position: relative; z-index: 3; margin-left: auto; margin-right: 6%; margin-top: 85px; align-self: flex-start; width: 330px; flex-shrink: 0; background: #fff; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);">
+      <div style="background: #1A1C27; padding: 14px 22px; clip-path: polygon(0 0, 100% 0, 100% 100%, 4% 100%);">
+        <div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 12px; color: #CEC2AB; text-transform: uppercase; letter-spacing: 0.1em;">Request a Free Quote</div>
+      </div>
+      <div style="padding: 22px 22px 24px;">
+        <div style="font-size: 12.5px; color: rgba(26,28,39,0.6); margin-bottom: 16px;">Tell us what you need moved — we'll respond within one business day.</div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <input type="text" placeholder="Full Name" style="background: #F7F5F0; border: 1px solid #e4ddce; color: #1A1C27; padding: 11px 12px; font-size: 13px; font-family: 'Inter', sans-serif;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <input type="tel" placeholder="Phone" style="background: #F7F5F0; border: 1px solid #e4ddce; color: #1A1C27; padding: 11px 12px; font-size: 13px; font-family: 'Inter', sans-serif; min-width: 0;">
+            <input type="email" placeholder="Email" style="background: #F7F5F0; border: 1px solid #e4ddce; color: #1A1C27; padding: 11px 12px; font-size: 13px; font-family: 'Inter', sans-serif; min-width: 0;">
+          </div>
+          <textarea placeholder="What do you need shipped or crated?" rows="2" style="background: #F7F5F0; border: 1px solid #e4ddce; color: #1A1C27; padding: 11px 12px; font-size: 13px; font-family: 'Inter', sans-serif; resize: none;"></textarea>
+          <button style="background: #1A1C27; color: #CEC2AB; border: none; padding: 13px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; margin-top: 2px;" style-hover="background: #262a3a;">Get My Quote →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section style="background: #fff; padding: 44px 32px; border-bottom: 1px solid #eceff2;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="text-align: center; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; color: #1A1C27; letter-spacing: 0.01em; margin-bottom: 28px;">Las Vegas Crating's Appreciated Clients</div>
+      <div ref="{{ setTrustBarRef }}" onMouseDown="{{ onTrustDragStart }}" onMouseMove="{{ onTrustDragMove }}" onMouseUp="{{ onTrustDragEnd }}" onMouseLeave="{{ onTrustMouseLeave }}" onMouseEnter="{{ onTrustMouseEnter }}" style="display: flex; align-items: center; gap: 48px; overflow-x: auto; cursor: grab; padding: 4px 8px; scrollbar-width: none;">
+        <img src="assets/logos/wynn.webp" alt="Wynn" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/aria.webp" alt="Aria" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/hardrock.webp" alt="Hard Rock" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/mandalaybay.webp" alt="Mandalay Bay" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/flamingo.webp" alt="Flamingo" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/canes.webp" alt="Raising Cane's" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/redbull.webp" alt="Red Bull" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/resortsworld.webp" alt="Resorts World" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/palazzo.webp" alt="Palazzo" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/lvcc.webp" alt="Las Vegas Convention Center" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/wynn.webp" alt="Wynn" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/aria.webp" alt="Aria" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/hardrock.webp" alt="Hard Rock" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/mandalaybay.webp" alt="Mandalay Bay" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/flamingo.webp" alt="Flamingo" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/canes.webp" alt="Raising Cane's" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/redbull.webp" alt="Red Bull" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/resortsworld.webp" alt="Resorts World" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/palazzo.webp" alt="Palazzo" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/logos/lvcc.webp" alt="Las Vegas Convention Center" draggable="false" style="height: 46px; width: auto; max-width: 130px; object-fit: contain; flex-shrink: 0;">
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO SECTION -->
+  <section style="background: #F7F5F0; padding: 90px 32px;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <div>
+        <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 34px; color: #1A1C27; margin: 0 0 22px; letter-spacing: normal; text-wrap: pretty;">
+          A Packaging Store That Actually Has It All<span style="display: inline-block; width: 100px; height: 28px; position: relative; vertical-align: middle; margin-left: 10px; overflow: hidden;">
+            <span style="position: absolute; left: 0; bottom: 0; width: 24px; height: 24px; perspective: 100px; animation: crateMove 5s ease-in-out infinite;">
+              <span style="position: absolute; bottom: 0; left: 0; width: 24px; height: 16px; background: #CEC2AB; border: 2px solid #1A1C27;"></span>
+              <span style="position: absolute; top: 0; left: 0; width: 24px; height: 10px; background: #CEC2AB; border: 2px solid #1A1C27; transform-origin: bottom; animation: crateLidOpen 5s ease-in-out infinite;"></span>
+            </span>
+            <span style="position: absolute; left: 32px; bottom: 0; width: 50px; height: 24px; animation: truckDrive 5s ease-in-out infinite;">
+              <span style="position: absolute; bottom: 6px; left: 0; width: 34px; height: 16px; background: #1A1C27;"></span>
+              <span style="position: absolute; bottom: 6px; left: 34px; width: 12px; height: 11px; background: #1A1C27;"></span>
+              <span style="position: absolute; bottom: 9px; left: 36px; width: 8px; height: 6px; background: #CEC2AB;"></span>
+              <span style="position: absolute; bottom: 0; left: 5px; width: 8px; height: 8px; border-radius: 50%; background: #1A1C27; border: 2px solid #CEC2AB;"></span>
+              <span style="position: absolute; bottom: 0; left: 36px; width: 8px; height: 8px; border-radius: 50%; background: #1A1C27; border: 2px solid #CEC2AB;"></span>
+            </span>
+          </span>
+        </h2>
+        <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto;"></div>
+      </div>
+      <p style="font-size: 16px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 22px 0 0;">
+        Our Las Vegas location is a full working packaging store — on-site packing, custom crating, pallets, heat shrink wrapping, and art installation, all under one roof. We've been industry professionals for over 25 years and are equipped to handle any size project, from freight pickup and cross-docking to international shipping and long or short-term warehouse storage.
+      </p>
+    </div>
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 48px;">
+      <a href="Get a Quote.dc.html" style="display: inline-flex; align-items: center; gap: 8px; background: #CEC2AB; color: #1A1C27; padding: 15px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap;" style-hover="background: #ddd3c0;">Get a Quote ↗</a>
+      <a href="tel:7027484973" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+        <span style="width: 32px; height: 32px; border: 1.5px solid #1A1C27; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #1A1C27; flex-shrink: 0; animation: phoneRing 1.4s ease-in-out infinite;">☎</span>
+        <span style="line-height: 1.3;">
+          <span style="display: block; font-size: 10.5px; color: #7d7568; text-transform: uppercase; letter-spacing: 0.05em;">Call Us Now</span>
+          <span style="display: block; font-size: 14px; font-weight: 800; color: #1A1C27;">702-748-4973</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CATEGORY ICON CARDS -->
+  <section style="background: #1A1C27; padding: 90px 32px; position: relative">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #CEC2AB; text-transform: uppercase; margin-bottom: 16px;">Explore by Category</div>
+        <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 30px; margin: 0 0 16px; letter-spacing: normal; color: #fff;">What We Ship</h2>
+        <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto;"></div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; margin-bottom: 32px;">
+        <sc-for list="{{ categoryCardsRow1 }}" as="card" hint-placeholder-count="3">
+          <div style="position: relative; width: 340px;">
+            <div style="position: relative; aspect-ratio: 4/3; overflow: hidden; background-image: url('{{ card.img }}'); background-size: cover; background-position: center;">
+              <div style="position: absolute; left: 0; right: 0; bottom: -2px; height: 48px; background: #CEC2AB; clip-path: polygon(0 100%, 100% 40%, 100% 100%);"></div>
+            <div style="position: absolute; top: 199px; width: 58px; height: 58px; border-radius: 50%; background: #fff; border: 3px solid #CEC2AB; display: flex; align-items: center; justify-content: center; font-size: 19px; color: #1A1C27; box-shadow: 0 4px 10px rgba(26,28,39,0.15); z-index: 2; left: 274px; transition: transform 0.2s;" style-hover="animation: iconWiggle 0.6s ease;">{{ card.icon }}</div></div>
+            
+            <div style="background: #CEC2AB; border: 1px solid #e5e0d3; border-top: none; margin-top: -2px; padding: 40px 22px 30px; position: relative; transition: transform 0.2s, box-shadow 0.2s;" style-hover="transform: translateY(-6px); box-shadow: 0 16px 30px -12px rgba(26,28,39,0.18);">
+              <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 19px; margin-bottom: 10px; color: #1A1C27;">{{ card.title }}</div>
+              <p style="font-size: 15px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0;">{{ card.desc }}</p>
+            <a href="#" style="position: absolute; left: 286px; width: 56px; height: 49px; background: #F7F5F0; clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%); display: flex; align-items: center; justify-content: center; color: #1A1C27; font-size: 17px; z-index: 1; top: 105px" style-hover="background: #fff;">→</a></div>
+            
+          </div>
+        </sc-for>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 32px;">
+        <sc-for list="{{ categoryCardsRow2 }}" as="card" hint-placeholder-count="2">
+          <div style="position: relative; width: 340px;">
+            <div style="position: relative; aspect-ratio: 4/3; overflow: hidden; background-image: url('{{ card.img }}'); background-size: cover; background-position: center;">
+              <div style="position: absolute; left: 0; right: 0; bottom: -2px; height: 48px; background: #CEC2AB; clip-path: polygon(0 100%, 100% 40%, 100% 100%);"></div>
+            <div style="position: absolute; top: 194px; width: 65px; height: 63px; border-radius: 50%; background: #fff; border: 3px solid #CEC2AB; display: flex; align-items: center; justify-content: center; font-size: 19px; color: #1A1C27; box-shadow: 0 4px 10px rgba(26,28,39,0.15); z-index: 2; left: 266px; transition: transform 0.2s;" style-hover="animation: iconWiggle 0.6s ease;">{{ card.icon }}</div></div>
+            
+            <div style="background: #CEC2AB; border: 1px solid #e5e0d3; border-top: none; margin-top: -2px; padding: 40px 22px 30px; position: relative; transition: transform 0.2s, box-shadow 0.2s;" style-hover="transform: translateY(-6px); box-shadow: 0 16px 30px -12px rgba(26,28,39,0.18);">
+              <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 19px; margin-bottom: 10px; color: #1A1C27;">{{ card.title }}</div>
+              <p style="font-size: 15px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0;">{{ card.desc }}</p>
+            <a href="#" style="position: absolute; left: 292px; width: 51px; height: 55px; background: #F7F5F0; clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%); display: flex; align-items: center; justify-content: center; color: #1A1C27; font-size: 17px; z-index: 1; top: 107px" style-hover="background: #fff;">→</a></div>
+            
+          </div>
+        </sc-for>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; margin-top: 48px;">
+        <a href="Get a Quote.dc.html" style="display: inline-flex; align-items: center; gap: 8px; background: #CEC2AB; color: #1A1C27; padding: 15px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap;" style-hover="background: #ddd3c0;">Get a Quote ↗</a>
+        <a href="tel:7027484973" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+          <span style="width: 32px; height: 32px; border: 1.5px solid #CEC2AB; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #CEC2AB; flex-shrink: 0; animation: phoneRing 1.4s ease-in-out infinite;">☎</span>
+          <span style="line-height: 1.3;">
+            <span style="display: block; font-size: 10.5px; color: #9aa0ac; text-transform: uppercase; letter-spacing: 0.05em;">Call Us Now</span>
+            <span style="display: block; font-size: 14px; font-weight: 800; color: #fff;">702-748-4973</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOM CRATING -->
+  <section style="background: #fff; padding: 100px 32px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="aspect-ratio: 4/3; background-image: url('uploads/crating (1).webp'); background-size: cover; background-position: center; border: 1px solid #d8d0bd; clip-path: polygon(0 0, 92% 0, 100% 12%, 100% 100%, 0 100%);"></div>
+        <div style="aspect-ratio: 4/3; background-image: url('uploads/shipping.webp'); background-size: cover; background-position: center; border: 1px solid #d8d0bd; clip-path: polygon(0 0, 92% 0, 100% 12%, 100% 100%, 0 100%);"></div>
+      </div>
+      <div>
+        <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #A9824F; text-transform: uppercase; margin-bottom: 16px;">Precision Built</div>
+        <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 32px; margin: 0 0 16px; letter-spacing: normal; text-wrap: pretty;">Custom Crating and Shipping</h2>
+        <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 0 22px;"></div>
+        <p style="font-size: 15.5px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0 0 20px;">
+          Our custom brand crates are perfect for high-value items such as fine art, statues, antiques / heirlooms, electronics, porcelain, neon signs, and more. With so many customizable options such as windows, doors, lids, hinges, our crate quality comes second to none. Shock resistant, ISPM-15 heat treated, and perfect for any project that requires a customized wooden shipping crate for a higher degree of protection. Our top rated team of logistic experts uses secure and proper techniques to construct the finest pack and ship services. We offer freight pick-up's with our specialty team of expert delivery service professionals for all high-end and oversized difficulty shipments and deliveries.
+        </p>
+        <div style="font-size: 19px; font-weight: 600; color: #1A1C27; margin-bottom: 14px;">Single Units or Mass Production? Wood, Plastic, Metal, and More</div>
+        <p style="font-size: 15.5px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0;">
+          Our brand of boxes started decades ago and is still only improving. Shipping custom items needs specialty made boxes that are safe and secure for your valuables. These types of items are just not readily available for purchase that is where we step in and hand design everything to your specifications. No matter the size, quantity, or quality, we can and will produce any number that you need for available materials for both local and international use.
+        </p>
+        <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 32px;">
+          <a href="Get a Quote.dc.html" style="display: inline-flex; align-items: center; gap: 8px; background: #CEC2AB; color: #1A1C27; padding: 15px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap;" style-hover="background: #ddd3c0;">Get a Quote ↗</a>
+          <a href="tel:7027484973" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+            <span style="width: 32px; height: 32px; border: 1.5px solid #1A1C27; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #1A1C27; flex-shrink: 0; animation: phoneRing 1.4s ease-in-out infinite;">☎</span>
+            <span style="line-height: 1.3;">
+              <span style="display: block; font-size: 10.5px; color: #7d7568; text-transform: uppercase; letter-spacing: 0.05em;">Call Us Now</span>
+              <span style="display: block; font-size: 14px; font-weight: 800; color: #1A1C27;">702-748-4973</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAREHOUSE STORAGE / FINE ART -->
+  <section style="background: #F7F5F0; padding: 100px 32px;">
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+      <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #A9824F; text-transform: uppercase; margin-bottom: 16px;">Secure &amp; White Glove</div>
+      <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 32px; color: #1A1C27; margin: 0 0 16px; letter-spacing: normal;">Warehouse Storage and Fine Art Shipping</h2>
+      <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto 22px;"></div>
+      <p style="font-size: 15.5px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0 0 20px;">
+        Are you in the local Las Vegas / Henderson area and need large art cargo to be held and stored in our secure warehouse? We offer full art transportation and delivery services with expertise and white glove services for art and vintage antiques. On-site art installation for large projects – Art Courier Services – Fine Art Packaging for International Shipping. We have been servicing all major casinos, fine art galleries, auction houses, and personal and private collectors as well.
+      </p>
+      <p style="font-size: 15.5px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0;">
+        Looking for temporary storage while moving? When you need a little bit of time but don't need a do-it-yourself storage unit for a month or more on a contract, let us take care of the gap between moves. Our Las Vegas warehouse offers full service fulfillment for Cross-Docking, Fine Art, Alcohol and Wine, Cars, Sculptures, Antiques, Casino Temp Storage, and easy access Convention Event Storage.
+      </p>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; margin-top: 40px;">
+        <a href="Get a Quote.dc.html" style="display: inline-flex; align-items: center; gap: 8px; background: #CEC2AB; color: #1A1C27; padding: 15px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap;" style-hover="background: #ddd3c0;">Get a Quote ↗</a>
+        <a href="tel:7027484973" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+          <span style="width: 32px; height: 32px; border: 1.5px solid #1A1C27; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #1A1C27; flex-shrink: 0; animation: phoneRing 1.4s ease-in-out infinite;">☎</span>
+          <span style="line-height: 1.3;">
+            <span style="display: block; font-size: 10.5px; color: #7d7568; text-transform: uppercase; letter-spacing: 0.05em;">Call Us Now</span>
+            <span style="display: block; font-size: 14px; font-weight: 800; color: #1A1C27;">702-748-4973</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOGLE REVIEWS -->
+  <section style="background: #1A1C27; padding: 90px 32px; border-top: 1px solid rgba(206,194,171,0.15);">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 44px;">
+        <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #CEC2AB; text-transform: uppercase; margin-bottom: 16px;">Google Reviews</div>
+        <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 30px; color: #fff; margin: 0 0 16px; letter-spacing: normal;">What Our Customers Have To Say on Google</h2>
+        <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto;"></div>
+      </div>
+      <div style="position: relative;">
+        <button onClick="{{ reviewsPrev }}" style="position: absolute; left: -22px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: #23262f; border: 1px solid rgba(206,194,171,0.3); color: #CEC2AB; font-size: 18px; cursor: pointer; z-index: 2; display: flex; align-items: center; justify-content: center;" style-hover="background: #2c303b;">‹</button>
+        <div ref="{{ setReviewsScrollerRef }}" style="display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 4px 2px; scrollbar-width: none;">
+          <sc-for list="{{ reviews }}" as="rev" hint-placeholder-count="3">
+            <div style="flex: 0 0 clamp(260px, 31%, 380px); scroll-snap-align: start; background: #fff; border: 1px solid #e5e0d3; clip-path: polygon(0 0, 90% 0, 100% 14%, 100% 100%, 0 100%); padding: 28px;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+                <div style="color: #CEC2AB; font-size: 15px; letter-spacing: 2px;">★★★★★</div>
+                <img src="uploads/google icon.png" alt="Google" style="width: 18px; height: 18px; object-fit: contain; flex-shrink: 0;">
+              </div>
+              <p style="font-size: 14px; line-height: 1.65; color: #3a3d47; margin: 0 0 16px;">{{ rev.text }}</p>
+              <div style="font-size: 12.5px; font-weight: 700; color: #1A1C27;">{{ rev.author }}</div>
+              <div style="font-size: 11.5px; color: #7d7568;">{{ rev.time }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <button onClick="{{ reviewsNext }}" style="position: absolute; right: -22px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: #23262f; border: 1px solid rgba(206,194,171,0.3); color: #CEC2AB; font-size: 18px; cursor: pointer; z-index: 2; display: flex; align-items: center; justify-content: center;" style-hover="background: #2c303b;">›</button>
+      </div>
+      <div style="text-align: center; margin-top: 36px;">
+        <a href="#" style="font-size: 13.5px; font-weight: 700; color: #CEC2AB; text-transform: uppercase; letter-spacing: 0.03em;">Read more reviews on Google →</a>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; margin-top: 36px;">
+        <a href="Get a Quote.dc.html" style="display: inline-flex; align-items: center; gap: 8px; background: #CEC2AB; color: #1A1C27; padding: 15px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap;" style-hover="background: #ddd3c0;">Get a Quote ↗</a>
+        <a href="tel:7027484973" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+          <span style="width: 32px; height: 32px; border: 1.5px solid #CEC2AB; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #CEC2AB; flex-shrink: 0; animation: phoneRing 1.4s ease-in-out infinite;">☎</span>
+          <span style="line-height: 1.3;">
+            <span style="display: block; font-size: 10.5px; color: #9aa0ac; text-transform: uppercase; letter-spacing: 0.05em;">Call Us Now</span>
+            <span style="display: block; font-size: 14px; font-weight: 800; color: #fff;">702-748-4973</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATIONS -->
+  <section style="background: #F7F5F0; padding: 100px 32px;">
+    <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+      <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #CEC2AB; text-transform: uppercase; margin-bottom: 16px;">Where We Operate</div>
+      <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 32px; color: #1A1C27; margin: 0 0 16px; letter-spacing: normal; text-wrap: pretty;">One Standard, Four Locations Nationwide.</h2>
+      <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto 44px;"></div>
+
+      <div style="padding: 0 90px;">
+      <div style="position: relative; width: 100%; aspect-ratio: 16/9; margin-bottom: 8px;">
+        <sc-for list="{{ mapDots }}" as="dot" hint-placeholder-count="200">
+          <div style="position: absolute; left: {{ dot.x }}; top: {{ dot.y }}; width: 4px; height: 4px; border-radius: 50%; background: #a89877; transform: translate(-50%, -50%);"></div>
+        </sc-for>
+        <sc-for list="{{ mapLocations }}" as="loc" hint-placeholder-count="4">
+          <div style="position: absolute; left: {{ loc.x }}; top: {{ loc.y }}; transform: translate(-50%, -100%); display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 30px; height: 30px; border-radius: 50% 50% 50% 0; background: #1A1C27; transform: rotate(-45deg); box-shadow: 0 4px 10px rgba(26,28,39,0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <div style="width: 10px; height: 10px; border-radius: 50%; background: #fff; transform: rotate(45deg);"></div>
+            </div>
+            <div style="width: 1px; height: 46px; border-left: 1px dashed #a89877; margin-top: 4px;"></div>
+            <div style="text-align: center; white-space: nowrap; background: #F7F5F0; padding: 4px 10px; border-radius: 3px;">
+              <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13px; color: #1A1C27; margin-bottom: 3px;">{{ loc.city }}</div>
+              <div style="font-size: 12px; color: #3a3d47; font-weight: 600;">{{ loc.address }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      </div>
+
+      <p style="font-size: 15px; color: #3a3d47; margin: 70px 0 0;">
+        Need service outside of Nevada? Contact our team. <a href="#contact" style="color: #CEC2AB; text-decoration: underline; font-weight: 700;">Contact Us →</a>
+      </p>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; margin-top: 32px;">
+        <a href="Get a Quote.dc.html" style="display: inline-flex; align-items: center; gap: 8px; background: #CEC2AB; color: #1A1C27; padding: 15px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap;" style-hover="background: #ddd3c0;">Get a Quote ↗</a>
+        <a href="tel:7027484973" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+          <span style="width: 32px; height: 32px; border: 1.5px solid #1A1C27; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #1A1C27; flex-shrink: 0; animation: phoneRing 1.4s ease-in-out infinite;">☎</span>
+          <span style="line-height: 1.3;">
+            <span style="display: block; font-size: 10.5px; color: #7d7568; text-transform: uppercase; letter-spacing: 0.05em;">Call Us Now</span>
+            <span style="display: block; font-size: 14px; font-weight: 800; color: #1A1C27;">702-748-4973</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL CTA BANNER -->
+  <section style="background: linear-gradient(100deg, rgba(26,28,39,0.75) 30%, rgba(26,28,39,0.55) 100%), url('uploads/las-vegas-crating-3pl-warehouse (1).webp') center/cover no-repeat; padding: 70px 32px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px;">
+      <div>
+        <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 32px; color: #fff; margin: 0 0 16px; letter-spacing: normal; text-wrap: pretty;">Ready to Ship? Let's Get Your Free Quote.</h2>
+        <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto 14px;"></div>
+        <p style="font-size: 14.5px; color: #cfd2d9; margin: 0;">Call now or request a quote online — most quotes are returned the same business day.</p>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;">
+        <a href="Get a Quote.dc.html" style="display: inline-flex; align-items: center; gap: 8px; background: #CEC2AB; color: #1A1C27; padding: 15px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap;" style-hover="background: #ddd3c0;">Get a Quote ↗</a>
+        <a href="tel:7027484973" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+          <span style="width: 32px; height: 32px; border: 1.5px solid #CEC2AB; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #CEC2AB; flex-shrink: 0; animation: phoneRing 1.4s ease-in-out infinite;">☎</span>
+          <span style="line-height: 1.3;">
+            <span style="display: block; font-size: 10.5px; color: #9aa0ac; text-transform: uppercase; letter-spacing: 0.05em;">Call Us Now</span>
+            <span style="display: block; font-size: 14px; font-weight: 800; color: #fff;">702-748-4973</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #1A1C27; color: #cfd2d9; padding: 70px 32px 28px;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px;">
+        <div>
+          <img src="assets/logo-new-color.webp" alt="Las Vegas Crating &amp; Logistics" style="height: 40px; width: auto; display: block; margin-bottom: 16px; filter: brightness(0) invert(1);">
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0 0 14px;">4640 Polaris Ave, Las Vegas, NV 89103</p>
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0 0 14px;">1-833-801-9084</p>
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0;">Monday – Friday: 8:00am – 5:00pm<br>Saturday &amp; Sunday: By Appointment</p>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Shipping &amp; Storage</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ shippingLinks }}" as="l" hint-placeholder-count="5">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Packing &amp; Crating</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ cratingLinks }}" as="l" hint-placeholder-count="5">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Company</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ companyLinks }}" as="l" hint-placeholder-count="7">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(206,194,171,0.15); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div style="font-size: 12.5px; color: #7d818c;">© 2026 Las Vegas Crating &amp; Logistics. All rights reserved.</div>
+        <div style="display: flex; gap: 24px; font-size: 12.5px;">
+          <a href="Privacy Policy.dc.html" style="color: #7d818c;">Privacy Policy</a>
+          <a href="#" style="color: #7d818c;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { activeSlide: 0 };
+  dragState = { down: false, startX: 0, startScroll: 0 };
+  autoScrollPaused = false;
+  trustLogos = [
+    'assets/logos/wynn.webp', 'assets/logos/aria.webp', 'assets/logos/hardrock.webp',
+    'assets/logos/mandalaybay.webp', 'assets/logos/flamingo.webp', 'assets/logos/canes.webp',
+    'assets/logos/redbull.webp', 'assets/logos/resortsworld.webp', 'assets/logos/palazzo.webp',
+    'assets/logos/lvcc.webp',
+  ];
+
+  componentDidMount() {
+    this.autoScrollTimer = setInterval(() => {
+      if (this.autoScrollPaused || this.dragState.down || !this.trustBarEl) return;
+      const el = this.trustBarEl;
+      el.scrollLeft += 1;
+      if (el.scrollLeft >= el.scrollWidth / 2) el.scrollLeft -= el.scrollWidth / 2;
+    }, 20);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.autoScrollTimer);
+  }
+
+  usOutline = [
+    [-124,49],[-95,49],[-83,45],[-71,45],[-67,44],[-70,41],[-74,40],[-76,36],
+    [-81,31],[-80,26],[-81,25],[-83,28],[-89,30],[-94,29],[-97,26],[-103,29],
+    [-108,31],[-114,32],[-117,33],[-122,38],[-124,42],
+  ];
+
+  pointInPolygon(lon, lat, poly) {
+    let inside = false;
+    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+      const [xi, yi] = poly[i], [xj, yj] = poly[j];
+      const intersect = ((yi > lat) !== (yj > lat)) && (lon < (xj - xi) * (lat - yi) / (yj - yi) + xi);
+      if (intersect) inside = !inside;
+    }
+    return inside;
+  }
+
+  buildMapDots() {
+    const dots = [];
+    const lonMin = -125, lonMax = -66, latMin = 24, latMax = 49;
+    for (let lat = latMin; lat <= latMax; lat += 1.0) {
+      for (let lon = lonMin; lon <= lonMax; lon += 1.3) {
+        if (this.pointInPolygon(lon, lat, this.usOutline)) {
+          dots.push({
+            x: (((lon - lonMin) / (lonMax - lonMin)) * 100).toFixed(2) + '%',
+            y: (((latMax - lat) / (latMax - latMin)) * 100).toFixed(2) + '%',
+          });
+        }
+      }
+    }
+    return dots;
+  }
+
+  setReviewsScrollerRef = (el) => { this.reviewsScrollerEl = el; };
+  reviewsPrev = () => {
+    if (!this.reviewsScrollerEl) return;
+    const card = this.reviewsScrollerEl.firstElementChild;
+    const step = card ? card.getBoundingClientRect().width + 24 : 300;
+    this.reviewsScrollerEl.scrollLeft -= step;
+  };
+  reviewsNext = () => {
+    if (!this.reviewsScrollerEl) return;
+    const card = this.reviewsScrollerEl.firstElementChild;
+    const step = card ? card.getBoundingClientRect().width + 24 : 300;
+    this.reviewsScrollerEl.scrollLeft += step;
+  };
+
+  renderVals() {
+    const setTrustBarRef = (el) => { this.trustBarEl = el; };
+    const onTrustDragStart = (e) => {
+      if (!this.trustBarEl) return;
+      this.dragState = { down: true, startX: e.pageX, startScroll: this.trustBarEl.scrollLeft };
+      this.trustBarEl.style.cursor = 'grabbing';
+    };
+    const onTrustDragMove = (e) => {
+      if (!this.dragState.down || !this.trustBarEl) return;
+      e.preventDefault();
+      this.trustBarEl.scrollLeft = this.dragState.startScroll - (e.pageX - this.dragState.startX);
+    };
+    const onTrustDragEnd = () => {
+      this.dragState.down = false;
+      if (this.trustBarEl) this.trustBarEl.style.cursor = 'grab';
+    };
+    const onTrustMouseEnter = () => { this.autoScrollPaused = true; };
+    const onTrustMouseLeave = () => { this.autoScrollPaused = false; onTrustDragEnd(); };
+    return {
+      navItems: [
+        { label: 'PACKAGING', href: 'Packaging.dc.html', color: '#1A1C27', weight: 600 },
+        { label: 'SHIPPING', href: 'Shipping.dc.html', color: '#1A1C27', weight: 600 },
+        { label: 'CRATING', href: 'Crating.dc.html', color: '#1A1C27', weight: 600 },
+        { label: 'LOGISTICS', href: 'Logistics.dc.html', color: '#1A1C27', weight: 600 },
+        { label: 'LOCATIONS', href: 'Locations.dc.html', color: '#1A1C27', weight: 600 },
+      ],
+      socials: ['in', 'f', 'x'],
+      aboutOpen: !!this.state.aboutOpen,
+      openAbout: () => this.setState({ aboutOpen: true }),
+      closeAbout: () => this.setState({ aboutOpen: false }),
+      blogOpen: !!this.state.blogOpen,
+      openBlog: () => this.setState({ blogOpen: true }),
+      closeBlog: () => this.setState({ blogOpen: false }),
+      blogSubItems: [
+        { label: 'Specialty Shipping Blog', href: 'Specialty Shipping Blog.dc.html' },
+      ],
+      aboutSubItems: [
+        { label: 'Local Shipping Supplies', href: 'Local Shipping Supplies.dc.html' },
+        { label: 'Art Courier Service', href: 'Art Courier Service.dc.html' },
+        { label: 'Convention, Trade Show, Event Packing, Shipping & Storage', href: 'Convention Trade Show Event Packing Shipping Storage.dc.html' },
+        { label: 'Trade Show & Exhibition Movers', href: 'Trade Show Exhibition Movers.dc.html' },
+        { label: 'Estate Relocation Moves', href: 'Estate Relocation Moves.dc.html' },
+        { label: 'Las Vegas Crating Packs and Ships the Leonardo Da Vinci Exhibit', href: 'Las Vegas Crating Packs and Ships Leonardo Da Vinci Exhibit.dc.html' },
+        { label: 'Clients & Partners', href: 'Clients and Partners.dc.html' },
+        { label: 'Difference Between A Freight Forwarder and a Broker', href: 'Difference Between A Freight Forwarder and a Broker.dc.html' },
+      ],
+      setTrustBarRef, onTrustDragStart, onTrustDragMove, onTrustDragEnd, onTrustMouseEnter, onTrustMouseLeave,
+      setReviewsScrollerRef: this.setReviewsScrollerRef, reviewsPrev: this.reviewsPrev, reviewsNext: this.reviewsNext,
+      categoryCardsRow1: [
+        { icon: '✈', title: 'Air Freight', desc: 'Fast air freight for time-sensitive shipments, domestic and international.', img: 'uploads/air freight (1).webp?v=2' },
+        { icon: '🚚', title: 'Ground Shipping', desc: 'Reliable ground freight and trucking across the country, tracked door to door.', img: 'uploads/ground shipping (1).webp?v=2' },
+        { icon: '▭', title: 'Crate Shipping', desc: 'Custom-built wood crates for oversized, fragile, and high-value cargo.', img: 'uploads/crate shipping.webp?v=2' },
+      ],
+      categoryCardsRow2: [
+        { icon: '🖼', title: 'Art & Antiques', desc: 'Specialty handling and crating for fine art, antiques, and vintage collectibles.', img: 'uploads/art and antiques (1).webp?v=2' },
+        { icon: '▤', title: 'Event & Tradeshow Shipping', desc: 'Packing, shipping, and storage for conventions, trade shows, and exhibits.', img: 'uploads/Event & Tradeshow Shipping.webp?v=2' },
+      ],
+      reviews: [
+        { text: 'Great work and great service! They\u2019re professional and I am satisfied with the shipping experience. I recommend them!', author: 'Ryan R', time: '2 years ago' },
+        { text: 'We had 16 crates filled with thousands of pounds in solid marble art. It was shipped to us in perfect condition. A team of 5 had to piece together the marble to create the house that now stands outside the property. The attention and care that this company provides is incredible. I am very satisfied and impressed with the outcome. Thank you guys!', author: 'Melissa Wilt', time: '2 years ago' },
+        { text: 'Superb service from Chris and everyone at Las Vegas Crating. I had been looking all over the place to just get 1 or 2 boxes (both with awkward dimensions) for some personal items that I needed to ship. It was either impossible to find them or would cost me an arm and a leg. I contacted Chris and he made those custom boxes for me with no questions asked. Super professional and helpful.', author: 'Chris Dizon', time: '3 years ago' },
+        { text: 'Having purchased a huge amount of Engineering & Test Equipment, we decided to try Las Vegas Crating. They won us over with our very first shipment. \u2018I received the speakers and am overjoyed. Nothing I have ever ordered were packaged so professionally.\u2019', author: 'JustBruce', time: '3 years ago' },
+        { text: 'My company had to ship a large framed piece of art. Not only did Chris respond promptly with accurate and competitive quotes, he even facilitated the white glove service at our pick up location.', author: 'J. McClintock', time: '4 years ago' },
+        { text: 'Very helpful on getting a giant mirror and glass cabinet packaged and shipped for me.', author: 'FlowRider 13roz', time: '4 years ago' },
+        { text: 'Exceptionally professional. Will had a lot of wisdom and attention to detail. Very happy so far!', author: 'Eric Rozan', time: '4 years ago' },
+        { text: 'Friendly and professional. Obviously a favorite of many because of how busy they were. Despite this they took the time to give personalized service.', author: 'Bill Durborow', time: '4 years ago' },
+      ],
+      mapDots: this.buildMapDots(),
+      mapLocations: [
+        { city: 'Las Vegas, NV', address: 'Headquarters — 4640 Polaris Ave', x: '20%', y: '44%' },
+        { city: 'Los Angeles, CA', address: '2140 Producer Ln, Los Angeles, CA', x: '9%', y: '76%' },
+        { city: 'San Antonio, TX', address: '8410 Broadway St, San Antonio, TX', x: '45%', y: '78%' },
+        { city: 'Miami, FL', address: '9587 Premier Pkwy, Miramar, FL', x: '76%', y: '93%' },
+      ],
+      shippingLinks: [
+        { label: 'International', href: 'Shipping.dc.html' },
+        { label: 'Same Day', href: 'Shipping.dc.html' },
+        { label: 'Moving', href: 'Shipping.dc.html' },
+        { label: 'Small Moves', href: 'Shipping.dc.html' },
+        { label: 'Art Packing', href: 'Shipping.dc.html' },
+      ],
+      cratingLinks: [
+        { label: 'Custom Wood Crates', href: 'Crating.dc.html' },
+        { label: 'Re-Usable Crates', href: 'Crating.dc.html' },
+        { label: 'ISPM-15', href: 'Crating.dc.html' },
+        { label: 'Wood Pallets', href: 'Crating.dc.html' },
+        { label: 'Freight', href: 'Crating.dc.html' },
+      ],
+      companyLinks: [
+        { label: 'Home', href: 'Homepage v3.dc.html' },
+        { label: 'Packaging', href: 'Packaging.dc.html' },
+        { label: 'Shipping', href: 'Shipping.dc.html' },
+        { label: 'Crating', href: 'Crating.dc.html' },
+        { label: 'Logistics', href: 'Logistics.dc.html' },
+        { label: 'Locations', href: 'Locations.dc.html' },
+        { label: 'Contact Us', href: 'Contact.dc.html' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

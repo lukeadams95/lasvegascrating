@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    body { margin: 0; background: #F7F5F0; font-family: 'Inter', sans-serif; }
+    @keyframes phoneRing {
+      0%, 100% { transform: rotate(0deg); }
+      10% { transform: rotate(-15deg); }
+      20% { transform: rotate(12deg); }
+      30% { transform: rotate(-10deg); }
+      40% { transform: rotate(8deg); }
+      50% { transform: rotate(0deg); }
+    }
+    a { color: #1A1C27; text-decoration: none; }
+    a:hover { color: #CEC2AB; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="background: #F7F5F0; color: #1A1C27; min-height: 100vh;">
+
+  <!-- TOP INFO BAR -->
+  <div style="background: #fff; padding: 8px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 12px; color: #1A1C27; border-bottom: 1px solid #eceff2; overflow-x: auto;">
+    <div style="display: flex; align-items: center; gap: 24px; white-space: nowrap; flex-shrink: 0;">
+      <div style="display: flex; align-items: center; gap: 7px;">
+        <span style="width: 13px; height: 13px; border: 1.5px solid #a89877; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 8px; color: #a89877; flex-shrink: 0;">◷</span>
+        Monday to Friday: 8:00am – 5:00pm, Saturday &amp; Sunday: By Appointment
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 20px; white-space: nowrap; flex-shrink: 0;">
+      <a href="Service Areas.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">Service Areas</a>
+      <a href="Careers.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">Careers</a>
+      <a href="FAQ.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">FAQ</a>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <sc-for list="{{ socials }}" as="soc" hint-placeholder-count="3">
+          <a href="#" style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid #d8d0bd; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #1A1C27;" style-hover="border-color: #a89877; color: #a89877;">{{ soc }}</a>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAV -->
+  <div style="background: #fff; position: relative; z-index: 20; border-bottom: 1px solid #eceff2;">
+    <div style="max-width: 1440px; margin: 0 auto; padding: 10px 32px 0;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;">
+        <div style="display: flex; align-items: center; flex-shrink: 0;">
+          <a href="Homepage v3.dc.html"><img src="assets/logo-new-color.webp" alt="Las Vegas Crating &amp; Logistics" style="height: 52px; width: auto; display: block; position: relative; top: 14px;"></a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; flex-shrink: 0;">
+          <a href="tel:7027484973" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            <span style="font-size: 12px;">☎</span> 702-748-4973
+          </a>
+          <a href="mailto:contact@lasvegascrating.com" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            <span style="font-size: 12px;">✉</span> contact@lasvegascrating.com
+          </a>
+          <a href="Contact.dc.html" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            Contact Us
+          </a>
+          <span style="width: 34px; height: 34px; border: 1px solid #d8d0bd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #1A1C27; cursor: pointer;" style-hover="border-color: #a89877; color: #a89877;">⚲</span>
+          <a href="Get a Quote.dc.html" style="background: #1A1C27; color: #fff; padding: 12px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap; position: relative; top: 14px;" style-hover="background: #262a3a;">Get a Quote</a>
+        </div>
+      </div>
+      <nav style="display: flex; align-items: center; justify-content: center; gap: 2px; flex-wrap: wrap; width: fit-content; margin: 4px auto 0; border-top: 1px solid #eceff2; padding-top: 4px;">
+        <a href="Homepage v3.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">HOME</a>
+        <div style="position: relative;" onMouseEnter="{{ openAbout }}" onMouseLeave="{{ closeAbout }}">
+          <a href="About.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 13.5px; letter-spacing: 0.02em; color: #A9824F; white-space: nowrap;" style-hover="color: #a89877;">ABOUT <span style="font-size: 8px; position: relative; top: 1px;">▾</span></a>
+          <sc-if value="{{ aboutOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #eceff2; box-shadow: 0 16px 32px rgba(26,28,39,0.14); min-width: 300px; padding: 6px; z-index: 50; display: flex; flex-direction: column;">
+              <sc-for list="{{ aboutSubItems }}" as="sub" hint-placeholder-count="8">
+                <a href="{{ sub.href }}" style="padding: 10px 14px; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 13px; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877; background: #F7F5F0;">{{ sub.label }}</a>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+          <a href="{{ item.href }}" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">
+            {{ item.label }}
+          </a>
+        </sc-for>
+        <a href="Specialty Shipping Blog.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">BLOG</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section style="background: #1A1C27; padding: 0;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; align-content: center; min-height: clamp(280px, calc(15.6vw + 260px), 560px);">
+      <div style="padding: 80px 0 80px 32px; min-width: 0;">
+        <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #CEC2AB; text-transform: uppercase; margin-bottom: 16px;">Resources</div>
+        <h1 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 40px; line-height: 1.2; color: #fff; margin: 0 0 20px; letter-spacing: normal; text-wrap: pretty;">What Is the Difference Between a Freight Forwarder and a Broker?</h1>
+        <p style="font-size: 15px; color: #CEC2AB; margin: 0 0 20px;">A question we get asked often — here's a clear breakdown of the differences, with examples.</p>
+        <p style="font-size: 15px; line-height: 1.75; color: #cfd2d9; margin: 0;">Freight forwarders manage the journey of goods; customs brokers ensure those goods meet the legal requirements to cross borders. Both roles are crucial but serve different, sometimes interconnected, functions in international logistics.</p>
+      </div>
+      <div style="position: relative; align-self: stretch; min-height: 420px; min-width: 0;">
+        <image-slot id="ffb-hero-photo" shape="rect" src="uploads/Difference Between A Freight Forwarder and a Broker HERO (1).webp" placeholder="Photo: cargo containers, customs paperwork, or a freight dock"></image-slot>
+        <div style="position: absolute; inset: 0; background: linear-gradient(90deg, #1A1C27 0%, rgba(26,28,39,0) 18%, rgba(26,28,39,0) 82%, #1A1C27 100%); pointer-events: none;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIDE-BY-SIDE COMPARISON -->
+  <section style="background: #fff; padding: 100px 32px;">
+    <div style="max-width: 1160px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 56px;">
+        <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #A9824F; text-transform: uppercase; margin-bottom: 16px;">Comparison</div>
+        <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 32px; color: #1A1C27; margin: 0 0 16px; letter-spacing: normal; text-wrap: pretty;">Freight Forwarders vs. Customs Brokers</h2>
+        <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto;"></div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+        
+        <div style="background: #F7F5F0; border: 1px solid #E4DDCE; padding: 40px 34px;">
+          <div style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 22px; color: #1A1C27; margin-bottom: 22px; text-align: center;">Freight Forwarders</div>
+          <div style="margin-bottom: 16px;"><div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #A9824F; margin-bottom: 6px;">Role</div><p style="font-size: 14.5px; line-height: 1.7; color: rgba(26,28,39,0.75); margin: 0;">Act as logistics coordinators, managing transportation from origin to final destination — selecting carriers, negotiating freight rates, booking cargo space, and handling documentation like bills of lading and waybills.</p></div>
+          <div style="margin-bottom: 16px;"><div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #A9824F; margin-bottom: 6px;">Scope</div><p style="font-size: 14.5px; line-height: 1.7; color: rgba(26,28,39,0.75); margin: 0;">Span the entire supply chain, including inland transportation, warehousing, and final delivery — essentially an extension of a company’s logistics department.</p></div>
+          <div style="margin-bottom: 16px;"><div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #A9824F; margin-bottom: 6px;">Services Include</div><p style="font-size: 14.5px; line-height: 1.7; color: rgba(26,28,39,0.75); margin: 0;">Multi-modal transport coordination (air, sea, land), shipment consolidation to reduce costs, end-to-end tracking, and insurance, warehousing, and distribution services.</p></div>
+          <div style="margin-bottom: 16px;"><div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #A9824F; margin-bottom: 6px;">Example</div><p style="font-size: 14.5px; line-height: 1.7; color: rgba(26,28,39,0.75); margin: 0;">A Las Vegas company shipping goods to Japan might use a freight forwarder to book air or sea freight, arrange pickup, coordinate customs requirements on both ends, and manage final delivery in Japan.</p></div>
+        </div>
+        
+        <div style="background: #F7F5F0; border: 1px solid #E4DDCE; padding: 40px 34px;">
+          <div style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 22px; color: #1A1C27; margin-bottom: 22px; text-align: center;">Customs Brokers</div>
+          <div style="margin-bottom: 16px;"><div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #A9824F; margin-bottom: 6px;">Role</div><p style="font-size: 14.5px; line-height: 1.7; color: rgba(26,28,39,0.75); margin: 0;">Specialize in managing the customs clearance process — ensuring paperwork is prepared, duties and taxes are calculated correctly, and goods comply with import/export regulations.</p></div>
+          <div style="margin-bottom: 16px;"><div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #A9824F; margin-bottom: 6px;">Scope</div><p style="font-size: 14.5px; line-height: 1.7; color: rgba(26,28,39,0.75); margin: 0;">Focused on the legal and regulatory side of international trade, dealing directly with customs authorities.</p></div>
+          <div style="margin-bottom: 16px;"><div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #A9824F; margin-bottom: 6px;">Services Include</div><p style="font-size: 14.5px; line-height: 1.7; color: rgba(26,28,39,0.75); margin: 0;">Preparation of customs documentation, classification of goods under correct tariff codes, calculation and payment of duties and taxes, and advising on trade agreements and duty mitigation strategies.</p></div>
+          <div style="margin-bottom: 16px;"><div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #A9824F; margin-bottom: 6px;">Example</div><p style="font-size: 14.5px; line-height: 1.7; color: rgba(26,28,39,0.75); margin: 0;">When those goods arrive in Japan, a customs broker manages clearance, ensures paperwork is in order for Japanese customs, and confirms duties are paid correctly to avoid delays or penalties.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY DIFFERENCES ACCORDION -->
+  <section style="background: #F7F5F0; padding: 100px 32px;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 44px;">
+        <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #A9824F; text-transform: uppercase; margin-bottom: 16px;">Summary</div>
+        <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 32px; color: #1A1C27; margin: 0 0 16px; letter-spacing: normal; text-wrap: pretty;">Key Differences</h2>
+        <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto;"></div>
+      </div>
+      <div>
+        <sc-for list="{{ diffItems }}" as="item" hint-placeholder-count="5">
+          <div style="border-bottom: 1px solid #E4DDCE; background: #fff;">
+            <button onClick="{{ item.toggle }}" style="width: 100%; background: none; border: none; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; cursor: pointer;">
+              <span style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; color: {{ item.qColor }};">{{ item.q }}</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; transform: {{ item.chevronRotate }};"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <sc-if value="{{ item.isOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="padding: 0 20px 20px;">
+                <p style="font-size: 14.5px; line-height: 1.7; color: rgba(26,28,39,0.72); margin: 0;">{{ item.a }}</p>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL CTA BANNER -->
+  <section style="background: linear-gradient(100deg, rgba(26,28,39,0.75) 30%, rgba(26,28,39,0.55) 100%), url('uploads/las-vegas-crating-3pl-warehouse (1).webp') center/cover no-repeat; padding: 70px 32px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px;">
+      <div>
+        <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 32px; color: #fff; margin: 0 0 16px; letter-spacing: normal; text-wrap: pretty;">Ready to Ship? Let's Get Your Free Quote.</h2>
+        <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto 14px;"></div>
+        <p style="font-size: 14.5px; color: #cfd2d9; margin: 0;">Call now or request a quote online — most quotes are returned the same business day.</p>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;">
+        <a href="Get a Quote.dc.html" style="display: inline-flex; align-items: center; gap: 8px; background: #CEC2AB; color: #1A1C27; padding: 15px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap;" style-hover="background: #ddd3c0;">Get a Quote ↗</a>
+        <a href="tel:7027484973" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+          <span style="width: 32px; height: 32px; border: 1.5px solid #CEC2AB; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #CEC2AB; flex-shrink: 0; animation: phoneRing 1.4s ease-in-out infinite;">☎</span>
+          <span style="line-height: 1.3;">
+            <span style="display: block; font-size: 10.5px; color: #9aa0ac; text-transform: uppercase; letter-spacing: 0.05em;">Call Us Now</span>
+            <span style="display: block; font-size: 14px; font-weight: 800; color: #fff;">702-748-4973</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #1A1C27; color: #cfd2d9; padding: 70px 32px 28px;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px;">
+        <div>
+          <img src="assets/logo-new-color.webp" alt="Las Vegas Crating &amp; Logistics" style="height: 40px; width: auto; display: block; margin-bottom: 16px; filter: brightness(0) invert(1);">
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0 0 14px;">4640 Polaris Ave, Las Vegas, NV 89103</p>
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0 0 14px;">1-833-801-9084</p>
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0;">Monday – Friday: 8:00am – 5:00pm<br>Saturday &amp; Sunday: By Appointment</p>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Shipping &amp; Storage</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ shippingLinks }}" as="l" hint-placeholder-count="5">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Packing &amp; Crating</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ cratingLinks }}" as="l" hint-placeholder-count="5">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Company</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ companyLinks }}" as="l" hint-placeholder-count="7">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(206,194,171,0.15); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div style="font-size: 12.5px; color: #7d818c;">© 2026 Las Vegas Crating &amp; Logistics. All rights reserved.</div>
+        <div style="display: flex; gap: 24px; font-size: 12.5px;">
+          <a href="Privacy Policy.dc.html" style="color: #7d818c;">Privacy Policy</a>
+          <a href="#" style="color: #7d818c;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  diffData = [["Focus","Freight forwarders are transport-oriented, handling the physical movement of goods; customs brokers focus on customs and compliance."],["Licensing","Customs brokers are typically required to be licensed; freight forwarders don’t necessarily need the same specific licensing, though they must comply with transport regulations."],["Overlap","Both handle documentation, and freight forwarders often subcontract to customs brokers for clearance services they don’t offer in-house."],["Challenges for Businesses","Small businesses often lean on freight forwarders for broader service, while larger entities with complex customs needs may engage customs brokers directly for specialized compliance work."],["Integration","Modern logistics increasingly sees these roles converge, with companies offering both services or forming partnerships for seamless solutions."]];
+  state = { openAccordion: 0 };
+  toggleAccordion(i) { this.setState(s => ({ openAccordion: s.openAccordion === i ? -1 : i })); }
+
+  renderVals() {
+    return {
+      navItems: [
+        { label: 'PACKAGING', href: 'Packaging.dc.html' },
+        { label: 'SHIPPING', href: 'Shipping.dc.html' },
+        { label: 'CRATING', href: 'Crating.dc.html' },
+        { label: 'LOGISTICS', href: 'Logistics.dc.html' },
+        { label: 'LOCATIONS', href: 'Locations.dc.html' },
+      ],
+      socials: ['in', 'f', 'x'],
+      aboutOpen: !!this.state.aboutOpen,
+      openAbout: () => this.setState({ aboutOpen: true }),
+      closeAbout: () => this.setState({ aboutOpen: false }),
+      blogOpen: !!this.state.blogOpen,
+      openBlog: () => this.setState({ blogOpen: true }),
+      closeBlog: () => this.setState({ blogOpen: false }),
+      blogSubItems: [
+        { label: 'Specialty Shipping Blog', href: 'Specialty Shipping Blog.dc.html' },
+      ],
+      aboutSubItems: [
+        { label: 'Local Shipping Supplies', href: 'Local Shipping Supplies.dc.html' },
+        { label: 'Art Courier Service', href: 'Art Courier Service.dc.html' },
+        { label: 'Convention, Trade Show, Event Packing, Shipping & Storage', href: 'Convention Trade Show Event Packing Shipping Storage.dc.html' },
+        { label: 'Trade Show & Exhibition Movers', href: 'Trade Show Exhibition Movers.dc.html' },
+        { label: 'Estate Relocation Moves', href: 'Estate Relocation Moves.dc.html' },
+        { label: 'Las Vegas Crating Packs and Ships the Leonardo Da Vinci Exhibit', href: 'Las Vegas Crating Packs and Ships Leonardo Da Vinci Exhibit.dc.html' },
+        { label: 'Clients & Partners', href: 'Clients and Partners.dc.html' },
+        { label: 'Difference Between A Freight Forwarder and a Broker', href: 'Difference Between A Freight Forwarder and a Broker.dc.html' },
+      ],
+      diffItems: this.diffData.map((d, i) => {
+        const isOpen = i === this.state.openAccordion;
+        return {
+          q: d[0], a: d[1], isOpen,
+          qColor: isOpen ? '#A9824F' : '#1A1C27',
+          chevronRotate: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+          toggle: () => this.toggleAccordion(i),
+        };
+      }),
+      shippingLinks: [
+        { label: 'International', href: 'Shipping.dc.html' },
+        { label: 'Same Day', href: 'Shipping.dc.html' },
+        { label: 'Moving', href: 'Shipping.dc.html' },
+        { label: 'Small Moves', href: 'Shipping.dc.html' },
+        { label: 'Art Packing', href: 'Shipping.dc.html' },
+      ],
+      cratingLinks: [
+        { label: 'Custom Wood Crates', href: 'Crating.dc.html' },
+        { label: 'Re-Usable Crates', href: 'Crating.dc.html' },
+        { label: 'ISPM-15', href: 'Crating.dc.html' },
+        { label: 'Wood Pallets', href: 'Crating.dc.html' },
+        { label: 'Freight', href: 'Crating.dc.html' },
+      ],
+      companyLinks: [
+        { label: 'Home', href: 'Homepage v3.dc.html' },
+        { label: 'Packaging', href: 'Packaging.dc.html' },
+        { label: 'Shipping', href: 'Shipping.dc.html' },
+        { label: 'Crating', href: 'Crating.dc.html' },
+        { label: 'Logistics', href: 'Logistics.dc.html' },
+        { label: 'Locations', href: 'Locations.dc.html' },
+        { label: 'Contact Us', href: 'Contact.dc.html' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

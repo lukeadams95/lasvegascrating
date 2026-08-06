@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    body { margin: 0; background: #F7F5F0; font-family: 'Inter', sans-serif; }
+    @keyframes phoneRing {
+      0%, 100% { transform: rotate(0deg); }
+      10% { transform: rotate(-15deg); }
+      20% { transform: rotate(12deg); }
+      30% { transform: rotate(-10deg); }
+      40% { transform: rotate(8deg); }
+      50% { transform: rotate(0deg); }
+    }
+    a { color: #1A1C27; text-decoration: none; }
+    a:hover { color: #CEC2AB; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="background: #F7F5F0; color: #1A1C27; min-height: 100vh;">
+
+  <!-- TOP INFO BAR -->
+  <div style="background: #fff; padding: 8px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 12px; color: #1A1C27; border-bottom: 1px solid #eceff2; overflow-x: auto;">
+    <div style="display: flex; align-items: center; gap: 24px; white-space: nowrap; flex-shrink: 0;">
+      <div style="display: flex; align-items: center; gap: 7px;">
+        <span style="width: 13px; height: 13px; border: 1.5px solid #a89877; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 8px; color: #a89877; flex-shrink: 0;">◷</span>
+        Monday to Friday: 8:00am – 5:00pm, Saturday &amp; Sunday: By Appointment
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 20px; white-space: nowrap; flex-shrink: 0;">
+      <a href="Service Areas.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">Service Areas</a>
+      <a href="Careers.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">Careers</a>
+      <a href="FAQ.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">FAQ</a>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <sc-for list="{{ socials }}" as="soc" hint-placeholder-count="3">
+          <a href="#" style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid #d8d0bd; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #1A1C27;" style-hover="border-color: #a89877; color: #a89877;">{{ soc }}</a>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAV -->
+  <div style="background: #fff; position: relative; z-index: 20; border-bottom: 1px solid #eceff2;">
+    <div style="max-width: 1440px; margin: 0 auto; padding: 10px 32px 0;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;">
+        <div style="display: flex; align-items: center; flex-shrink: 0;">
+          <a href="Homepage v3.dc.html"><img src="assets/logo-new-color.webp" alt="Las Vegas Crating &amp; Logistics" style="height: 52px; width: auto; display: block; position: relative; top: 14px;"></a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; flex-shrink: 0;">
+          <a href="tel:7027484973" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            <span style="font-size: 12px;">☎</span> 702-748-4973
+          </a>
+          <a href="mailto:contact@lasvegascrating.com" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            <span style="font-size: 12px;">✉</span> contact@lasvegascrating.com
+          </a>
+          <a href="Contact.dc.html" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            Contact Us
+          </a>
+          <span style="width: 34px; height: 34px; border: 1px solid #d8d0bd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #1A1C27; cursor: pointer;" style-hover="border-color: #a89877; color: #a89877;">⚲</span>
+          <a href="Get a Quote.dc.html" style="background: #1A1C27; color: #fff; padding: 12px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap; position: relative; top: 14px;" style-hover="background: #262a3a;">Get a Quote</a>
+        </div>
+      </div>
+      <nav style="display: flex; align-items: center; justify-content: center; gap: 2px; flex-wrap: wrap; width: fit-content; margin: 4px auto 0; border-top: 1px solid #eceff2; padding-top: 4px;">
+        <a href="Homepage v3.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">HOME</a>
+        <div style="position: relative;" onMouseEnter="{{ openAbout }}" onMouseLeave="{{ closeAbout }}">
+          <a href="About.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">ABOUT <span style="font-size: 8px; position: relative; top: 1px;">▾</span></a>
+          <sc-if value="{{ aboutOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #eceff2; box-shadow: 0 16px 32px rgba(26,28,39,0.14); min-width: 300px; padding: 6px; z-index: 50; display: flex; flex-direction: column;">
+              <sc-for list="{{ aboutSubItems }}" as="sub" hint-placeholder-count="8">
+                <a href="{{ sub.href }}" style="padding: 10px 14px; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 13px; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877; background: #F7F5F0;">{{ sub.label }}</a>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+<sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+          <a href="{{ item.href }}" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: {{ item.weight }}; font-size: 13.5px; letter-spacing: 0.02em; color: {{ item.color }}; white-space: nowrap;" style-hover="color: #a89877;">
+            {{ item.label }}
+          </a>
+        </sc-for>
+        <a href="Specialty Shipping Blog.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">BLOG</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section style="background: #1A1C27; padding: 0;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; align-content: center; min-height: clamp(280px, calc(15.6vw + 260px), 560px);">
+      <div style="padding: 80px 0 80px 32px; min-width: 0;">
+        <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #CEC2AB; text-transform: uppercase; margin-bottom: 16px;">Packaging</div>
+        <h1 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 48px; line-height: 1.1; color: #fff; margin: 0 0 20px; letter-spacing: normal; text-wrap: pretty;">Specialty Packing Services in Las Vegas</h1>
+        <p style="font-size: 15px; line-height: 1.75; color: #cfd2d9; margin: 0;">
+          Need a box or packing material you can't find anywhere else? Concerned about safely crating a valuable or fragile item? Bring your items directly to our Las Vegas warehouse and we'll store, pack, and ship everything for you — locally or internationally, large or small, fragile or high-tech.
+        </p>
+      </div>
+      <div style="position: relative; align-self: stretch; min-height: 420px; min-width: 0;">
+        <image-slot id="pkg-hero-photo" shape="rect" src="uploads/packaging hero (1).webp" placeholder="Photo: packing station with boxes, shrink wrap rolls, and supplies in a warehouse"></image-slot>
+        <div style="position: absolute; inset: 0; background: linear-gradient(90deg, #1A1C27 0%, rgba(26,28,39,0) 18%, rgba(26,28,39,0) 82%, #1A1C27 100%); pointer-events: none;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES STRIP -->
+  <section style="background: #1A1C27; padding: 18px 32px; border-top: 1px solid rgba(206,194,171,0.15);">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 26px;">
+      <sc-for list="{{ highlights }}" as="h" hint-placeholder-count="4">
+        <div style="font-size: 12.5px; font-weight: 700; color: #CEC2AB; text-transform: uppercase; letter-spacing: 0.02em; display: flex; align-items: center; gap: 8px; white-space: nowrap;">
+          <span style="width: 5px; height: 5px; border-radius: 50%; background: #CEC2AB; flex-shrink: 0;"></span>{{ h }}
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- SERVICE PILLS -->
+  <section style="background: #fff; padding: 40px 32px; border-bottom: 1px solid #eceff2;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px;">
+        <sc-for list="{{ services }}" as="svc" hint-placeholder-count="7">
+          <button onClick="{{ svc.select }}" style="background: {{ svc.bg }}; border: 1.5px solid {{ svc.borderColor }}; color: {{ svc.textColor }}; padding: 13px 20px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-align: left; cursor: pointer; max-width: 220px; transition: all 0.2s;">
+            {{ svc.title }}
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE HEADING + OVERVIEW -->
+  <section style="background: #F7F5F0; padding: 90px 32px 60px;">
+    <div style="max-width: 1240px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 34px; color: #1A1C27; margin: 0 0 22px; letter-spacing: normal; text-wrap: pretty;">{{ activeTitle }}</h2>
+      <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto 26px;"></div>
+      <p style="font-size: 16px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0 auto; max-width: 900px; text-align: left;">{{ activeIntro }}</p>
+    </div>
+  </section>
+
+  <!-- SPLIT 1 (photo left, text right) -->
+  <section style="background: #F7F5F0; padding: 0 32px 90px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center;">
+      <div style="aspect-ratio: 4/3; clip-path: polygon(0 0, 92% 0, 100% 12%, 100% 100%, 0 100%);">
+        <image-slot id="{{ activePhoto1Id }}" shape="rect" placeholder="{{ activePhoto1Placeholder }}"></image-slot>
+      </div>
+      <div>
+        <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #A9824F; text-transform: uppercase; margin-bottom: 14px; text-align: center;">{{ activeSection1Label }}</div>
+        <p style="font-size: 15.5px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0;">{{ activeSection1Body }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT'S APPLIED — 3-PANEL PROCESS -->
+  <section style="background: #1A1C27; padding: 90px 0 0;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px; text-align: center; margin-bottom: 50px;">
+      <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #CEC2AB; text-transform: uppercase; margin-bottom: 16px;">Process</div>
+      <h3 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 30px; color: #fff; margin: 0 0 16px; letter-spacing: normal;">How It's Applied</h3>
+      <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto;"></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+      <sc-for list="{{ activeHowApplied }}" as="step" hint-placeholder-count="3">
+        <div style="position: relative; background: {{ step.bg }}; padding: 70px 32px 60px; display: flex; flex-direction: column; align-items: center; text-align: center; min-height: 260px;">
+          <div style="margin-bottom: 22px;">
+            <sc-if value="{{ step.isStep1 }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></sc-if>
+            <sc-if value="{{ step.isStep2 }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></sc-if>
+            <sc-if value="{{ step.isStep3 }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></sc-if>
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 19px; color: #fff; margin-bottom: 10px; text-align: center;">{{ step.title }}</div>
+          <p style="font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.7); margin: 0; max-width: 240px; text-align: center;">{{ step.desc }}</p>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#CEC2AB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; bottom: 16px; left: 20px; opacity: 0.85;"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- MID SECTIONS (homepage card style) -->
+  <sc-if value="{{ activeHasMidSections }}" hint-placeholder-val="{{ true }}">
+    <section style="background: #1A1C27; padding: 90px 32px;">
+      <div style="max-width: 1240px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+          <sc-for list="{{ activeMidSections }}" as="sec" hint-placeholder-count="2">
+            <div style="background: #CEC2AB; border: 1px solid #b3a689; padding: 28px 24px; text-align: center; transition: transform 0.2s, box-shadow 0.2s;" style-hover="transform: translateY(-6px); box-shadow: 0 16px 30px -12px rgba(0,0,0,0.3);">
+              <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 19px; color: #1A1C27; margin-bottom: 10px;">{{ sec.label }}</div>
+              <sc-if value="{{ sec.hasSizes }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+                  <sc-for list="{{ sec.sizes }}" as="sz" hint-placeholder-count="6">
+                    <span style="background: #1A1C27; color: #CEC2AB; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 12px; padding: 7px 12px; white-space: nowrap;">{{ sz }}</span>
+                  </sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ sec.notSizes }}" hint-placeholder-val="{{ true }}">
+                <p style="font-size: 15px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0;">{{ sec.body }}</p>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- APPLICATIONS ACCORDION (reversed — accordion left, photo right) -->
+  <section style="background: #fff; padding: 100px 32px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center;">
+      <div>
+        <h3 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 30px; color: #1A1C27; margin: 0 0 26px; letter-spacing: normal; text-wrap: pretty; text-align: center;">{{ activeApplicationsHeading }}</h3>
+        <div>
+          <sc-for list="{{ activeApplicationsItems }}" as="item" hint-placeholder-count="4">
+            <div style="border-bottom: 1px solid #eceff2;">
+              <button onClick="{{ item.toggle }}" style="width: 100%; background: none; border: none; padding: 18px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; cursor: pointer;">
+                <span style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; color: {{ item.qColor }}; text-align: center; flex: 1;">{{ item.q }}</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; transform: {{ item.chevronRotate }};"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <sc-if value="{{ item.isOpen }}" hint-placeholder-val="{{ false }}">
+                <div style="background: #F7F5F0; padding: 16px 20px; margin: 0 0 16px; text-align: center;">
+                  <p style="font-size: 15px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0;">{{ item.a }}</p>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="aspect-ratio: 3/4; clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%, 0 12%);">
+        <image-slot id="{{ activePhoto2Id }}" shape="rect" placeholder="{{ activePhoto2Placeholder }}"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US — ZIGZAG STEPS -->
+  <section style="background: #F7F5F0; padding: 90px 32px;">
+    <div style="max-width: 1160px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 64px;">
+        <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #A9824F; text-transform: uppercase; margin-bottom: 16px;">Why Choose Us</div>
+        <h3 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 30px; color: #1A1C27; margin: 0 0 16px; letter-spacing: normal; text-wrap: pretty;">{{ activeWCUHeading }}</h3>
+        <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto;"></div>
+      </div>
+      <div style="position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+        <div style="position: absolute; top: 45px; left: 6%; right: 6%; border-top: 2px dashed #CEC2AB; z-index: 0;"></div>
+        <sc-for list="{{ activeWCUPoints }}" as="pt" hint-placeholder-count="4">
+          <div style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: {{ pt.offset }};">
+            <div style="position: relative; width: 82px; height: 82px; border-radius: 50%; border: 2px solid #CEC2AB; background: #F7F5F0; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <sc-if value="{{ pt.isCheck }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></sc-if>
+              <sc-if value="{{ pt.isBox }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></sc-if>
+              <sc-if value="{{ pt.isTruck }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7"/><circle cx="7" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/></svg></sc-if>
+              <sc-if value="{{ pt.isHandshake }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M4 20c0-3 2-5 5-5M20 20c0-3-2-5-5-5"/></svg></sc-if>
+              <sc-if value="{{ pt.isShield }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/></svg></sc-if>
+              <sc-if value="{{ pt.isWarehouse }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></sc-if>
+              <sc-if value="{{ pt.isLeaf }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c8 0 14-6 14-14-8 0-14 6-14 14z"/><path d="M5 19c2-4 4-6 8-9"/></svg></sc-if>
+              <sc-if value="{{ pt.isCalendar }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="1"/><path d="M4 10h16"/><path d="M8 3v4M16 3v4"/></svg></sc-if>
+              <sc-if value="{{ pt.isGear }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></sc-if>
+              <sc-if value="{{ pt.isStar }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#CEC2AB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 6 6.5.5-5 4.3 1.7 6.2L12 16.8 6.3 20l1.7-6.2-5-4.3 6.5-.5z"/></svg></sc-if>
+              <div style="position: absolute; bottom: -6px; right: -6px; width: 27px; height: 27px; border-radius: 50%; background: #1A1C27; color: #CEC2AB; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 11px; display: flex; align-items: center; justify-content: center;">{{ pt.num }}</div>
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 19px; color: #1A1C27; margin: 22px 0 8px;">{{ pt.title }}</div>
+            <p style="font-size: 15px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0; max-width: 220px;">{{ pt.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL CTA BANNER -->
+  <section style="background: linear-gradient(100deg, rgba(26,28,39,0.75) 30%, rgba(26,28,39,0.55) 100%), url('uploads/las-vegas-crating-3pl-warehouse (1).webp') center/cover no-repeat; padding: 70px 32px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px;">
+      <div>
+        <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 32px; color: #fff; margin: 0 0 16px; letter-spacing: normal; text-wrap: pretty;">Ready to Ship? Let's Get Your Free Quote.</h2>
+        <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto 14px;"></div>
+        <p style="font-size: 14.5px; color: #cfd2d9; margin: 0;">Call now or request a quote online — most quotes are returned the same business day.</p>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;">
+        <a href="Get a Quote.dc.html" style="display: inline-flex; align-items: center; gap: 8px; background: #CEC2AB; color: #1A1C27; padding: 15px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap;" style-hover="background: #ddd3c0;">Get a Quote ↗</a>
+        <a href="tel:7027484973" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+          <span style="width: 32px; height: 32px; border: 1.5px solid #CEC2AB; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #CEC2AB; flex-shrink: 0; animation: phoneRing 1.4s ease-in-out infinite;">☎</span>
+          <span style="line-height: 1.3;">
+            <span style="display: block; font-size: 10.5px; color: #9aa0ac; text-transform: uppercase; letter-spacing: 0.05em;">Call Us Now</span>
+            <span style="display: block; font-size: 14px; font-weight: 800; color: #fff;">702-748-4973</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #1A1C27; color: #cfd2d9; padding: 70px 32px 28px;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px;">
+        <div>
+          <img src="assets/logo-new-color.webp" alt="Las Vegas Crating &amp; Logistics" style="height: 40px; width: auto; display: block; margin-bottom: 16px; filter: brightness(0) invert(1);">
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0 0 14px;">4640 Polaris Ave, Las Vegas, NV 89103</p>
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0 0 14px;">1-833-801-9084</p>
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0;">Monday – Friday: 8:00am – 5:00pm<br>Saturday &amp; Sunday: By Appointment</p>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Shipping &amp; Storage</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ shippingLinks }}" as="l" hint-placeholder-count="5">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Packing &amp; Crating</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ cratingLinks }}" as="l" hint-placeholder-count="5">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Company</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ companyLinks }}" as="l" hint-placeholder-count="7">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(206,194,171,0.15); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div style="font-size: 12.5px; color: #7d818c;">© 2026 Las Vegas Crating &amp; Logistics. All rights reserved.</div>
+        <div style="display: flex; gap: 24px; font-size: 12.5px;">
+          <a href="Privacy Policy.dc.html" style="color: #7d818c;">Privacy Policy</a>
+          <a href="#" style="color: #7d818c;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { activeIndex: 0, openAccordion: 0 };
+
+  servicesData = [
+    {
+      title: 'Corrugated Shipping Boxes',
+      slug: 'corrugated',
+      intro: 'Corrugated shipping boxes are sturdy, lightweight containers made from corrugated fiberboard — a wavy inner "fluting" sandwiched between two flat "linerboards" that creates cushioning, rigidity, and impact resistance. They\u2019re the backbone of modern logistics, eco-friendly and fully recyclable.',
+      photo1: 'Photo: stacked corrugated boxes in the warehouse',
+      photo2: 'Photo: box flute close-up or a worker taping a box',
+      sections: [
+        { label: 'Materials & Construction', body: 'Kraft paper linerboards with a fluted medium for support. Single-Wall for lighter items, Double-Wall for heavier or fragile loads, Triple-Wall for industrial-strength jobs. Flute sizes range from A-flute (maximum cushioning) to B-flute (better stacking), sourced to meet burst strength and edge crush standards.' },
+        { label: 'Sizes & Types', body: 'Regular Slotted (RSC), Half Slotted (HSC), Full Overlap (FOL), Overlap (OSC), Telescoping, and Die-Cut/Custom styles, in sizes from small parts boxes (4×4×4") up to large moving cartons (24×24×24"), plus specialty tall and flat sizes for frames, mirrors, and wine cases.', sizes: ['RSC — 4×4×4"', 'HSC — 12×12×12"', 'FOL — 18×18×18"', 'OSC — 24×24×24"', 'Telescoping', 'Die-Cut / Custom'] },
+      ],
+      applications: {
+        heading: 'Where Are Corrugated Boxes Used?',
+        items: [
+          { q: 'How are they used for shipping?', a: 'Their shock-absorbing design protects goods during transit and can be combined with wood reinforcement for oversized or international shipments.' },
+          { q: 'How are they used for storage?', a: "Durable enough for long or short-term storage, with moisture-barrier options suited to Las Vegas's dry climate." },
+          { q: 'How are they used for electronics?', a: 'Anti-static liners and double-wall construction protect TVs, computers, and other sensitive equipment.' },
+          { q: 'How are they used for fine art?', a: 'Acid-free tissue, foam corners, and telescoping designs adjust to fit frames, canvases, or sculptures.' },
+          { q: 'How are they used for wine and antiques?', a: 'Molded pulp dividers and custom inserts protect bottles and fragile heirlooms alike.' },
+        ],
+      },
+      howApplied: [
+        { title: 'Select the Right Box', desc: 'We help you choose the correct wall strength, flute type, and size for your item.' },
+        { title: 'Protect & Cushion', desc: "Foam inserts, bubble wrap, or dividers are added based on what's inside." },
+        { title: 'Seal & Label', desc: 'Boxes are sealed, labeled, and prepped for pickup, shipping, or storage.' },
+      ],
+      whyChooseUs: {
+        heading: 'Why Choose Us for Corrugated Boxes',
+        points: [
+          { icon: 'warehouse', title: 'Local Storefront', desc: 'In-store and delivery options anywhere in Nevada' },
+          { icon: 'box', title: 'Custom Sizing', desc: 'Standard sizes in stock or fully custom dimensions' },
+          { icon: 'check', title: 'Expert Guidance', desc: 'Our team helps you pick the right strength and flute type' },
+          { icon: 'handshake', title: 'Competitive Pricing', desc: 'Single boxes or bulk orders, fair pricing either way' },
+        ],
+      },
+    },
+    {
+      title: 'Heat Shrink Wrapping',
+      slug: 'heat-shrink',
+      intro: 'A flexible, heat-sensitive plastic film is wrapped around an item and heated to shrink tightly around its shape, creating a secure, tamper-evident seal that protects against moisture, dust, and UV.',
+      photo1: 'Photo: item mid-wrap with a heat gun',
+      photo2: 'Photo: film conforming to a surface, close-up',
+      sections: [
+        { label: 'Materials', body: 'Polyethylene, PVC, or polyolefin film, shrinking at 250\u00b0F\u2013350\u00b0F, in thicknesses from 6\u201312 mils for heavier items, with UV-inhibiting, flame-retardant, or anti-static additives available.' },
+      ],
+      applications: {
+        heading: 'Where Is Heat Shrink Wrapping Used?',
+        items: [
+          { q: 'Is it used for mil-spec applications?', a: 'Yes, paired with vapor barrier bags for weapons, vehicles, and field equipment requiring DoD compliance.' },
+          { q: 'Is it used for industrial equipment?', a: 'Yes, for machinery, generators, and oversized freight needing weatherproof protection.' },
+          { q: 'Is it used for commercial shipments?', a: 'Yes, for general cargo, palletized goods, and retail products in transit.' },
+          { q: 'Is it used for food storage?', a: 'Yes, food-grade films protect palletized goods, produce, and frozen items.' },
+          { q: 'Is it used for aviation and construction?', a: 'Yes, from aircraft components to steel beams and precast concrete panels.' },
+        ],
+      },
+      howApplied: [
+        { title: 'Wrap the Item', desc: 'Film is draped or wrapped around the cargo with full coverage.' },
+        { title: 'Apply Controlled Heat', desc: 'Heat guns, blowers, or shrink tunnels shrink the film tightly into place.' },
+        { title: 'Inspect the Seal', desc: 'Every wrap is checked for gaps to guarantee a weatherproof finish.' },
+      ],
+      whyChooseUs: {
+        heading: 'Why Choose Us for Heat Shrink Wrapping',
+        points: [
+          { icon: 'star', title: '25+ Years Experience', desc: 'Trusted for shrink wrap of every kind' },
+          { icon: 'truck', title: 'On-Site Service', desc: 'We wrap cargo of any size at your location' },
+          { icon: 'box', title: 'Full Material Range', desc: 'PE, PVC, and polyolefin films for any application' },
+          { icon: 'shield', title: 'Layered Protection', desc: 'Paired with vapor barrier bags when needed' },
+        ],
+      },
+    },
+    {
+      title: 'Industrial Shrink Wrapping',
+      slug: 'industrial-shrink',
+      intro: 'Protects oversized or irregularly shaped cargo across marine, construction, aerospace, energy, and defense industries — the film conforms to complex shapes for a tight, weatherproof barrier.',
+      photo1: 'Photo: oversized item shrink-wrapped on a flatbed or lift',
+      photo2: 'Photo: heavy-duty film texture or a worker on scaffolding',
+      sections: [
+        { label: 'Materials', body: 'Heavy-duty polyethylene (6\u201312 mils) for puncture resistance, polyolefin for lighter cargo like electronics, and PVC for high-value items needing a glossy finish, with UV and flame-retardant additives available.' },
+      ],
+      applications: {
+        heading: 'Which Industries Use Industrial Shrink Wrapping?',
+        items: [
+          { q: 'Is it used in the marine industry?', a: 'Yes, full yachts and vessels are wrapped to shield against weather and saltwater corrosion.' },
+          { q: 'Is it used in construction?', a: 'Yes, steel beams, precast concrete, and HVAC units are protected from rust and contamination.' },
+          { q: 'Is it used in aerospace?', a: 'Yes, aircraft wings and fuselage sections stay pristine during global shipping.' },
+          { q: 'Is it used in energy and mining?', a: 'Yes, turbine blades, solar arrays, and drill rigs are protected in coastal or remote environments.' },
+          { q: 'Is it used in defense?', a: 'Yes, military hardware is wrapped to secure sensitive components and deter tampering.' },
+        ],
+      },
+      howApplied: [
+        { title: 'Assess the Load', desc: 'We evaluate size, shape, and material needs on-site.' },
+        { title: 'Wrap On-Site', desc: 'Lifts and scaffolding ensure even coverage on oversized equipment.' },
+        { title: 'Secure for Transit', desc: 'Wrapped cargo is stabilized and ready for pickup or storage.' },
+      ],
+      whyChooseUs: {
+        heading: 'Why Choose Us for Industrial Shrink Wrapping',
+        points: [
+          { icon: 'truck', title: 'Full-Service Operations', desc: 'On-site wrapping, pickup, delivery, and storage' },
+          { icon: 'warehouse', title: 'Cross-Docking Ready', desc: 'Paired with our warehouse for efficient handling' },
+          { icon: 'handshake', title: 'Industry Trusted', desc: 'Marine, construction, energy, and defense clients' },
+          { icon: 'shield', title: 'Heavy-Duty Materials', desc: '6–12 mil film rated for the toughest jobs' },
+        ],
+      },
+    },
+    {
+      title: 'Food Industry Shrink Wrapping',
+      slug: 'food-shrink',
+      intro: 'Ensures safe transport, storage, and preservation of perishable and non-perishable goods, from palletized canned goods to fresh produce and frozen items.',
+      photo1: 'Photo: palletized food goods wrapped and ready for shipment',
+      photo2: 'Photo: food-safe film close-up on a product case',
+      sections: [
+        { label: 'Materials', body: 'Food-grade films, typically 3\u20136 mils thick, often with anti-fog agents or UV inhibitors. Polyolefin is FDA-approved for direct food contact and meets HACCP standards.' },
+      ],
+      applications: {
+        heading: 'What Food Products Get Shrink Wrapped?',
+        items: [
+          { q: 'Is it used for beverages and canned goods?', a: 'Yes, pallets are unitized to secure loads and reduce shifting during transport.' },
+          { q: 'Is it used for frozen and dairy products?', a: 'Yes, securing boxes protects from damage and maintains hygiene.' },
+          { q: 'Is it used for retail snacks?', a: 'Yes, packaging enhances brand visibility and tamper-evidence.' },
+          { q: 'Is it used for dry goods like flour and rice?', a: 'Yes, it withstands moisture, insects, and environmental damage during long-term storage.' },
+        ],
+      },
+      howApplied: [
+        { title: 'Select Food-Safe Film', desc: 'FDA-approved polyolefin or polyethylene chosen for your product.' },
+        { title: 'Wrap & Unitize', desc: 'Pallets or cases are securely wrapped to prevent shifting.' },
+        { title: 'Prep for Cold Chain', desc: 'Wrapped goods are prepped to maintain freshness in transit.' },
+      ],
+      whyChooseUs: {
+        heading: 'Why Choose Us for Food Industry Shrink Wrapping',
+        points: [
+          { icon: 'check', title: 'FDA-Approved Films', desc: 'Food-safe materials that meet HACCP standards' },
+          { icon: 'leaf', title: 'Cold-Chain Compatible', desc: 'Maintains temperature control in transit' },
+          { icon: 'calendar', title: 'Extended Shelf Life', desc: 'Protects against moisture, dust, and pests' },
+          { icon: 'shield', title: 'Vapor Barrier Pairing', desc: 'Extra protection for dried and sensitive goods' },
+        ],
+      },
+    },
+    {
+      title: 'Mil-Spec Heat Shrink Wrapping & Vapor Barrier Bags',
+      slug: 'mil-spec',
+      intro: 'Meets U.S. Department of Defense standards, including MIL-STD-2073-1, for protecting military equipment during global shipping, long-term storage, or deployment.',
+      photo1: 'Photo: military-style crate or equipment being sealed',
+      photo2: 'Photo: sealed vapor barrier bag with humidity indicator card',
+      sections: [
+        { label: 'Heat Shrink Wrapping', body: 'Heavy-duty polyethylene or MIL-PRF-81705-compliant film for weapons, vehicles, aircraft parts, and field equipment like generators and radar systems.' },
+        { label: 'Vapor Barrier Bags', body: 'Multi-layered laminates meeting MIL-PRF-131K, blocking moisture and protecting against electrostatic discharge — used for electronics, munitions, and spare parts with preservation up to 20 years.', center: true },
+      ],
+      applications: {
+        heading: 'What Gets Mil-Spec Packaging?',
+        items: [
+          { q: 'Are weapons and ammunition included?', a: 'Yes, small arms, missiles, and artillery shells are protected from corrosion during shipping.' },
+          { q: 'Are vehicles and aircraft parts included?', a: 'Yes, helicopter blades and tank components are shielded from weather exposure.' },
+          { q: 'Is field equipment included?', a: 'Yes, generators, radar systems, and communication devices are wrapped for deployment readiness.' },
+          { q: 'Are electronics included?', a: 'Yes, avionics and missile guidance systems are sealed in ESD-safe vapor barrier bags.' },
+        ],
+      },
+      howApplied: [
+        { title: 'Seal With Vapor Barrier', desc: 'Items are sealed in MIL-PRF-131K bags with desiccants first.' },
+        { title: 'Add Shrink Protection', desc: 'A shrink-wrapped outer layer adds physical and tamper protection.' },
+        { title: 'Verify Compliance', desc: 'Every shipment is checked against DoD packaging standards.' },
+      ],
+      whyChooseUs: {
+        heading: 'Why Choose Us for Mil-Spec Packaging',
+        points: [
+          { icon: 'shield', title: 'DoD Compliant', desc: 'Meets MIL-STD-2073-1, MIL-PRF-131K, MIL-PRF-81705' },
+          { icon: 'truck', title: 'On-Site Capability', desc: 'Full pickup and delivery at your location' },
+          { icon: 'warehouse', title: 'HQ Near the Strip', desc: 'Full warehouse storage on-site' },
+          { icon: 'calendar', title: '20-Year Preservation', desc: 'Long-term protection for sensitive equipment' },
+        ],
+      },
+    },
+    {
+      title: 'Vapor Barrier Bags',
+      slug: 'vapor-barrier',
+      intro: 'Also called foil, alufoil, or Mylar bags — one of the most effective packaging solutions against moisture, oxygen, salt spray, and airborne contaminants.',
+      photo1: 'Photo: sealed foil bag with a visible desiccant packet',
+      photo2: 'Photo: metallic laminate texture, close-up',
+      sections: [
+        { label: 'Materials & Types', body: 'MIL-PRF-131K Class 1-rated poly foil laminate bags with low oxygen and moisture transmission and high puncture resistance, available as heat-sealed bags, heat-sealed shrink, or coated paper.' },
+        { label: 'Military & Government Use', body: 'Federal, state, and local government accounts, including M1165A1 HMMWV transport and GovPlanet experience, meeting MIL-STD-2073-1 on every job.', center: true },
+      ],
+      applications: {
+        heading: 'What Gets Packed in Vapor Barrier Bags?',
+        items: [
+          { q: 'Are electronics included?', a: 'Yes, sensitive components are protected from moisture-induced corrosion and static damage.' },
+          { q: 'Are antiques and fine art included?', a: 'Yes, especially for sea shipments where salt water and salt spray are highly corrosive.' },
+          { q: 'Are government and military shipments included?', a: 'Yes, including vehicles like the M1165A1 HMMWV and equipment for federal agencies.' },
+        ],
+      },
+      howApplied: [
+        { title: 'Calculate Desiccant', desc: "We calculate the exact amount needed for your item's volume." },
+        { title: 'Seal the Bag', desc: 'Heat-sealed or vacuum-sealed for an airtight barrier.' },
+        { title: 'Monitor Humidity', desc: 'A humidity indicator card is included for easy inspection.' },
+      ],
+      whyChooseUs: {
+        heading: 'Why Choose Us for Vapor Barrier Bags',
+        points: [
+          { icon: 'shield', title: 'Military-Grade Bags', desc: 'MIL-PRF-131K Class 1-rated protection' },
+          { icon: 'handshake', title: 'Government Experience', desc: 'Trusted by federal, state, and local agencies' },
+          { icon: 'gear', title: 'Precise Desiccant Calculation', desc: 'Calculated to MIL-D-3464 standards' },
+          { icon: 'star', title: '25+ Years Expertise', desc: 'Shipping, packing, and logistics experience' },
+        ],
+      },
+    },
+    {
+      title: 'White Glove Delivery Service',
+      slug: 'white-glove',
+      intro: 'Meticulous, hands-on care for every item — residential, commercial, state-to-state, and international. On-site art installation, removal, packing, shipping, and storage for major Strip galleries and casinos, plus private collectors.',
+      photo1: 'Photo: team installing or handling a large art piece',
+      photo2: 'Photo: gloved hands packing a fragile item',
+      sections: [
+        { label: 'Worry-Free Guarantee', body: "You're never responsible for loading, unloading, or packing — door-to-door precision handling for fragile, expensive heirlooms and keepsakes." },
+        { label: 'Pickup & Delivery', body: "We've shipped vintage phone booths, slot machines, chandeliers, and priceless memorabilia, using multi-person teams, specialized vehicles, and lifts, with cleanup included.", center: true },
+      ],
+      applications: {
+        heading: 'What Requires White Glove Delivery?',
+        items: [
+          { q: 'Is fine art included?', a: 'Yes, along with museum sculptures and auction wins requiring careful handling.' },
+          { q: 'Are antiques and heirlooms included?', a: 'Yes, one-of-a-kind heirlooms and fragile antiques get door-to-door precision handling.' },
+          { q: 'Is furniture and appliances included?', a: 'Yes, vintage furniture and heavy appliances are moved without any hassle on your end.' },
+          { q: 'Are collectibles and electronics included?', a: 'Yes, along with rare jewelry and stones needing the highest level of care.' },
+        ],
+      },
+      howApplied: [
+        { title: 'Assess the Item', desc: 'Our team evaluates handling needs before pickup.' },
+        { title: 'Pack & Transport', desc: 'Specialized vehicles, lifts, and multi-person teams handle every step.' },
+        { title: 'Install & Clean Up', desc: 'Items are placed exactly where you want them, with cleanup included.' },
+      ],
+      whyChooseUs: {
+        heading: 'Why Choose Us for White Glove Delivery',
+        points: [
+          { icon: 'check', title: 'Worry-Free Guarantee', desc: 'You never load, unload, or pack a thing' },
+          { icon: 'star', title: 'Strip-Trusted', desc: 'Experience with major galleries and casinos' },
+          { icon: 'truck', title: 'Specialized Equipment', desc: 'Lifts, rigging, and multi-person teams' },
+          { icon: 'calendar', title: 'Next-Day Availability', desc: 'Fast turnaround locally and out of state' },
+        ],
+      },
+    },
+  ];
+
+  setActive(i) { this.setState({ activeIndex: i, openAccordion: 0 }); }
+  toggleAccordion(i) { this.setState(s => ({ openAccordion: s.openAccordion === i ? -1 : i })); }
+
+  renderVals() {
+    const active = this.servicesData[this.state.activeIndex];
+    return {
+      navItems: [
+        { label: 'PACKAGING', href: 'Packaging.dc.html', color: '#A9824F', weight: 800 },
+        { label: 'SHIPPING', href: 'Shipping.dc.html', color: '#1A1C27', weight: 600 },
+        { label: 'CRATING', href: 'Crating.dc.html', color: '#1A1C27', weight: 600 },
+        { label: 'LOGISTICS', href: 'Logistics.dc.html', color: '#1A1C27', weight: 600 },
+        { label: 'LOCATIONS', href: 'Locations.dc.html', color: '#1A1C27', weight: 600 },
+      ],
+      socials: ['in', 'f', 'x'],
+      aboutOpen: !!this.state.aboutOpen,
+      openAbout: () => this.setState({ aboutOpen: true }),
+      closeAbout: () => this.setState({ aboutOpen: false }),
+      blogOpen: !!this.state.blogOpen,
+      openBlog: () => this.setState({ blogOpen: true }),
+      closeBlog: () => this.setState({ blogOpen: false }),
+      blogSubItems: [
+        { label: 'Specialty Shipping Blog', href: 'Specialty Shipping Blog.dc.html' },
+      ],
+      aboutSubItems: [
+        { label: 'Local Shipping Supplies', href: 'Local Shipping Supplies.dc.html' },
+        { label: 'Art Courier Service', href: 'Art Courier Service.dc.html' },
+        { label: 'Convention, Trade Show, Event Packing, Shipping & Storage', href: 'Convention Trade Show Event Packing Shipping Storage.dc.html' },
+        { label: 'Trade Show & Exhibition Movers', href: 'Trade Show Exhibition Movers.dc.html' },
+        { label: 'Estate Relocation Moves', href: 'Estate Relocation Moves.dc.html' },
+        { label: 'Las Vegas Crating Packs and Ships the Leonardo Da Vinci Exhibit', href: 'Las Vegas Crating Packs and Ships Leonardo Da Vinci Exhibit.dc.html' },
+        { label: 'Clients & Partners', href: 'Clients and Partners.dc.html' },
+        { label: 'Difference Between A Freight Forwarder and a Broker', href: 'Difference Between A Freight Forwarder and a Broker.dc.html' },
+      ],
+      highlights: [
+        'Art & Fine Art Shipping',
+        'Antique Handling, Packing & Shipping',
+        'Difficult and Hard-to-Pack Items',
+        'Car Parts, Motorcycles, Pianos & More',
+      ],
+      services: this.servicesData.map((s, i) => ({
+        title: s.title,
+        select: () => this.setActive(i),
+        bg: i === this.state.activeIndex ? '#A9824F' : '#fff',
+        borderColor: i === this.state.activeIndex ? '#A9824F' : '#E4DDCE',
+        textColor: i === this.state.activeIndex ? '#fff' : '#1A1C27',
+      })),
+      activeTitle: active.title,
+      activeIntro: active.intro,
+      activePhoto1Id: 'pkg-' + active.slug + '-photo1',
+      activePhoto1Placeholder: active.photo1,
+      activePhoto2Id: 'pkg-' + active.slug + '-photo2',
+      activePhoto2Placeholder: active.photo2,
+      activeSection1Label: active.sections[0].label,
+      activeSection1Body: active.sections[0].body,
+      activeMidSections: active.sections.slice(1).map(sec => ({
+        label: sec.label, body: sec.body, sizes: sec.sizes || [],
+        hasSizes: !!sec.sizes, notSizes: !sec.sizes, align: (sec.sizes || sec.center) ? 'center' : 'left',
+      })),
+      activeHasMidSections: active.sections.length > 1,
+      activeHowApplied: active.howApplied.map((step, i) => ({
+        title: step.title, desc: step.desc,
+        bg: ['#1A1C27', '#232A42', '#2D3658'][i],
+        isStep1: i === 0, isStep2: i === 1, isStep3: i === 2,
+      })),
+      activeApplicationsHeading: active.applications.heading,
+      activeApplicationsItems: active.applications.items.map((item, i) => {
+        const isOpen = i === this.state.openAccordion;
+        return {
+          q: item.q, a: item.a, isOpen,
+          qColor: isOpen ? '#A9824F' : '#1A1C27',
+          chevronRotate: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+          toggle: () => this.toggleAccordion(i),
+        };
+      }),
+      activeWCUHeading: active.whyChooseUs.heading,
+      activeWCUPoints: active.whyChooseUs.points.map((pt, i) => ({
+        num: '0' + (i + 1),
+        title: pt.title,
+        desc: pt.desc,
+        offset: (i % 2 === 1 ? '36px' : '0px'),
+        isCheck: pt.icon === 'check', isBox: pt.icon === 'box', isTruck: pt.icon === 'truck',
+        isHandshake: pt.icon === 'handshake', isShield: pt.icon === 'shield', isWarehouse: pt.icon === 'warehouse',
+        isLeaf: pt.icon === 'leaf', isCalendar: pt.icon === 'calendar', isGear: pt.icon === 'gear', isStar: pt.icon === 'star',
+      })),
+      shippingLinks: [
+        { label: 'International', href: 'Shipping.dc.html' },
+        { label: 'Same Day', href: 'Shipping.dc.html' },
+        { label: 'Moving', href: 'Shipping.dc.html' },
+        { label: 'Small Moves', href: 'Shipping.dc.html' },
+        { label: 'Art Packing', href: 'Shipping.dc.html' },
+      ],
+      cratingLinks: [
+        { label: 'Custom Wood Crates', href: 'Crating.dc.html' },
+        { label: 'Re-Usable Crates', href: 'Crating.dc.html' },
+        { label: 'ISPM-15', href: 'Crating.dc.html' },
+        { label: 'Wood Pallets', href: 'Crating.dc.html' },
+        { label: 'Freight', href: 'Crating.dc.html' },
+      ],
+      companyLinks: [
+        { label: 'Home', href: 'Homepage v3.dc.html' },
+        { label: 'Packaging', href: 'Packaging.dc.html' },
+        { label: 'Shipping', href: 'Shipping.dc.html' },
+        { label: 'Crating', href: 'Crating.dc.html' },
+        { label: 'Logistics', href: 'Logistics.dc.html' },
+        { label: 'Locations', href: 'Locations.dc.html' },
+        { label: 'Contact Us', href: 'Contact.dc.html' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

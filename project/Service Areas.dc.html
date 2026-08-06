@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #F7F5F0; font-family: 'Inter', sans-serif; }
+    @keyframes phoneRing {
+      0%, 100% { transform: rotate(0deg); }
+      10% { transform: rotate(-15deg); }
+      20% { transform: rotate(12deg); }
+      30% { transform: rotate(-10deg); }
+      40% { transform: rotate(8deg); }
+      50% { transform: rotate(0deg); }
+    }
+    a { color: #1A1C27; text-decoration: none; }
+    a:hover { color: #CEC2AB; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="background: #F7F5F0; color: #1A1C27; min-height: 100vh;">
+
+  <!-- TOP INFO BAR -->
+  <div style="background: #fff; padding: 8px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 12px; color: #1A1C27; border-bottom: 1px solid #eceff2; overflow-x: auto;">
+    <div style="display: flex; align-items: center; gap: 24px; white-space: nowrap; flex-shrink: 0;">
+      <div style="display: flex; align-items: center; gap: 7px;">
+        <span style="width: 13px; height: 13px; border: 1.5px solid #a89877; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 8px; color: #a89877; flex-shrink: 0;">◷</span>
+        Monday to Friday: 8:00am – 5:00pm, Saturday &amp; Sunday: By Appointment
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 20px; white-space: nowrap; flex-shrink: 0;">
+      <a href="Service Areas.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">Service Areas</a>
+      <a href="Careers.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">Careers</a>
+      <a href="FAQ.dc.html" style="color: #1A1C27; font-weight: 600;" style-hover="color: #a89877;">FAQ</a>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <sc-for list="{{ socials }}" as="soc" hint-placeholder-count="3">
+          <a href="#" style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid #d8d0bd; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #1A1C27;" style-hover="border-color: #a89877; color: #a89877;">{{ soc }}</a>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAV -->
+  <div style="background: #fff; position: relative; z-index: 20; border-bottom: 1px solid #eceff2;">
+    <div style="max-width: 1440px; margin: 0 auto; padding: 10px 32px 0;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;">
+        <div style="display: flex; align-items: center; flex-shrink: 0;">
+          <a href="Homepage v3.dc.html"><img src="assets/logo-new-color.webp" alt="Las Vegas Crating &amp; Logistics" style="height: 52px; width: auto; display: block; position: relative; top: 14px;"></a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; flex-shrink: 0;">
+          <a href="tel:7027484973" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            <span style="font-size: 12px;">☎</span> 702-748-4973
+          </a>
+          <a href="mailto:contact@lasvegascrating.com" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            <span style="font-size: 12px;">✉</span> contact@lasvegascrating.com
+          </a>
+          <a href="Contact.dc.html" style="display: flex; align-items: center; gap: 8px; background: #35506b; color: #fff; padding: 9px 18px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #416086;">
+            Contact Us
+          </a>
+          <span style="width: 34px; height: 34px; border: 1px solid #d8d0bd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #1A1C27; cursor: pointer;" style-hover="border-color: #a89877; color: #a89877;">⚲</span>
+          <a href="Get a Quote.dc.html" style="background: #1A1C27; color: #fff; padding: 12px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap; position: relative; top: 14px;" style-hover="background: #262a3a;">Get a Quote</a>
+        </div>
+      </div>
+      <nav style="display: flex; align-items: center; justify-content: center; gap: 2px; flex-wrap: wrap; width: fit-content; margin: 4px auto 0; border-top: 1px solid #eceff2; padding-top: 4px;">
+        <a href="Homepage v3.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">HOME</a>
+        <div style="position: relative;" onMouseEnter="{{ openAbout }}" onMouseLeave="{{ closeAbout }}">
+          <a href="About.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">ABOUT <span style="font-size: 8px; position: relative; top: 1px;">▾</span></a>
+          <sc-if value="{{ aboutOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #eceff2; box-shadow: 0 16px 32px rgba(26,28,39,0.14); min-width: 300px; padding: 6px; z-index: 50; display: flex; flex-direction: column;">
+              <sc-for list="{{ aboutSubItems }}" as="sub" hint-placeholder-count="8">
+                <a href="{{ sub.href }}" style="padding: 10px 14px; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 13px; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877; background: #F7F5F0;">{{ sub.label }}</a>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+          <a href="{{ item.href }}" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">
+            {{ item.label }}
+          </a>
+        </sc-for>
+        <a href="Specialty Shipping Blog.dc.html" style="display: flex; align-items: center; gap: 4px; padding: 6px 13px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13.5px; letter-spacing: 0.02em; color: #1A1C27; white-space: nowrap;" style-hover="color: #a89877;">BLOG</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section style="background: #1A1C27; padding: 0;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; align-content: center; min-height: clamp(280px, calc(15.6vw + 260px), 560px);">
+      <div style="padding: 80px 0 80px 32px; min-width: 0;">
+        <div style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #CEC2AB; text-transform: uppercase; margin-bottom: 16px;">Service Areas</div>
+        <h1 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 48px; line-height: 1.1; color: #fff; margin: 0 0 20px; letter-spacing: normal; text-wrap: pretty;">Where We Ship, Pack, and Deliver</h1>
+        <p style="font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.7); margin: 0;">
+          If we can get a truck to you, we ship anything to anywhere. From the Las Vegas Valley to Utah, Arizona, and beyond, our fleet covers it.
+        </p>
+      </div>
+      <div style="position: relative; align-self: stretch; min-height: 420px; min-width: 0; display: flex; align-items: center; justify-content: center; padding: 40px 32px;">
+        <svg viewBox="0 0 400 340" style="width: 100%; max-width: 380px;">
+          <polygon points="70,20 180,10 230,60 260,150 200,260 120,300 60,240 40,140" fill="#232A42" stroke="#3a4468" stroke-width="1.5"/>
+          <polygon points="180,10 320,20 330,150 260,150 230,60" fill="#2D3658" stroke="#3a4468" stroke-width="1.5"/>
+          <polygon points="200,260 260,150 330,150 340,300 240,320" fill="#1f2540" stroke="#3a4468" stroke-width="1.5"/>
+          <circle cx="150" cy="150" r="95" fill="none" stroke="#CEC2AB" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.6"/>
+          <circle cx="150" cy="150" r="7" fill="#CEC2AB"/>
+          <text x="150" y="130" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="11" font-weight="700">LAS VEGAS</text>
+          <circle cx="330" cy="150" r="4" fill="#fff" opacity="0.8"/>
+          <text x="330" y="140" text-anchor="middle" fill="#cfd2d9" font-family="Inter, sans-serif" font-size="9">UTAH</text>
+          <circle cx="280" cy="270" r="4" fill="#fff" opacity="0.8"/>
+          <text x="280" y="290" text-anchor="middle" fill="#cfd2d9" font-family="Inter, sans-serif" font-size="9">ARIZONA</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section style="background: #1A1C27; padding: 90px 32px;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="width: 100%; aspect-ratio: 16/7; border: 1px solid #3a4468; position: relative; overflow: hidden;">
+        <iframe src="https://maps.google.com/maps?q=4640+Polaris+Ave,+Las+Vegas,+NV+89103&amp;z=6&amp;output=embed" style="width: 100%; height: 100%; border: 0; display: block;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Service area map centered on Las Vegas"></iframe>
+        <div style="position: absolute; top: 16px; left: 16px; background: rgba(26,28,39,0.85); border: 1px solid #CEC2AB; padding: 8px 14px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 12.5px; color: #CEC2AB; pointer-events: none;">LAS VEGAS HQ + SERVICE RADIUS</div>
+      </div>
+      <p style="text-align: center; font-size: 14.5px; color: rgba(255,255,255,0.65); margin: 26px 0 0;">Serving Clark County and beyond — call <a href="tel:7027484973" style="color: #CEC2AB;">(702) 748-4973</a> for a free quote.</p>
+    </div>
+  </section>
+
+  <!-- LAS VEGAS VALLEY ACCORDION -->
+  <section style="background: #F7F5F0; padding: 100px 32px;">
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 34px; color: #1A1C27; margin: 0 0 22px; letter-spacing: normal; text-wrap: pretty;">Las Vegas Valley Service Areas</h2>
+      <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto 26px;"></div>
+      <p style="font-size: 16px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0 0 46px;">The Las Vegas Valley spans over 600 square miles and more than 2 million people — we cover all of it, locally and internationally.</p>
+    </div>
+    <div style="max-width: 900px; margin: 0 auto;">
+      <sc-for list="{{ valleyItems }}" as="item" hint-placeholder-count="12">
+        <div style="border-bottom: 1px solid #e4ddce;">
+          <button onClick="{{ item.toggle }}" style="width: 100%; background: none; border: none; padding: 18px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; cursor: pointer;">
+            <span style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; color: {{ item.qColor }}; text-align: center; flex: 1;">{{ item.name }}</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#A9824F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; transform: {{ item.chevronRotate }};"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <sc-if value="{{ item.isOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="background: #fff; padding: 16px 20px; margin: 0 0 16px; text-align: center;">
+              <p style="font-size: 15px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0;">{{ item.desc }}</p>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- OUT-OF-STATE -->
+  <section style="background: #fff; padding: 100px 32px;">
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 34px; color: #1A1C27; margin: 0 0 22px; letter-spacing: normal; text-wrap: pretty;">Packing and Shipping Beyond Nevada</h2>
+      <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto 26px;"></div>
+      <p style="font-size: 16px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0 0 46px;">Our reach extends well past state lines — with regular routes into Utah and Arizona.</p>
+    </div>
+    <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+      <sc-for list="{{ stateCards }}" as="card" hint-placeholder-count="2">
+        <div style="background: #F7F5F0; border: 1px solid #eceff2; padding: 32px 28px;">
+          <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 20px; color: #1A1C27; margin-bottom: 14px; text-align: center;">{{ card.state }}</div>
+          <p style="font-size: 15px; line-height: 1.7; color: rgba(26,28,39,0.7); margin: 0; text-align: center;">{{ card.cities }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- CLARK COUNTY & NEIGHBORING AREAS -->
+  <section style="background: #F7F5F0; padding: 100px 32px;">
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 34px; color: #1A1C27; margin: 0 0 22px; letter-spacing: normal; text-wrap: pretty;">Clark County &amp; Neighboring Areas</h2>
+      <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto 34px;"></div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+        <sc-for list="{{ neighborAreas }}" as="area" hint-placeholder-count="20">
+          <span style="background: #fff; border: 1px solid #e4ddce; color: #1A1C27; font-size: 13.5px; font-weight: 600; padding: 9px 16px; white-space: nowrap;">{{ area }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREIGHT STORAGE -->
+  <section style="background: #1A1C27; padding: 90px 32px;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 34px; color: #fff; margin: 0 0 22px; letter-spacing: normal; text-wrap: pretty;">Freight Storage</h2>
+      <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto 26px;"></div>
+      <p style="font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.7); margin: 0;">Need dedicated space for freight? Whether you're a business storing convention booths between events or just need temporary space during a move, we offer both short-term and long-term freight storage.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section style="background: #fff; padding: 100px 32px;">
+    <div style="max-width: 640px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 36px;">
+        <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 34px; color: #1A1C27; margin: 0 0 22px; letter-spacing: normal; text-wrap: pretty;">Contact Us for a Quote</h2>
+        <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto;"></div>
+      </div>
+      <div style="background: #F7F5F0; border: 1px solid #eceff2; padding: 36px;">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <input type="text" placeholder="Name" style="background: #fff; border: 1px solid #d8d0bd; color: #1A1C27; padding: 13px 14px; font-size: 14px; font-family: 'Inter', sans-serif;">
+            <input type="email" placeholder="Email" style="background: #fff; border: 1px solid #d8d0bd; color: #1A1C27; padding: 13px 14px; font-size: 14px; font-family: 'Inter', sans-serif;">
+          </div>
+          <input type="text" placeholder="Subject" style="background: #fff; border: 1px solid #d8d0bd; color: #1A1C27; padding: 13px 14px; font-size: 14px; font-family: 'Inter', sans-serif;">
+          <textarea placeholder="Message" rows="5" style="background: #fff; border: 1px solid #d8d0bd; color: #1A1C27; padding: 13px 14px; font-size: 14px; font-family: 'Inter', sans-serif; resize: none;"></textarea>
+          <button style="background: #CEC2AB; color: #1A1C27; border: none; padding: 15px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; cursor: pointer; margin-top: 4px;" style-hover="background: #ddd3c0;">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL CTA BANNER -->
+  <section style="background: linear-gradient(100deg, rgba(26,28,39,0.75) 30%, rgba(26,28,39,0.55) 100%), url('uploads/las-vegas-crating-3pl-warehouse (1).webp') center/cover no-repeat; padding: 70px 32px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px;">
+      <div>
+        <h2 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 32px; color: #fff; margin: 0 0 16px; letter-spacing: normal; text-wrap: pretty;">Ready to Ship? Let's Get Your Free Quote.</h2>
+        <div style="width: 70px; height: 4px; background: #CEC2AB; margin: 0 auto 14px;"></div>
+        <p style="font-size: 14.5px; color: #cfd2d9; margin: 0;">Call now or request a quote online — most quotes are returned the same business day.</p>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;">
+        <a href="Get a Quote.dc.html" style="display: inline-flex; align-items: center; gap: 8px; background: #CEC2AB; color: #1A1C27; padding: 15px 26px; clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap;" style-hover="background: #ddd3c0;">Get a Quote ↗</a>
+        <a href="tel:7027484973" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+          <span style="width: 32px; height: 32px; border: 1.5px solid #CEC2AB; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #CEC2AB; flex-shrink: 0; animation: phoneRing 1.4s ease-in-out infinite;">☎</span>
+          <span style="line-height: 1.3;">
+            <span style="display: block; font-size: 10.5px; color: #9aa0ac; text-transform: uppercase; letter-spacing: 0.05em;">Call Us Now</span>
+            <span style="display: block; font-size: 14px; font-weight: 800; color: #fff;">702-748-4973</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #1A1C27; color: #cfd2d9; padding: 70px 32px 28px;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px;">
+        <div>
+          <img src="assets/logo-new-color.webp" alt="Las Vegas Crating &amp; Logistics" style="height: 40px; width: auto; display: block; margin-bottom: 16px; filter: brightness(0) invert(1);">
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0 0 14px;">4640 Polaris Ave, Las Vegas, NV 89103</p>
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0 0 14px;">1-833-801-9084</p>
+          <p style="font-size: 13px; line-height: 1.7; color: #9aa0ac; margin: 0;">Monday – Friday: 8:00am – 5:00pm<br>Saturday &amp; Sunday: By Appointment</p>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Shipping &amp; Storage</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ shippingLinks }}" as="l" hint-placeholder-count="5">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Packing &amp; Crating</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ cratingLinks }}" as="l" hint-placeholder-count="5">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: #CEC2AB; margin-bottom: 18px;">Company</div>
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <sc-for list="{{ companyLinks }}" as="l" hint-placeholder-count="7">
+              <a href="{{ l.href }}" style="font-size: 13.5px; color: #9aa0ac;">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(206,194,171,0.15); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div style="font-size: 12.5px; color: #7d818c;">© 2026 Las Vegas Crating &amp; Logistics. All rights reserved.</div>
+        <div style="display: flex; gap: 24px; font-size: 12.5px;">
+          <a href="Privacy Policy.dc.html" style="color: #7d818c;">Privacy Policy</a>
+          <a href="#" style="color: #7d818c;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { openAccordion: 0 };
+
+  valleyData = [
+    { name: 'Downtown', desc: 'Home to Fremont Street and countless casinos and businesses, within easy reach for fast storage, transport, and small or large moves.' },
+    { name: 'Paradise', desc: 'This unincorporated but urban area south of Las Vegas draws heavy tourism and is officially addressed as "Las Vegas, NV."' },
+    { name: 'Summerlin', desc: 'On the west side near Red Rock, a thriving residential destination for many out-of-town relocations.' },
+    { name: 'Centennial Hills', desc: 'About 20 minutes from the Strip, a newer area with many residential homes and horse properties.' },
+    { name: 'Sun City', desc: 'An active community for small moves, including specialty antiques and vintage goods needing white-glove care.' },
+    { name: 'Aliante', desc: "North Las Vegas's age-restricted communities and golf courses, with short or long-term storage during transitional moves." },
+    { name: 'Spring Valley', desc: 'Bordered by Sahara, Decatur, Warm Springs, and Hualapai, with strip malls and housing subdivisions that regularly need custom boxing and crating.' },
+    { name: 'Henderson', desc: 'Southeast Las Vegas, home to over 300,000 residents and several local casinos, with commercial specialty packing services available.' },
+    { name: 'The Strip', desc: "Our headquarters sits just off the 215 and I-15, adjacent to the world's largest trade shows and conventions — handling pickups, deliveries, receiving, and on-site crating for any business." },
+    { name: 'Blue Diamond', desc: 'A seven-square-mile area southwest of the valley, including destinations like Bonnie Springs.' },
+    { name: 'Boulder City', desc: 'A historic area near Hoover Dam and Lake Mead, within easy reach for securing cargo and commodities.' },
+    { name: 'Primm', desc: "25 miles south on I-15 near the California state line, with quality transportation to and from its resorts and casinos." },
+  ];
+
+  toggleAccordion(i) { this.setState(s => ({ openAccordion: s.openAccordion === i ? -1 : i })); }
+
+  renderVals() {
+    return {
+      navItems: [
+        { label: 'PACKAGING', href: 'Packaging.dc.html' },
+        { label: 'SHIPPING', href: 'Shipping.dc.html' },
+        { label: 'CRATING', href: 'Crating.dc.html' },
+        { label: 'LOGISTICS', href: 'Logistics.dc.html' },
+        { label: 'LOCATIONS', href: 'Locations.dc.html' },
+      ],
+      socials: ['in', 'f', 'x'],
+      aboutOpen: !!this.state.aboutOpen,
+      openAbout: () => this.setState({ aboutOpen: true }),
+      closeAbout: () => this.setState({ aboutOpen: false }),
+      blogOpen: !!this.state.blogOpen,
+      openBlog: () => this.setState({ blogOpen: true }),
+      closeBlog: () => this.setState({ blogOpen: false }),
+      blogSubItems: [
+        { label: 'Specialty Shipping Blog', href: 'Specialty Shipping Blog.dc.html' },
+      ],
+      aboutSubItems: [
+        { label: 'Local Shipping Supplies', href: 'Local Shipping Supplies.dc.html' },
+        { label: 'Art Courier Service', href: 'Art Courier Service.dc.html' },
+        { label: 'Convention, Trade Show, Event Packing, Shipping & Storage', href: 'Convention Trade Show Event Packing Shipping Storage.dc.html' },
+        { label: 'Trade Show & Exhibition Movers', href: 'Trade Show Exhibition Movers.dc.html' },
+        { label: 'Estate Relocation Moves', href: 'Estate Relocation Moves.dc.html' },
+        { label: 'Las Vegas Crating Packs and Ships the Leonardo Da Vinci Exhibit', href: 'Las Vegas Crating Packs and Ships Leonardo Da Vinci Exhibit.dc.html' },
+        { label: 'Clients & Partners', href: 'Clients and Partners.dc.html' },
+        { label: 'Difference Between A Freight Forwarder and a Broker', href: 'Difference Between A Freight Forwarder and a Broker.dc.html' },
+      ],
+      valleyItems: this.valleyData.map((item, i) => {
+        const isOpen = i === this.state.openAccordion;
+        return {
+          name: item.name, desc: item.desc, isOpen,
+          qColor: isOpen ? '#A9824F' : '#1A1C27',
+          chevronRotate: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+          toggle: () => this.toggleAccordion(i),
+        };
+      }),
+      stateCards: [
+        { state: 'Utah', cities: 'St. George (the 5th fastest-growing city in the U.S.), Salt Lake City, Zion, Colorado City, Cedar City, Beaver, and every route in between.' },
+        { state: 'Arizona', cities: 'Phoenix, Scottsdale, Tucson, Tempe, Mesa, Sedona, Flagstaff, Chandler, Yuma, Gilbert, Prescott, and Kingman.' },
+      ],
+      neighborAreas: ['Paradise', 'Blue Diamond', 'Bunkerville', 'Cal-Nev-Ari', 'Enterprise', 'Goodsprings', 'Indian Springs', 'Laughlin', 'Moapa Town', 'Mount Charleston', 'Nellis AFB', 'Nelson', 'Searchlight', 'Spring Valley', 'Summerlin South', 'Whitney', 'Winchester', 'Lake Havasu City', 'Pahrump', 'Riverside'],
+      shippingLinks: [
+        { label: 'International', href: 'Shipping.dc.html' },
+        { label: 'Same Day', href: 'Shipping.dc.html' },
+        { label: 'Moving', href: 'Shipping.dc.html' },
+        { label: 'Small Moves', href: 'Shipping.dc.html' },
+        { label: 'Art Packing', href: 'Shipping.dc.html' },
+      ],
+      cratingLinks: [
+        { label: 'Custom Wood Crates', href: 'Crating.dc.html' },
+        { label: 'Re-Usable Crates', href: 'Crating.dc.html' },
+        { label: 'ISPM-15', href: 'Crating.dc.html' },
+        { label: 'Wood Pallets', href: 'Crating.dc.html' },
+        { label: 'Freight', href: 'Crating.dc.html' },
+      ],
+      companyLinks: [
+        { label: 'Home', href: 'Homepage v3.dc.html' },
+        { label: 'Packaging', href: 'Packaging.dc.html' },
+        { label: 'Shipping', href: 'Shipping.dc.html' },
+        { label: 'Crating', href: 'Crating.dc.html' },
+        { label: 'Logistics', href: 'Logistics.dc.html' },
+        { label: 'Locations', href: 'Locations.dc.html' },
+        { label: 'Contact Us', href: 'Contact.dc.html' },
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>
