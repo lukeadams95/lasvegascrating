@@ -15,6 +15,23 @@
   }
 
   /* ---------------------------------------------------------------------
+     Desktop shrink-on-scroll sticky header — the slim logo + CTA bar
+     appears once the full header has scrolled out of view.
+     ------------------------------------------------------------------- */
+  const stickyHeader = document.getElementById('stickyHeader');
+  const mainnav = document.querySelector('.mainnav');
+
+  if (stickyHeader && mainnav) {
+    const toggleStickyHeader = () => {
+      const threshold = mainnav.offsetTop + mainnav.offsetHeight;
+      stickyHeader.classList.toggle('is-visible', window.scrollY > threshold);
+    };
+    window.addEventListener('scroll', toggleStickyHeader, { passive: true });
+    window.addEventListener('resize', toggleStickyHeader);
+    toggleStickyHeader();
+  }
+
+  /* ---------------------------------------------------------------------
      "About" dropdown — hover works via CSS; click/tap toggle for touch,
      plus outside-click and Escape to close.
      ------------------------------------------------------------------- */

@@ -57,10 +57,6 @@
     </div>
 
     <nav class="nav" id="primaryNav" aria-label="Primary">
-      <div class="nav__mobile-cta">
-        <a href="tel:7027484973" class="btn btn--steel">&#9742; 702-748-4973</a>
-        <a href="get-a-quote.html" class="btn btn--tan">Get a Quote</a>
-      </div>
       <a href="index.html" class="nav__link">HOME</a>
       <div class="has-dropdown" id="aboutDropdown">
         <a href="about.html" class="nav__link" aria-haspopup="true" aria-expanded="false">
@@ -86,6 +82,21 @@
     </nav>
   </div>
 </header>
+<div class="sticky-header" id="stickyHeader">
+  <div class="sticky-header__inner">
+    <a href="index.html" class="sticky-header__logo">
+      <img src="assets/logo-new-color.webp" alt="Las Vegas Crating &amp; Logistics" width="160" height="42">
+    </a>
+    <div class="sticky-header__actions">
+      <a href="tel:7027484973" class="btn btn--steel">
+        <span aria-hidden="true">&#9742;</span> 702-748-4973
+      </a>
+      <a href="contact.html" class="btn btn--steel">Contact Us</a>
+      <a href="get-a-quote.html" class="btn btn--nav-quote">Get a Quote</a>
+    </div>
+  </div>
+</div>
+
 
 <main>
 
@@ -213,6 +224,13 @@
     </div>
   </div>
 </footer>
+
+<div class="mobile-cta-bar" role="region" aria-label="Quick contact">
+  <a href="tel:7027484973" class="mobile-cta-bar__btn mobile-cta-bar__btn--call">
+    <span aria-hidden="true">&#9742;</span> Call Now
+  </a>
+  <a href="get-a-quote.html" class="mobile-cta-bar__btn mobile-cta-bar__btn--quote">Get a Quote</a>
+</div>
 
 <script src="js/main.js" defer></script>
 </body>

@@ -344,6 +344,48 @@ h1, h2 {
 }
 .btn--nav-quote:hover { background: var(--dark-3); color: #fff; }
 
+/* =========================================================================
+   DESKTOP SHRINK-ON-SCROLL STICKY HEADER
+   ========================================================================= */
+
+.sticky-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 8px 20px rgba(5, 25, 52, 0.1);
+  transform: translateY(-100%);
+  transition: transform 0.25s ease;
+}
+.sticky-header.is-visible { transform: translateY(0); }
+.sticky-header__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 12px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.sticky-header__logo { display: flex; align-items: center; flex-shrink: 0; }
+.sticky-header__logo img { height: 40px; width: auto; display: block; }
+.sticky-header__actions { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.sticky-header__actions .btn { clip-path: var(--clip-btn-nav); }
+
+@media (min-width: 1181px) {
+  .sticky-header { display: block; }
+}
+
+/* =========================================================================
+   MOBILE STICKY CTA BAR
+   ========================================================================= */
+
+.mobile-cta-bar { display: none; }
+
 .nav-toggle {
   display: none;
   width: 40px;
@@ -403,8 +445,6 @@ h1, h2 {
 .nav__link:hover { color: var(--tan-dot); }
 .nav__link--active { font-weight: 800; color: var(--tan-dark); }
 .nav__link--active:hover { color: var(--tan-dot); }
-
-.nav__mobile-cta { display: none; }
 
 .has-dropdown { position: relative; }
 .dropdown-caret { font-size: 8px; position: relative; top: 1px; }
@@ -1780,8 +1820,37 @@ h1, h2 {
 
 @media (max-width: 1180px) {
   .nav-toggle { display: flex; }
+  .logo-link img { top: 0; }
   .mainnav__actions .email-btn,
-  .mainnav__actions .icon-btn { display: none; }
+  .mainnav__actions .icon-btn,
+  .mainnav__actions .phone-btn,
+  .mainnav__actions .contact-btn,
+  .mainnav__actions .btn--nav-quote { display: none; }
+
+  body { padding-bottom: 60px; }
+  .mobile-cta-bar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    box-shadow: 0 -6px 16px rgba(5, 25, 52, 0.18);
+  }
+  .mobile-cta-bar__btn {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 12px;
+    font-weight: 700;
+    font-size: 13.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .mobile-cta-bar__btn--call { background: var(--steel); color: #fff; }
+  .mobile-cta-bar__btn--quote { background: var(--tan); color: var(--ink); }
   .nav {
     display: none;
     flex-direction: column;
@@ -1852,23 +1921,6 @@ h1, h2 {
 
 @media (max-width: 480px) {
   .zigzag__grid { grid-template-columns: 1fr; }
-}
-
-/* Below this, even phone/contact/quote buttons don't fit next to the logo
-   and hamburger — move them into the mobile nav panel instead. */
-@media (max-width: 780px) {
-  .mainnav__actions .contact-btn,
-  .mainnav__actions .phone-btn,
-  .mainnav__actions .btn--nav-quote { display: none; }
-  .nav__mobile-cta {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    padding-bottom: 14px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid var(--line);
-    width: 100%;
-  }
 }
 
 @media (max-width: 640px) {
