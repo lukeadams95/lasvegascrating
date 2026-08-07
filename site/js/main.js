@@ -308,6 +308,33 @@
   });
 
   /* ---------------------------------------------------------------------
+     Price list category cards (Local Shipping Supplies) — each category
+     toggles open independently, and the jump-nav row opens + scrolls to
+     the matching category so visitors don't have to scroll past
+     unrelated tables to find bulk/bundle pricing.
+     ------------------------------------------------------------------- */
+  const priceCards = document.querySelectorAll('.price-table-card');
+  if (priceCards.length) {
+    priceCards.forEach((card) => {
+      const head = card.querySelector('.price-table-card__head');
+      head.addEventListener('click', () => {
+        card.classList.toggle('is-open');
+        head.setAttribute('aria-expanded', card.classList.contains('is-open'));
+      });
+    });
+
+    document.querySelectorAll('.price-list-nav__link').forEach((link) => {
+      link.addEventListener('click', () => {
+        const card = document.getElementById('price-' + link.dataset.priceTarget);
+        if (!card) return;
+        card.classList.add('is-open');
+        card.querySelector('.price-table-card__head').setAttribute('aria-expanded', 'true');
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------------------
      "Read More Posts" toggle (Blog index) — reveals the hidden posts
      and swaps the button for a static "Showing all posts" label.
      ------------------------------------------------------------------- */
