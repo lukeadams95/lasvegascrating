@@ -332,7 +332,32 @@
         card.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
+
+    // Deep links (e.g. packaging.html linking to #price-shipping-boxes)
+    // should land on an already-open card, not a collapsed one.
+    if (location.hash) {
+      const target = document.getElementById(location.hash.slice(1));
+      if (target && target.classList.contains('price-table-card')) {
+        target.classList.add('is-open');
+        target.querySelector('.price-table-card__head').setAttribute('aria-expanded', 'true');
+        setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+      }
+    }
   }
+
+  /* ---------------------------------------------------------------------
+     Expandable mid-cards (e.g. "Sizes & Types" on Corrugated Shipping
+     Boxes) — reveals a fuller size list instead of just looking
+     clickable with nothing behind it.
+     ------------------------------------------------------------------- */
+  document.querySelectorAll('.mid-card--expandable').forEach((card) => {
+    const toggle = card.querySelector('.mid-card__label--toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', () => {
+      card.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', card.classList.contains('is-open'));
+    });
+  });
 
   /* ---------------------------------------------------------------------
      "Read More Posts" toggle (Blog index) — reveals the hidden posts
